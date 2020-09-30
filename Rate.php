@@ -53,163 +53,100 @@ final class Rate extends PostmenEntity
     /** @var string */
     private $info_message;
 
-    /**
-     * @return Weight
-     */
     public function getChargeWeight(): ?Weight
     {
         return $this->charge_weight;
     }
 
-    /**
-     * @param Weight $charge_weight
-     * @return Rate
-     */
     public function setChargeWeight(?Weight $charge_weight): Rate
     {
         $this->charge_weight = $charge_weight;
         return $this;
     }
 
-    /**
-     * @return Money
-     */
     public function getTotalCharge(): ?Money
     {
         return $this->total_charge;
     }
 
-    /**
-     * @param Money $total_charge
-     * @return Rate
-     */
     public function setTotalCharge(?Money $total_charge): Rate
     {
         $this->total_charge = $total_charge;
         return $this;
     }
 
-    /**
-     * @return SimpleShipperAccount
-     */
     public function getSimpleShipperAccount(): ?SimpleShipperAccount
     {
         return $this->simple_shipper_account;
     }
 
-    /**
-     * @param SimpleShipperAccount $simple_shipper_account
-     * @return Rate
-     */
     public function setSimpleShipperAccount(?SimpleShipperAccount $simple_shipper_account): Rate
     {
         $this->simple_shipper_account = $simple_shipper_account;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getServiceType(): ?string
     {
         return $this->service_type;
     }
 
-    /**
-     * @param string $service_type
-     * @return Rate
-     */
     public function setServiceType(?string $service_type): Rate
     {
         $this->service_type = $service_type;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getServiceName(): ?string
     {
         return $this->service_name;
     }
 
-    /**
-     * @param string $service_name
-     * @return Rate
-     */
     public function setServiceName(?string $service_name): Rate
     {
         $this->service_name = $service_name;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getPickupDeadline(): ?string
     {
         return $this->pickup_deadline;
     }
 
-    /**
-     * @param string $pickup_deadline
-     * @return Rate
-     */
     public function setPickupDeadline(?string $pickup_deadline): Rate
     {
         $this->pickup_deadline = $pickup_deadline;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getBookingCutOff(): ?string
     {
         return $this->booking_cut_off;
     }
 
-    /**
-     * @param string $booking_cut_off
-     * @return Rate
-     */
     public function setBookingCutOff(?string $booking_cut_off): Rate
     {
         $this->booking_cut_off = $booking_cut_off;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getDeliveryDate(): ?string
     {
         return $this->delivery_date;
     }
 
-    /**
-     * @param string $delivery_date
-     * @return Rate
-     */
     public function setDeliveryDate(?string $delivery_date): Rate
     {
         $this->delivery_date = $delivery_date;
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getTransitTime(): ?int
     {
         return $this->transit_time;
     }
 
-    /**
-     * @param int $transit_time
-     * @return Rate
-     */
-    public function setTransitTime(int $transit_time): Rate
+    public function setTransitTime(?int $transit_time): Rate
     {
         $this->transit_time = $transit_time;
         return $this;
@@ -223,46 +160,28 @@ final class Rate extends PostmenEntity
         return $this->detailed_charges;
     }
 
-    /**
-     * @param DetailedCharge $detailed_charge
-     * @return Rate
-     */
     public function addDetailedCharge(?DetailedCharge $detailed_charge): Rate
     {
         $this->detailed_charges[] = $detailed_charge;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getErrorMessage(): ?string
     {
         return $this->error_message;
     }
 
-    /**
-     * @param string $error_message
-     * @return Rate
-     */
     public function setErrorMessage(?string $error_message): Rate
     {
         $this->error_message = $error_message;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getInfoMessage(): ?string
     {
         return $this->info_message;
     }
 
-    /**
-     * @param string $info_message
-     * @return Rate
-     */
     public function setInfoMessage(?string $info_message): Rate
     {
         $this->info_message = $info_message;
@@ -272,8 +191,6 @@ final class Rate extends PostmenEntity
     public static function fromData(array $data): Rate
     {
         $entity = (new self)
-            ->setChargeWeight(Weight::fromData($data['charge_weight'] ?? []))
-            ->setTotalCharge(Money::fromData($data['total_charge'] ?? []))
             ->setSimpleShipperAccount(SimpleShipperAccount::fromData($data['shipper_account'] ?? []))
             ->setServiceType($data['service_type'] ?? null)
             ->setServiceName($data['service_name'] ?? null)
@@ -283,6 +200,14 @@ final class Rate extends PostmenEntity
             ->setTransitTime($data['transit_time'] ?? null)
             ->setErrorMessage($data['error_message'] ?? null)
             ->setInfoMessage($data['info_message'] ?? null);
+
+        if ($data['charge_weight'] ?? false) {
+            $entity->setChargeWeight(Weight::fromData($data['charge_weight']));
+        }
+
+        if ($data['total_charge'] ?? false) {
+            $entity->setTotalCharge(Money::fromData($data['total_charge']));
+        }
 
         foreach ($data['detailed_charges'] ?? [] as $detailed_charge) {
             $entity->addDetailedCharge(DetailedCharge::fromData($detailed_charge));

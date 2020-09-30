@@ -189,6 +189,8 @@ final class Label extends PostmenEntity
                 ->setId($data['shipper_account']['id'] ?? null)
                 ->setSlug($data['shipper_account']['slug'] ?? null)
                 ->setDescription($data['shipper_account']['description'] ?? null)
-            );
+            )
+            ->setRate(Rate::fromData($data['rate'] ?? null))
+            ->setServiceType($data['service_type'] ?? null);
     }
 }
