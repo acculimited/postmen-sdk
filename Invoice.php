@@ -24,7 +24,7 @@ final class Invoice extends PostmenEntity
 
     public function getDate(): string
     {
-        return $this->date->format('Y-m-d');
+        return $this->date;
     }
 
     public function setDate(DateTimeInterface $date): Invoice
