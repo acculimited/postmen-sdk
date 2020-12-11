@@ -22,14 +22,14 @@ final class Invoice extends PostmenEntity
     /** @var int */
     private $number_of_copies;
 
-    public function getDate(): string
+    public function getDate(): DateTimeInterface
     {
         return $this->date;
     }
 
     public function setDate(DateTimeInterface $date): Invoice
     {
-        $this->date = $date;
+        $this->date = $date->format('Y-m-d');
         return $this;
     }
 
