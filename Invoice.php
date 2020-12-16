@@ -4,7 +4,6 @@ namespace Accu\Postmen\Entities;
 
 use Accu\Postmen\Utility\JsonSerializer;
 use Accu\Postmen\Utility\PostmenEntity;
-use DateTimeInterface;
 
 final class Invoice extends PostmenEntity
 {
