@@ -10,7 +10,7 @@ final class Invoice extends PostmenEntity
 {
     use JsonSerializer;
 
-    /** @var DateTimeInterface */
+    /** @var string */
     private $date;
 
     /** @var string */
@@ -22,12 +22,12 @@ final class Invoice extends PostmenEntity
     /** @var int */
     private $number_of_copies;
 
-    public function getDate(): DateTimeInterface
+    public function getDate(): string
     {
         return $this->date;
     }
 
-    public function setDate(DateTimeInterface $date): Invoice
+    public function setDate(string $date): Invoice
     {
         $this->date = $date;
         return $this;
