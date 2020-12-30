@@ -10,26 +10,23 @@ use GuzzleHttp\HandlerStack;
 
 class Client
 {
-    public const PRODUCTION = 'https://production-api.postmen.com/v3/';
-    public const SANDBOX = 'https://sandbox-api.postmen.com/v3/';
-
     /** @var ClientInterface */
     private $client;
 
     /** @var array */
     private $options;
 
-    public function __construct(string $apiKey, string $mode = self::SANDBOX, ClientInterface $client = null)
+    public function __construct(Configuration $configuration, ClientInterface $client = null)
     {
         $stack = HandlerStack::create();
         $stack->push(new ErrorHandler());
 
         $this->options = [
-            'base_uri' => $mode,
+            'base_uri' => $configuration->getBaseURI(),
             'handler' => $stack,
             'headers' => [
                 'Content-Type' => 'application/json',
-                'postmen-api-key' => $apiKey,
+                'postmen-api-key' => $configuration->getApiKey(),
             ],
         ];
 
