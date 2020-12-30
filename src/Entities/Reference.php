@@ -3,7 +3,6 @@
 namespace Accu\Postmen\Entities;
 
 use Accu\Postmen\Utility\PostmenEntity;
-use Accu\Support\Shipping\Collections\Collection;
 use InvalidArgumentException;
 
 /**
@@ -43,10 +42,10 @@ final class Reference extends PostmenEntity
         return (new static)->setEntity($entity);
     }
 
-    public static function mapCollection(Collection $collection)
+    public static function mapCollection(array $collection)
     {
         return array_map(static function ($item) {
             return Reference::fromEntity($item);
-        }, $collection->getArrayCopy());
+        }, $collection);
     }
 }
