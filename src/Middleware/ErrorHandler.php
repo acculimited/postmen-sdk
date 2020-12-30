@@ -28,7 +28,7 @@ class ErrorHandler
                 }
 
                 // Allow the body to be read again downstream.
-                $request->getBody()->rewind();
+                $response->getBody()->rewind();
 
                 $responseData = \GuzzleHttp\json_decode($raw);
 
