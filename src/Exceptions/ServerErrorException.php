@@ -2,9 +2,7 @@
 
 namespace Accu\Postmen\Exceptions;
 
-use Exception;
-
-class ServerErrorException extends Exception
+class ServerErrorException extends PostmenException
 {
     public const STATUS_ERROR_500 = 500;
     public const STATUS_ERROR_502 = 502;

@@ -2,12 +2,11 @@
 
 namespace Accu\Postmen\Exceptions;
 
-use Exception;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;
 
-class InvalidRequestException extends Exception
+class InvalidRequestException extends PostmenException
 {
     public const META_ERROR_3001 = 3001;
     public const META_ERROR_4104 = 4104;
