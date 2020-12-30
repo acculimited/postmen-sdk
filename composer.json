@@ -1,0 +1,39 @@
+{
+  "name": "accu/postmen-sdk",
+  "description": "SDK for Postmen.com Parcel Shipping API.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Accu Limited",
+      "email": "opensource@accu.co.uk"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "php": "^7.1",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^6.5|^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Accu\\Postmen\\": "src"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.5"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Accu\\Postmen\\Tests\\": "tests"
+    },
+    "files": [
+      "tests/helpers.php"
+    ]
+  }
+}
