@@ -18,8 +18,9 @@ class Client
 
     public function __construct(Configuration $configuration, ClientInterface $client = null)
     {
-        $stack = HandlerStack::create();
-        $stack->push(new ErrorHandler());
+        $stack = $configuration->getHandlerStack() ?? HandlerStack::create();
+        $stack->remove('http_errors');
+        $stack->push(new ErrorHandler(), 'postmen_handler');
 
         $this->options = [
             'base_uri' => $configuration->getBaseURI(),
