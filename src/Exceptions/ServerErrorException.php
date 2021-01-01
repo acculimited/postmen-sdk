@@ -2,7 +2,9 @@
 
 namespace Accu\Postmen\Exceptions;
 
-class ServerErrorException extends PostmenException
+use GuzzleHttp\Exception\RequestException;
+
+class ServerErrorException extends RequestException
 {
     public const STATUS_ERROR_500 = 500;
     public const STATUS_ERROR_502 = 502;
