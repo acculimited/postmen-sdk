@@ -26,4 +26,14 @@ class InvalidRequestException extends PostmenException
         $this->request = $request;
         $this->response = $response;
     }
+
+    public function getRequest(): ?RequestInterface
+    {
+        return $this->request;
+    }
+
+    public function getResponse(): ?ResponseInterface
+    {
+        return $this->response;
+    }
 }
