@@ -7,6 +7,7 @@ use Accu\Postmen\Requests\Request;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
 
 class Client
 {
@@ -20,7 +21,7 @@ class Client
     {
         $stack = $configuration->getHandlerStack() ?? HandlerStack::create();
         $stack->remove('http_errors');
-        $stack->push(new ErrorHandler(), 'postmen_handler');
+        $stack->push(Middleware::retry(new ErrorHandler()), 'postmen_api_errors');
 
         $this->options = [
             'base_uri' => $configuration->getBaseURI(),
