@@ -8,6 +8,11 @@ use GuzzleHttp\Exception\InvalidArgumentException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * Error handling for documented API responses.
+ * @package Accu\Postmen\Middleware
+ * @see https://docs.postmen.com/errors.html
+ */
 class ErrorHandler
 {
     /**
@@ -39,7 +44,7 @@ class ErrorHandler
                     );
                 }
 
-                if (in_array((int) $responseData->meta->code, InvalidRequestException::INVALID_REQUEST_ERRORS)) {
+                if ((int) $responseData->meta->code > 200) {
                     $request->getBody()->rewind();
 
                     throw new InvalidRequestException(

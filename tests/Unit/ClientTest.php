@@ -4,6 +4,7 @@ namespace Accu\Postmen\Tests\Unit;
 
 use Accu\Postmen\Client;
 use Accu\Postmen\Configuration;
+use Accu\Postmen\Exceptions\InvalidRequestException;
 use Accu\Postmen\Exceptions\ServerErrorException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
@@ -48,6 +49,24 @@ class ClientTest extends TestCase
                 'Postmen API response malformed: meta data is missing.',
             ],
         ];
+    }
+
+    public function testWellFormedMetaError()
+    {
+        $client = $this->createMockedClient(new MockHandler([
+            new Response(200, [], \GuzzleHttp\json_encode([
+                'meta' => [
+                    'code' => 4100,
+                    'message' => 'Internal Error',
+                    'details' => [],
+                ],
+            ]))
+        ]));
+
+        $this->expectException(InvalidRequestException::class);
+        $this->expectExceptionMessage('Internal Error');
+
+        $client->send(new \Accu\Postmen\Requests\Labels\Retrieve('dummy-label'));
     }
 
     private function createMockedClient(MockHandler $mockHandler): Client
