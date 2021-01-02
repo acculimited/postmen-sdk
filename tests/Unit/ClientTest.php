@@ -17,7 +17,7 @@ class ClientTest extends TestCase
      */
     public function testServerExceptions(Response $response, string $expected)
     {
-        $client = $this->getMockedClient(new MockHandler([$response]));
+        $client = $this->createMockedClient(new MockHandler([$response]));
 
         $this->expectException(ServerErrorException::class);
         $this->expectExceptionMessage($expected);
@@ -50,7 +50,7 @@ class ClientTest extends TestCase
         ];
     }
 
-    private function getMockedClient(MockHandler $mockHandler): Client
+    private function createMockedClient(MockHandler $mockHandler): Client
     {
         return new Client(
             (new Configuration('dummy-key'))
