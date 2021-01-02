@@ -49,7 +49,7 @@ class ErrorHandler
         if ((int) $responseData->meta->code > 200) {
             $request->getBody()->rewind();
 
-            if ($retries < $this->maxRetries && $responseData->meta->retryable ?? false) {
+            if ($retries < $this->maxRetries && ($responseData->meta->retryable ?? false)) {
                 return true;
             }
 
