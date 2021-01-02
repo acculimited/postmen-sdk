@@ -1,4 +1,4 @@
-name: PHP Composer
+name: CI
 
 on:
   push:
@@ -14,8 +14,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Install PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 7.1
+        coverage: none
+
     - name: Validate composer.json and composer.lock
-      run: php7.1 /usr/bin/composer validate
+      run: composer validate
 
     - name: Cache Composer packages
       id: composer-cache
@@ -28,7 +34,7 @@ jobs:
 
     - name: Install dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
-      run: php7.1 /usr/bin/composer install --prefer-dist --no-progress --no-suggest
+      run: composer install --prefer-dist --no-progress --no-suggest
 
     - name: Run test suite
-      run: php7.1 /usr/bin/composer run-script test
+      run: composer run-script test
