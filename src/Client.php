@@ -21,7 +21,13 @@ class Client
     {
         $stack = $configuration->getHandlerStack() ?? HandlerStack::create();
         $stack->remove('http_errors');
-        $stack->push(Middleware::retry(new ErrorHandler()), 'postmen_api_errors');
+        $stack->push(
+            Middleware::retry(
+                new ErrorHandler($configuration->getMaxRetries()),
+                $configuration->getDelayCalculator()
+            ),
+            'postmen_api_errors'
+        );
 
         $this->options = [
             'base_uri' => $configuration->getBaseURI(),

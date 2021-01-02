@@ -18,7 +18,7 @@ class ErrorHandler
     /** @var int */
     private $maxRetries;
 
-    public function __construct(int $maxRetries = 3)
+    public function __construct(int $maxRetries)
     {
         $this->maxRetries = $maxRetries;
     }

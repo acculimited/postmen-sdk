@@ -111,6 +111,10 @@ class ClientTest extends TestCase
         return new Client(
             (new Configuration('dummy-key'))
                 ->setHandlerStack(HandlerStack::create($mockHandler))
+                ->setDelayCalculator(function (int $retries) {
+                    // No delay for testing!
+                    return 0;
+                })
         );
     }
 }

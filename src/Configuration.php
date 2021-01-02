@@ -18,6 +18,12 @@ class Configuration
     /** @var HandlerStack|null */
     private $handlerStack;
 
+    /** @var int */
+    private $maxRetries = 3;
+
+    /** @var callable|null */
+    private $delayCalculator;
+
     public function __construct(string $apiKey, bool $testMode = true)
     {
         $this->apiKey = $apiKey;
@@ -46,6 +52,28 @@ class Configuration
     public function setHandlerStack(HandlerStack $handlerStack = null): Configuration
     {
         $this->handlerStack = $handlerStack;
+        return $this;
+    }
+
+    public function getMaxRetries(): int
+    {
+        return $this->maxRetries;
+    }
+
+    public function setMaxRetries(int $maxRetries): Configuration
+    {
+        $this->maxRetries = $maxRetries;
+        return $this;
+    }
+
+    public function getDelayCalculator(): ?callable
+    {
+        return $this->delayCalculator;
+    }
+
+    public function setDelayCalculator(?callable $delayCalculator): Configuration
+    {
+        $this->delayCalculator = $delayCalculator;
         return $this;
     }
 }
