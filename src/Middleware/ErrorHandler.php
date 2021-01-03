@@ -53,12 +53,7 @@ class ErrorHandler
                 return true;
             }
 
-            throw new InvalidRequestException(
-                $responseData->meta->message ?? "Encountered error code: {$responseData->meta->code}.",
-                $request,
-                $response,
-                $responseData->meta->code
-            );
+            InvalidRequestException::handle($responseData, $request, $response);
         }
 
         // No need to retry the request, all looks good.

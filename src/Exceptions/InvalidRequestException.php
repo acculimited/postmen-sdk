@@ -8,6 +8,10 @@ use Throwable;
 
 class InvalidRequestException extends PostmenException
 {
+    public const META_CODE_EXEMPTIONS = [
+        4713,
+    ];
+
     /** @var RequestInterface */
     private $request;
 
@@ -35,5 +39,22 @@ class InvalidRequestException extends PostmenException
     public function getResponse(): ?ResponseInterface
     {
         return $this->response;
+    }
+
+    public static function handle(
+        \stdClass $json,
+        RequestInterface $request = null,
+        ResponseInterface $response = null
+    ) {
+        if ($json->meta && in_array((int) $json->meta->code, self::META_CODE_EXEMPTIONS)) {
+            return;
+        }
+
+        throw new InvalidRequestException(
+            $json->meta->message ?? "Encountered error code: {$json->meta->code}.",
+            $request,
+            $response,
+            $json->meta->code
+        );
     }
 }
