@@ -100,5 +100,5 @@ composer require accu/postmen-sdk
 ```
 
 Brought to you by:
-<p align="center"><a href="https://www.accu.co.uk" target="_blank"><img src="https://i.accu.co.uk/brands/AccuPro.svg" width="400"></a></p>
+<p align="center"><a href="https://www.accu.co.uk" target="_blank"><img src="https://i.accu.co.uk/logo/accu.svg" width="400"></a></p>
 <p align="right">Accuracy. Delivered.</p>
