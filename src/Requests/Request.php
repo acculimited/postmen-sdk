@@ -41,5 +41,5 @@ abstract class Request extends Psr7Request implements JsonSerializable
         );
     }
 
-    abstract public function mapResponseData(array $data);
+    abstract public function mapResponseData(array $json);
 }
