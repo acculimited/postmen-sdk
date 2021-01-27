@@ -1,0 +1,28 @@
+{
+  "$id": "/manifest_common_file",
+  "title": "A manifest common file object",
+  "description": "A manifest common file object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "description": "URL of the file"
+    },
+    "paper_size": {
+      "description": "Paper Size",
+      "enum": [
+        "a4"
+      ]
+    },
+    "file_type": {
+      "description": "File Type",
+      "enum": [
+        "csv",
+        "dat",
+        "zip",
+        "txt",
+        "tsv"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

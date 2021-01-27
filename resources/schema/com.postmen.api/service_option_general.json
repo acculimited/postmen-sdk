@@ -1,0 +1,23 @@
+{
+  "$id": "/service_option_general",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option - General",
+  "description": "General Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "$ref": "/service_option_general_type"
+    },
+    "enabled": {
+      "enum": [
+        true,
+        false
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "enabled"
+  ]
+}

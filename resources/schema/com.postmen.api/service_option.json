@@ -1,0 +1,128 @@
+{
+  "$id": "/service_option",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option",
+  "description": "Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "cod",
+        "signature",
+        "saturday_delivery",
+        "paperless_invoice",
+        "insurance",
+        "lithium_battery",
+        "access_point",
+        "pickup",
+        "rural_delivery",
+        "sameday_evening_delivery",
+        "overnight_evening_delivery",
+        "dangerous_goods"
+      ]
+    }
+  },
+  "switch": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "cod"
+            ],
+            "description": "cod"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_cod"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "signature",
+              "saturday_delivery",
+              "paperless_invoice"
+            ],
+            "description": "general"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_general"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "insurance"
+            ],
+            "description": "insurance"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_insurance"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "lithium_battery"
+            ],
+            "description": "lithium_battery"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_lithium_battery"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "access_point"
+            ],
+            "description": "access point"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_access_point"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "pickup"
+            ],
+            "description": "pickup service"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_pickup"
+      },
+      "continue": false
+    }
+  ],
+  "required": [
+    "type"
+  ]
+}

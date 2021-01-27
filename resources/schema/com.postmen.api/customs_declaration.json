@@ -1,0 +1,15 @@
+{
+  "$id": "/customs_declaration",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Customs Declaration",
+  "type": "object",
+  "description": "Customs Declaration object",
+  "properties": {
+    "number_of_copies": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    }
+  },
+  "additionalProperties": false
+}

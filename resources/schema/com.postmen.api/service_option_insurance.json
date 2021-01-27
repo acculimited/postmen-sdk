@@ -1,0 +1,22 @@
+{
+  "$id": "/service_option_insurance",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option - Insurance",
+  "description": "Insurance Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "insurance"
+      ]
+    },
+    "insured_value": {
+      "$ref": "/money"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "insured_value",
+    "type"
+  ]
+}

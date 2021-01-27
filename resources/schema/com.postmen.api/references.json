@@ -1,0 +1,12 @@
+{
+  "$id": "/references",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Label References",
+  "description": "Reference numbers for a label",
+  "type": "array",
+  "items": {
+    "type": "string"
+  },
+  "maxItems": 3,
+  "additionalProperties": false
+}

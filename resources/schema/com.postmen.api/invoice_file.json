@@ -1,0 +1,31 @@
+{
+  "$id": "/invoice_file",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "A invoice file object",
+  "description": "A invoice file object",
+  "type": "object",
+  "properties": {
+    "paper_size": {
+      "description": "Paper Size",
+      "enum": [
+        "a4"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "description": "URL of the file"
+    },
+    "file_type": {
+      "description": "File Type",
+      "enum": [
+        "pdf"
+      ]
+    }
+  },
+  "required": [
+    "paper_size",
+    "url",
+    "file_type"
+  ],
+  "additionalProperties": false
+}

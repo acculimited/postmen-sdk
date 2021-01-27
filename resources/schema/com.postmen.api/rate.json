@@ -1,0 +1,2694 @@
+{
+  "$id": "/rate",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Rates",
+  "description": "Rates",
+  "type": "object",
+  "properties": {},
+  "links": [
+    {
+      "title": "Calculate rates",
+      "description": "Calculate rates",
+      "href": "/rates",
+      "method": "POST",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Rate",
+        "description": "Rate Request",
+        "type": "object",
+        "properties": {
+          "async": {
+            "type": "boolean",
+            "description": "enable async mode or not",
+            "default": false
+          },
+          "is_document": {
+            "type": "boolean",
+            "description": "If the shipment is document type.",
+            "default": false
+          },
+          "shipper_accounts": {
+            "description": "accounts for shipment",
+            "type": "array",
+            "items": {
+              "$ref": "/postmen_reference"
+            },
+            "maxItems": 50
+          },
+          "shipment": {
+            "description": "the shipment of label",
+            "$ref": "/shipment"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "shipment"
+        ]
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Rate",
+        "description": "Rate Response",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Calculate Rate ID"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "calculating",
+              "calculated",
+              "failed"
+            ]
+          },
+          "rates": {
+            "type": "array",
+            "items": {
+              "$ref": "/rate_type"
+            }
+          },
+          "created_at": {
+            "$ref": "/postmen_date"
+          },
+          "updated_at": {
+            "$ref": "/postmen_date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "required": [
+        "shipment"
+      ],
+      "live_example": {
+        "$id": "/calculate_rates",
+        "resource_id": "",
+        "url": "/rates",
+        "body": {
+          "async": false,
+          "shipper_accounts": [
+            {
+              "id": "00000000-0000-0000-0000-000000000000"
+            }
+          ],
+          "shipment": {
+            "parcels": [
+              {
+                "description": "Food XS",
+                "box_type": "custom",
+                "weight": {
+                  "value": 2,
+                  "unit": "kg"
+                },
+                "dimension": {
+                  "width": 20,
+                  "height": 40,
+                  "depth": 40,
+                  "unit": "cm"
+                },
+                "items": [
+                  {
+                    "description": "Food Bar",
+                    "origin_country": "JPN",
+                    "quantity": 2,
+                    "price": {
+                      "amount": 3,
+                      "currency": "JPY"
+                    },
+                    "weight": {
+                      "value": 0.6,
+                      "unit": "kg"
+                    },
+                    "sku": "PS4-2015"
+                  }
+                ]
+              }
+            ],
+            "ship_from": {
+              "contact_name": "Yin Ting Wong",
+              "street1": "Flat A, 29/F, Block 17\nLaguna Verde",
+              "city": "Hung Hom",
+              "state": "Kowloon",
+              "country": "HKG",
+              "phone": "96679797",
+              "email": "test@test.test",
+              "type": "residential"
+            },
+            "ship_to": {
+              "contact_name": "Mike Carunchia",
+              "street1": "9504 W Smith ST",
+              "city": "Yorktown",
+              "state": "Indiana",
+              "postal_code": "47396",
+              "country": "USA",
+              "phone": "7657168649",
+              "email": "test@test.test",
+              "type": "residential"
+            }
+          }
+        },
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "created_at": "2015-09-09T07:49:54.060Z",
+            "id": "ad1f9340-608d-4a30-be0e-b0a62e07e4cc",
+            "updated_at": "2015-09-09T07:49:57.360Z",
+            "status": "calculated",
+            "rates": [
+              {
+                "charge_weight": {
+                  "value": 1.5,
+                  "unit": "kg"
+                },
+                "total_charge": {
+                  "amount": 429.57,
+                  "currency": "HKD"
+                },
+                "shipper_account": {
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "slug": "dhl",
+                  "description": "DHL Sandbox"
+                },
+                "service_type": "dhl_express_worldwide",
+                "service_name": "dhl_express_worldwide",
+                "pickup_deadline": "2015-09-01T18:00:00+00:00",
+                "booking_cut_off": "2015-09-01T17:00:00+00:00",
+                "delivery_date": "2015-09-01T23:00:00+00:00",
+                "transit_time": 1,
+                "detailed_charges": [
+                  {
+                    "type": "base",
+                    "charge": {
+                      "amount": 387,
+                      "currency": "HKD"
+                    }
+                  },
+                  {
+                    "type": "fuel_surcharge",
+                    "charge": {
+                      "amount": 42.57,
+                      "currency": "HKD"
+                    }
+                  }
+                ],
+                "error_message": null,
+                "info_message": null
+              },
+              {
+                "charge_weight": {
+                  "value": 1.5,
+                  "unit": "kg"
+                },
+                "total_charge": {
+                  "amount": 528,
+                  "currency": "HKD"
+                },
+                "shipper_account": {
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "slug": "dhl",
+                  "description": "DHL Sandbox"
+                },
+                "service_type": "dhl_express_easy",
+                "service_name": "dhl_express_easy",
+                "pickup_deadline": "2015-09-01T18:00:00+00:00",
+                "booking_cut_off": "2015-09-01T17:00:00+00:00",
+                "delivery_date": "2015-09-01T23:00:00+00:00",
+                "transit_time": 1,
+                "detailed_charges": [
+                  {
+                    "type": "base",
+                    "charge": {
+                      "amount": 528,
+                      "currency": "HKD"
+                    }
+                  }
+                ],
+                "error_message": null,
+                "info_message": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "title": "List all rates",
+      "description": "List all rates",
+      "href": "/rates",
+      "method": "GET",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "List all rates",
+        "description": "List all rates",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "List all rates",
+        "description": "List all rates",
+        "type": "object",
+        "properties": {
+          "next_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "limit": {
+            "description": "Number of records per page",
+            "type": "number"
+          },
+          "rates": {
+            "type": "array",
+            "items": {
+              "$ref": "/rate_record"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "required": [
+        "shipment"
+      ],
+      "live_example": {
+        "$id": "/list_all_rates",
+        "resource_id": "",
+        "url": "/rates",
+        "body": {},
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "next_token": "1",
+            "limit": 20,
+            "created_at_min": "2015-04-18T09:23:21+00:00",
+            "created_at_max": "2016-09-19T10:17:22+00:00",
+            "rates": [
+              {
+                "created_at": "2016-09-19T09:22:35+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T09:22:37+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "dhl",
+                      "description": "dhl (Runscope)"
+                    },
+                    "service_type": null,
+                    "service_name": null,
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": "No rate quotes returned from carrier.",
+                    "charge_weight": null,
+                    "total_charge": null,
+                    "detailed_charges": []
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T09:05:18+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T09:05:20+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canpar",
+                      "description": "canpar (Runscope)"
+                    },
+                    "service_type": "canpar_usa",
+                    "service_name": "USA",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 5,
+                      "unit": "lb"
+                    },
+                    "total_charge": {
+                      "amount": 32.35,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "Freight Charge",
+                        "charge": {
+                          "amount": 26.73,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "Fuel Surcharge",
+                        "charge": {
+                          "amount": 2.82,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "Residential Address Charge",
+                        "charge": {
+                          "amount": 2.8,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canpar",
+                      "description": "canpar (Runscope)"
+                    },
+                    "service_type": "canpar_select_usa",
+                    "service_name": "Select USA",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 5,
+                      "unit": "lb"
+                    },
+                    "total_charge": {
+                      "amount": 90.46,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "Freight Charge",
+                        "charge": {
+                          "amount": 79.77,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "Fuel Surcharge",
+                        "charge": {
+                          "amount": 7.89,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "Residential Address Charge",
+                        "charge": {
+                          "amount": 2.8,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T09:04:14+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T09:04:17+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "purolator",
+                      "description": "purolator (Runscope)"
+                    },
+                    "service_type": "purolator_ground_us",
+                    "service_name": "purolator_ground_us",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-26",
+                    "transit_time": 5,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 37.42,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 35.3,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 2.12,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "purolator",
+                      "description": "purolator (Runscope)"
+                    },
+                    "service_type": "purolator_express_us",
+                    "service_name": "purolator_express_us",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 152.75,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 144.1,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 8.65,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "purolator",
+                      "description": "purolator (Runscope)"
+                    },
+                    "service_type": "purolator_express_us_1030am",
+                    "service_name": "purolator_express_us_1030am",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 160.38,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 151.3,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 9.08,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "purolator",
+                      "description": "purolator (Runscope)"
+                    },
+                    "service_type": "purolator_express_us_9am",
+                    "service_name": "purolator_express_us_9am",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 213.75,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 201.65,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 12.1,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T09:03:05+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T09:03:08+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "fedex",
+                      "description": "fedex (Runscope)"
+                    },
+                    "service_type": "fedex_international_economy",
+                    "service_name": "Fedex International Economy",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-22T20:00:00",
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": "WARNING: Service was validated at the country level, but might not be valid for the actual intended city for the origin.",
+                    "charge_weight": {
+                      "value": 36,
+                      "unit": "lb"
+                    },
+                    "total_charge": {
+                      "amount": 327.33,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 301,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "residential_delivery",
+                        "charge": {
+                          "amount": 3.49,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 22.84,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "fedex",
+                      "description": "fedex (Runscope)"
+                    },
+                    "service_type": "fedex_international_first",
+                    "service_name": "Fedex International First",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20T08:00:00",
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": "WARNING: Service was validated at the country level, but might not be valid for the actual intended city for the origin.",
+                    "charge_weight": {
+                      "value": 36,
+                      "unit": "lb"
+                    },
+                    "total_charge": {
+                      "amount": 420.18,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 387.19,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "residential_delivery",
+                        "charge": {
+                          "amount": 3.67,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 29.32,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "fedex",
+                      "description": "fedex (Runscope)"
+                    },
+                    "service_type": "fedex_international_priority",
+                    "service_name": "Fedex International Priority",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20T10:30:00",
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": "WARNING: Service was validated at the country level, but might not be valid for the actual intended city for the origin.",
+                    "charge_weight": {
+                      "value": 36,
+                      "unit": "lb"
+                    },
+                    "total_charge": {
+                      "amount": 430.74,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 397.2,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "residential_delivery",
+                        "charge": {
+                          "amount": 3.49,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 30.05,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T09:01:18+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T09:01:21+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canada-post",
+                      "description": "canada-post (Runscope)"
+                    },
+                    "service_type": "DOM.EP",
+                    "service_name": "Expedited Parcel",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.6,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 9.99,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 9.21,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel_surcharge",
+                        "charge": {
+                          "amount": 0.3,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "tax",
+                        "charge": {
+                          "amount": 0.48,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canada-post",
+                      "description": "canada-post (Runscope)"
+                    },
+                    "service_type": "DOM.RP",
+                    "service_name": "Regular Parcel",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-21",
+                    "transit_time": 2,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.6,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 9.99,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 9.21,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel_surcharge",
+                        "charge": {
+                          "amount": 0.3,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "tax",
+                        "charge": {
+                          "amount": 0.48,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canada-post",
+                      "description": "canada-post (Runscope)"
+                    },
+                    "service_type": "DOM.XP",
+                    "service_name": "Xpresspost",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.6,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 14,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 12.31,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel_surcharge",
+                        "charge": {
+                          "amount": 1.02,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "tax",
+                        "charge": {
+                          "amount": 0.67,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canada-post",
+                      "description": "canada-post (Runscope)"
+                    },
+                    "service_type": "DOM.PC",
+                    "service_name": "Priority",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.6,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 23.95,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 21.07,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel_surcharge",
+                        "charge": {
+                          "amount": 1.74,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "tax",
+                        "charge": {
+                          "amount": 1.14,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T09:00:12+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T09:00:15+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "ups",
+                      "description": "ups (Runscope)"
+                    },
+                    "service_type": "ups_expedited",
+                    "service_name": "UPS Expedited",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": "Your invoice may vary from the displayed reference rates.",
+                    "charge_weight": {
+                      "value": 14.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 2207.38,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 2229.68,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "ups",
+                      "description": "ups (Runscope)"
+                    },
+                    "service_type": "ups_saver",
+                    "service_name": "UPS Saver",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": "Your invoice may vary from the displayed reference rates.",
+                    "charge_weight": {
+                      "value": 14.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 2398.58,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 2422.81,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "ups",
+                      "description": "ups (Runscope)"
+                    },
+                    "service_type": "ups_express",
+                    "service_name": "UPS Express",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "10:30",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": "Your invoice may vary from the displayed reference rates.",
+                    "charge_weight": {
+                      "value": 14.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 2540.37,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 2566.03,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "ups",
+                      "description": "ups (Runscope)"
+                    },
+                    "service_type": "ups_express_plus",
+                    "service_name": "UPS Express Plus",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "08:30",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": "Your invoice may vary from the displayed reference rates.",
+                    "charge_weight": {
+                      "value": 14.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 2884.1,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 2913.23,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T08:54:42+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T08:54:44+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "endicia",
+                      "description": "endicia (Runscope)"
+                    },
+                    "service_type": "endicia_priority_mail",
+                    "service_name": "Endicia Priority Mail",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": 0,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 6.71,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 6.71,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "endicia",
+                      "description": "endicia (Runscope)"
+                    },
+                    "service_type": "endicia_priority_mail_registered",
+                    "service_name": "Endicia Priority Mail Registered",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": 0,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 18.41,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 6.71,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "Fees",
+                        "charge": {
+                          "amount": 11.7,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "endicia",
+                      "description": "endicia (Runscope)"
+                    },
+                    "service_type": "endicia_priority_mail_express",
+                    "service_name": "Endicia Priority Mail Express",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": 0,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 20.66,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 20.66,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "endicia",
+                      "description": "endicia (Runscope)"
+                    },
+                    "service_type": "endicia_priority_mail_express_registered",
+                    "service_name": "Endicia Priority Mail Express Registered",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": 0,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 32.36,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 20.66,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "Fees",
+                        "charge": {
+                          "amount": 11.7,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T08:53:18+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T08:53:24+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "aramex",
+                      "description": "aramex (Runscope)"
+                    },
+                    "service_type": "aramex_priority_express",
+                    "service_name": "Priority Express",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 9.54,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 499.2,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 499.2,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T08:35:22+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T08:35:37+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "bring",
+                      "description": "bring (Runscope)"
+                    },
+                    "service_type": "PICKUP_PARCEL",
+                    "service_name": "yes",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 416.25,
+                      "currency": "NOK"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 333,
+                          "currency": "NOK"
+                        }
+                      },
+                      {
+                        "type": "VAT",
+                        "charge": {
+                          "amount": 83.25,
+                          "currency": "NOK"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "bring",
+                      "description": "bring (Runscope)"
+                    },
+                    "service_type": "BUSINESS_PARCEL",
+                    "service_name": "yes",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 596.25,
+                      "currency": "NOK"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 477,
+                          "currency": "NOK"
+                        }
+                      },
+                      {
+                        "type": "VAT",
+                        "charge": {
+                          "amount": 119.25,
+                          "currency": "NOK"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "bring",
+                      "description": "bring (Runscope)"
+                    },
+                    "service_type": "EXPRESS_INTERNATIONAL",
+                    "service_name": "yes",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 1200.37,
+                      "currency": "NOK"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 960.3,
+                          "currency": "NOK"
+                        }
+                      },
+                      {
+                        "type": "VAT",
+                        "charge": {
+                          "amount": 240.07,
+                          "currency": "NOK"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "bring",
+                      "description": "bring (Runscope)"
+                    },
+                    "service_type": "EXPRESS_INTERNATIONAL_1200",
+                    "service_name": "yes",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 1605.37,
+                      "currency": "NOK"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 1284.3,
+                          "currency": "NOK"
+                        }
+                      },
+                      {
+                        "type": "VAT",
+                        "charge": {
+                          "amount": 321.07,
+                          "currency": "NOK"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "bring",
+                      "description": "bring (Runscope)"
+                    },
+                    "service_type": "EXPRESS_NORDIC_SAME_DAY",
+                    "service_name": "yes",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 5429.38,
+                      "currency": "NOK"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 4343.5,
+                          "currency": "NOK"
+                        }
+                      },
+                      {
+                        "type": "VAT",
+                        "charge": {
+                          "amount": 1085.88,
+                          "currency": "NOK"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "bring",
+                      "description": "bring (Runscope)"
+                    },
+                    "service_type": "EXPRESS_INTERNATIONAL_0900",
+                    "service_name": "yes",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 5712.88,
+                      "currency": "NOK"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 4570.3,
+                          "currency": "NOK"
+                        }
+                      },
+                      {
+                        "type": "VAT",
+                        "charge": {
+                          "amount": 1142.58,
+                          "currency": "NOK"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T08:34:34+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T08:34:37+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "fedex-smartpost",
+                      "description": "fedex-smartpost (Runscope)"
+                    },
+                    "service_type": "SMART_POST",
+                    "service_name": "Smartpost",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": 2,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 3,
+                      "unit": "lb"
+                    },
+                    "total_charge": {
+                      "amount": 10.07,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 9.68,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "smartpost_fuel",
+                        "charge": {
+                          "amount": 0.39,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T08:00:09+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T08:00:14+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "hong-kong-post",
+                      "description": "hong-kong-post (Runscope)"
+                    },
+                    "service_type": "hong-kong-post_e_express",
+                    "service_name": "e-Express",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 139,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 139,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "hong-kong-post",
+                      "description": "hong-kong-post (Runscope)"
+                    },
+                    "service_type": "hong-kong-post_air_parcel",
+                    "service_name": "Air Parcel",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 224,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 224,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "hong-kong-post",
+                      "description": "hong-kong-post (Runscope)"
+                    },
+                    "service_type": "hong-kong-post_air_registered_mail_packet",
+                    "service_name": "Air Registered Mail - Packet",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 257.5,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 257.5,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "hong-kong-post",
+                      "description": "hong-kong-post (Runscope)"
+                    },
+                    "service_type": "hong-kong-post_speedpost",
+                    "service_name": "Speedpost",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 335,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 335,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T04:57:55+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T04:57:57+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "omniparcel",
+                      "description": "omniparcel (Runscope)"
+                    },
+                    "service_type": "omniparcel_untracked",
+                    "service_name": "Air Untracked",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 2.4,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 54.99,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": []
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "omniparcel",
+                      "description": "omniparcel (Runscope)"
+                    },
+                    "service_type": "omniparcel_tracked",
+                    "service_name": "Air Tracked",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 2.4,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 96.34,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": []
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T04:44:28+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T04:44:29+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "dpex",
+                      "description": "dpex (Runscope)"
+                    },
+                    "service_type": "dpex_express",
+                    "service_name": "Express Parcel",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 0.513,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 0,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": []
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-19T02:09:57+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-19T02:10:01+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "tnt",
+                      "description": "Runscope"
+                    },
+                    "service_type": null,
+                    "service_name": null,
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": null,
+                    "detailed_charges": []
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-18T09:22:35+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-18T09:22:36+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "dhl",
+                      "description": "dhl (Runscope)"
+                    },
+                    "service_type": null,
+                    "service_name": null,
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": "No rate quotes returned from carrier.",
+                    "charge_weight": null,
+                    "total_charge": null,
+                    "detailed_charges": []
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-18T09:05:15+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-18T09:05:18+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canpar",
+                      "description": "canpar (Runscope)"
+                    },
+                    "service_type": "canpar_usa",
+                    "service_name": "USA",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 5,
+                      "unit": "lb"
+                    },
+                    "total_charge": {
+                      "amount": 32.35,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "Freight Charge",
+                        "charge": {
+                          "amount": 26.73,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "Fuel Surcharge",
+                        "charge": {
+                          "amount": 2.82,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "Residential Address Charge",
+                        "charge": {
+                          "amount": 2.8,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canpar",
+                      "description": "canpar (Runscope)"
+                    },
+                    "service_type": "canpar_select_usa",
+                    "service_name": "Select USA",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 5,
+                      "unit": "lb"
+                    },
+                    "total_charge": {
+                      "amount": 90.46,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "Freight Charge",
+                        "charge": {
+                          "amount": 79.77,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "Fuel Surcharge",
+                        "charge": {
+                          "amount": 7.89,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "Residential Address Charge",
+                        "charge": {
+                          "amount": 2.8,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-18T09:04:15+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-18T09:04:16+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "purolator",
+                      "description": "purolator (Runscope)"
+                    },
+                    "service_type": "purolator_ground_us",
+                    "service_name": "purolator_ground_us",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-26",
+                    "transit_time": 5,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 37.42,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 35.3,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 2.12,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "purolator",
+                      "description": "purolator (Runscope)"
+                    },
+                    "service_type": "purolator_express_us",
+                    "service_name": "purolator_express_us",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 152.75,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 144.1,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 8.65,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "purolator",
+                      "description": "purolator (Runscope)"
+                    },
+                    "service_type": "purolator_express_us_1030am",
+                    "service_name": "purolator_express_us_1030am",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 160.38,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 151.3,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 9.08,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "purolator",
+                      "description": "purolator (Runscope)"
+                    },
+                    "service_type": "purolator_express_us_9am",
+                    "service_name": "purolator_express_us_9am",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": null,
+                    "total_charge": {
+                      "amount": 213.75,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 201.65,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 12.1,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-18T09:03:04+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-18T09:03:07+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "fedex",
+                      "description": "fedex (Runscope)"
+                    },
+                    "service_type": "fedex_international_economy",
+                    "service_name": "Fedex International Economy",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-22T20:00:00",
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": "WARNING: Service was validated at the country level, but might not be valid for the actual intended city for the origin.",
+                    "charge_weight": {
+                      "value": 36,
+                      "unit": "lb"
+                    },
+                    "total_charge": {
+                      "amount": 327.33,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 301,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "residential_delivery",
+                        "charge": {
+                          "amount": 3.49,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 22.84,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "fedex",
+                      "description": "fedex (Runscope)"
+                    },
+                    "service_type": "fedex_international_first",
+                    "service_name": "Fedex International First",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20T08:00:00",
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": "WARNING: Service was validated at the country level, but might not be valid for the actual intended city for the origin.",
+                    "charge_weight": {
+                      "value": 36,
+                      "unit": "lb"
+                    },
+                    "total_charge": {
+                      "amount": 420.18,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 387.19,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "residential_delivery",
+                        "charge": {
+                          "amount": 3.67,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 29.32,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "fedex",
+                      "description": "fedex (Runscope)"
+                    },
+                    "service_type": "fedex_international_priority",
+                    "service_name": "Fedex International Priority",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20T10:30:00",
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": "WARNING: Service was validated at the country level, but might not be valid for the actual intended city for the origin.",
+                    "charge_weight": {
+                      "value": 36,
+                      "unit": "lb"
+                    },
+                    "total_charge": {
+                      "amount": 430.74,
+                      "currency": "USD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 397.2,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "residential_delivery",
+                        "charge": {
+                          "amount": 3.49,
+                          "currency": "USD"
+                        }
+                      },
+                      {
+                        "type": "fuel",
+                        "charge": {
+                          "amount": 30.05,
+                          "currency": "USD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-18T09:01:18+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-18T09:01:21+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canada-post",
+                      "description": "canada-post (Runscope)"
+                    },
+                    "service_type": "DOM.EP",
+                    "service_name": "Expedited Parcel",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.6,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 9.99,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 9.21,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel_surcharge",
+                        "charge": {
+                          "amount": 0.3,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "tax",
+                        "charge": {
+                          "amount": 0.48,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canada-post",
+                      "description": "canada-post (Runscope)"
+                    },
+                    "service_type": "DOM.RP",
+                    "service_name": "Regular Parcel",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-21",
+                    "transit_time": 2,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.6,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 9.99,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 9.21,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel_surcharge",
+                        "charge": {
+                          "amount": 0.3,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "tax",
+                        "charge": {
+                          "amount": 0.48,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canada-post",
+                      "description": "canada-post (Runscope)"
+                    },
+                    "service_type": "DOM.XP",
+                    "service_name": "Xpresspost",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.6,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 14,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 12.31,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel_surcharge",
+                        "charge": {
+                          "amount": 1.02,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "tax",
+                        "charge": {
+                          "amount": 0.67,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "canada-post",
+                      "description": "canada-post (Runscope)"
+                    },
+                    "service_type": "DOM.PC",
+                    "service_name": "Priority",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "2016-09-20",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": null,
+                    "charge_weight": {
+                      "value": 1.6,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 23.95,
+                      "currency": "CAD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 21.07,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "fuel_surcharge",
+                        "charge": {
+                          "amount": 1.74,
+                          "currency": "CAD"
+                        }
+                      },
+                      {
+                        "type": "tax",
+                        "charge": {
+                          "amount": 1.14,
+                          "currency": "CAD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "created_at": "2016-09-18T09:00:11+00:00",
+                "id": "00000000-0000-0000-0000-000000000000",
+                "updated_at": "2016-09-18T09:00:14+00:00",
+                "status": "calculated",
+                "rates": [
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "ups",
+                      "description": "ups (Runscope)"
+                    },
+                    "service_type": "ups_expedited",
+                    "service_name": "UPS Expedited",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": null,
+                    "error_message": null,
+                    "info_message": "Your invoice may vary from the displayed reference rates.",
+                    "charge_weight": {
+                      "value": 14.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 2207.38,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 2229.68,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "ups",
+                      "description": "ups (Runscope)"
+                    },
+                    "service_type": "ups_saver",
+                    "service_name": "UPS Saver",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": null,
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": "Your invoice may vary from the displayed reference rates.",
+                    "charge_weight": {
+                      "value": 14.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 2398.58,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 2422.81,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "ups",
+                      "description": "ups (Runscope)"
+                    },
+                    "service_type": "ups_express",
+                    "service_name": "UPS Express",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "10:30",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": "Your invoice may vary from the displayed reference rates.",
+                    "charge_weight": {
+                      "value": 14.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 2540.37,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 2566.03,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "shipper_account": {
+                      "id": "00000000-0000-0000-0000-000000000000",
+                      "slug": "ups",
+                      "description": "ups (Runscope)"
+                    },
+                    "service_type": "ups_express_plus",
+                    "service_name": "UPS Express Plus",
+                    "pickup_deadline": null,
+                    "booking_cut_off": null,
+                    "delivery_date": "08:30",
+                    "transit_time": 1,
+                    "error_message": null,
+                    "info_message": "Your invoice may vary from the displayed reference rates.",
+                    "charge_weight": {
+                      "value": 14.5,
+                      "unit": "kg"
+                    },
+                    "total_charge": {
+                      "amount": 2884.1,
+                      "currency": "HKD"
+                    },
+                    "detailed_charges": [
+                      {
+                        "type": "base",
+                        "charge": {
+                          "amount": 2913.23,
+                          "currency": "HKD"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "encType": "application/x-www-form-urlencoded",
+      "properties": {
+        "status": {
+          "description": "Rate status",
+          "type": "string",
+          "enum": [
+            "calculating",
+            "calculated",
+            "failed"
+          ]
+        },
+        "limit": {
+          "description": "Number of records per page",
+          "type": "string"
+        },
+        "created_at_min": {
+          "description": "Start date and time of the record created (default: 24hrs ago)",
+          "type": "string",
+          "formats": [
+            "YYYY-MM-DDTHH:mm:ssZ"
+          ],
+          "format": "date-time"
+        },
+        "created_at_max": {
+          "description": "End date and time of the record created (default: NOW())",
+          "type": "string",
+          "formats": [
+            "YYYY-MM-DDTHH:mm:ssZ"
+          ],
+          "format": "date-time"
+        },
+        "next_token": {
+          "description": "Next token",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "Retrieve rates",
+      "description": "Retrieve rates",
+      "href": "/rates/:id",
+      "method": "GET",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Retrieve a rate result",
+        "description": "Retrieve a rate result",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Retrieve a rate result",
+        "description": "Retrieve a rate result",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Calculate Rate ID"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "calculating",
+              "calculated",
+              "failed"
+            ]
+          },
+          "rates": {
+            "type": "array",
+            "items": {
+              "$ref": "/rate_type"
+            }
+          },
+          "created_at": {
+            "$ref": "/postmen_date"
+          },
+          "updated_at": {
+            "$ref": "/postmen_date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "required": [
+        "shipment"
+      ],
+      "live_example": {
+        "$id": "/retrieve_rates",
+        "resource_id": "ad1f9340-608d-4a30-be0e-b0a62e07e4cc",
+        "url": "/rates/:id",
+        "body": {},
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "created_at": "2015-09-09T07:49:54.060Z",
+            "id": "ad1f9340-608d-4a30-be0e-b0a62e07e4cc",
+            "updated_at": "2015-09-09T07:49:57.360Z",
+            "status": "calculated",
+            "rates": [
+              {
+                "charge_weight": {
+                  "value": 1.5,
+                  "unit": "kg"
+                },
+                "total_charge": {
+                  "amount": 429.57,
+                  "currency": "HKD"
+                },
+                "shipper_account": {
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "slug": "dhl",
+                  "description": "DHL Sandbox"
+                },
+                "service_type": "dhl_express_worldwide",
+                "service_name": "dhl_express_worldwide",
+                "pickup_deadline": "2015-09-01T18:00:00+00:00",
+                "booking_cut_off": "2015-09-01T17:00:00+00:00",
+                "delivery_date": "2015-09-01T23:00:00+00:00",
+                "transit_time": 1,
+                "detailed_charges": [
+                  {
+                    "type": "base",
+                    "charge": {
+                      "amount": 387,
+                      "currency": "HKD"
+                    }
+                  },
+                  {
+                    "type": "fuel_surcharge",
+                    "charge": {
+                      "amount": 42.57,
+                      "currency": "HKD"
+                    }
+                  }
+                ],
+                "error_message": null,
+                "info_message": null
+              },
+              {
+                "charge_weight": {
+                  "value": 1.5,
+                  "unit": "kg"
+                },
+                "total_charge": {
+                  "amount": 528,
+                  "currency": "HKD"
+                },
+                "shipper_account": {
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "slug": "dhl",
+                  "description": "DHL Sandbox"
+                },
+                "service_type": "dhl_express_easy",
+                "service_name": "dhl_express_easy",
+                "pickup_deadline": "2015-09-01T18:00:00+00:00",
+                "booking_cut_off": "2015-09-01T17:00:00+00:00",
+                "delivery_date": "2015-09-01T23:00:00+00:00",
+                "transit_time": 1,
+                "detailed_charges": [
+                  {
+                    "type": "base",
+                    "charge": {
+                      "amount": 528,
+                      "currency": "HKD"
+                    }
+                  }
+                ],
+                "error_message": null,
+                "info_message": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

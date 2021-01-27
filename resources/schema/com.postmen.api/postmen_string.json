@@ -1,0 +1,10 @@
+{
+  "$id": "/postmen_string",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Postmen string",
+  "description": "A string with a maximum length of 255 characters.",
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 255,
+  "additionalProperties": false
+}

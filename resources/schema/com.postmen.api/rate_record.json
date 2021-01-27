@@ -1,0 +1,34 @@
+{
+  "$id": "/rate_record",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "A rate record object",
+  "description": "A rate record object",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Calculate Rate ID"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "calculating",
+        "calculated",
+        "failed"
+      ]
+    },
+    "rates": {
+      "type": "array",
+      "items": {
+        "$ref": "/rate_type"
+      }
+    },
+    "created_at": {
+      "$ref": "/postmen_date"
+    },
+    "updated_at": {
+      "$ref": "/postmen_date"
+    }
+  },
+  "additionalProperties": false
+}

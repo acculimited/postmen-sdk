@@ -1,0 +1,26 @@
+{
+  "$id": "/passport",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Passport",
+  "description": "Passport Object",
+  "type": "object",
+  "properties": {
+    "number": {
+      "type": "string",
+      "description": "Passport Number"
+    },
+    "issue_date": {
+      "description": "Issue Date in YYYY-MM-DD",
+      "type": "string",
+      "formats": [
+        "YYYY-MM-DD"
+      ],
+      "format": "date"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "number",
+    "issue_date"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$id": "/postmen_integer",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Postmen integer",
+  "type": "integer",
+  "minimum": 0,
+  "exclusiveMaximum": 16777216,
+  "additionalProperties": false
+}

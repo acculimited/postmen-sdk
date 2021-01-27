@@ -1,0 +1,52 @@
+{
+  "$id": "/customs",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Customs",
+  "description": "Customs Object",
+  "type": "object",
+  "properties": {
+    "purpose": {
+      "enum": [
+        "gift",
+        "merchandise",
+        "personal",
+        "sample",
+        "return",
+        "repair"
+      ]
+    },
+    "terms_of_trade": {
+      "enum": [
+        "dat",
+        "ddu",
+        "ddp",
+        "dap"
+      ]
+    },
+    "eei": {
+      "description": "EEI",
+      "oneOf": [
+        {
+          "$ref": "/eei_aes"
+        },
+        {
+          "$ref": "/eei_no_eei"
+        }
+      ]
+    },
+    "billing": {
+      "$ref": "/customs_billing"
+    },
+    "importer_address": {
+      "$ref": "/address",
+      "description": "The importer address"
+    },
+    "passport": {
+      "$ref": "/passport"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "purpose"
+  ]
+}

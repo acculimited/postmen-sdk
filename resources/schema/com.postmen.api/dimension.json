@@ -1,0 +1,42 @@
+{
+  "$id": "/dimension",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Dimension",
+  "description": "dimension object",
+  "type": "object",
+  "properties": {
+    "width": {
+      "type": "number",
+      "description": "width",
+      "exclusiveMinimum": 0
+    },
+    "height": {
+      "type": "number",
+      "description": "height",
+      "exclusiveMinimum": 0
+    },
+    "depth": {
+      "type": "number",
+      "description": "depth",
+      "exclusiveMinimum": 0
+    },
+    "unit": {
+      "description": "unit",
+      "enum": [
+        "cm",
+        "in",
+        "mm",
+        "m",
+        "ft",
+        "yd"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "width",
+    "height",
+    "depth",
+    "unit"
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "$id": "/weight",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Weight",
+  "description": "weight object",
+  "type": "object",
+  "properties": {
+    "unit": {
+      "enum": [
+        "lb",
+        "kg",
+        "oz",
+        "g"
+      ],
+      "description": "weight unit"
+    },
+    "value": {
+      "type": "number",
+      "description": "weight value"
+    }
+  },
+  "switch": [
+    {
+      "if": {
+        "properties": {
+          "unit": {
+            "enum": [
+              "lb"
+            ],
+            "description": "weight unit"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "type": "number",
+            "description": "weight value",
+            "maximum": 4400,
+            "exclusiveMinimum": 0
+          }
+        }
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "unit": {
+            "enum": [
+              "kg"
+            ],
+            "description": "weight unit"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "type": "number",
+            "description": "weight value",
+            "maximum": 2000,
+            "exclusiveMinimum": 0
+          }
+        }
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "unit": {
+            "enum": [
+              "g"
+            ],
+            "description": "weight unit"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "type": "number",
+            "description": "weight value",
+            "maximum": 440000,
+            "exclusiveMinimum": 0
+          }
+        }
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "unit": {
+            "enum": [
+              "oz"
+            ],
+            "description": "weight unit"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "type": "number",
+            "description": "weight value",
+            "maximum": 155205,
+            "exclusiveMinimum": 0
+          }
+        }
+      },
+      "continue": false
+    }
+  ],
+  "additionalProperties": false,
+  "required": [
+    "value",
+    "unit"
+  ]
+}

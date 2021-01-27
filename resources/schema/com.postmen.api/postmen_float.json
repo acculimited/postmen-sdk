@@ -1,0 +1,10 @@
+{
+  "$id": "/postmen_float",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Postmen float",
+  "description": "A float number.",
+  "type": "number",
+  "minimum": 0,
+  "exclusiveMaximum": 16777216,
+  "additionalProperties": false
+}

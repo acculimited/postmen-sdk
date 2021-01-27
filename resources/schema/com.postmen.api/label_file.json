@@ -1,0 +1,29 @@
+{
+  "$id": "/label_file",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "A label file object",
+  "description": "A label file object",
+  "type": "object",
+  "properties": {
+    "paper_size": {
+      "$ref": "/label_paper_size",
+      "default": "default"
+    },
+    "url": {
+      "type": "string",
+      "description": "URL of the file"
+    },
+    "file_type": {
+      "description": "File Type",
+      "enum": [
+        "pdf"
+      ]
+    }
+  },
+  "required": [
+    "paper_size",
+    "url",
+    "file_type"
+  ],
+  "additionalProperties": false
+}

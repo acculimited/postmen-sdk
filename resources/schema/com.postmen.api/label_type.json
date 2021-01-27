@@ -1,0 +1,52 @@
+{
+  "$id": "/label_type",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "A label object",
+  "description": "A label object",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Label ID"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "creating",
+        "created",
+        "cancelling",
+        "cancelled",
+        "manifesting",
+        "manifested",
+        "failed"
+      ]
+    },
+    "ship_date": {
+      "description": "Ship Date in YYYY-MM-DD",
+      "type": "string",
+      "formats": [
+        "YYYY-MM-DD"
+      ],
+      "format": "date"
+    },
+    "tracking_numbers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files": {
+      "$ref": "/files"
+    },
+    "rate": {
+      "$ref": "/rate_type"
+    },
+    "created_at": {
+      "$ref": "/postmen_date"
+    },
+    "updated_at": {
+      "$ref": "/postmen_date"
+    }
+  },
+  "additionalProperties": false
+}

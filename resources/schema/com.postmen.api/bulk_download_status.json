@@ -1,0 +1,13 @@
+{
+  "$id": "/bulk_download_status",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Bulk Download Status",
+  "description": "Bulk Download Status",
+  "additionalProperties": false,
+  "type": "string",
+  "enum": [
+    "creating",
+    "created",
+    "failed"
+  ]
+}

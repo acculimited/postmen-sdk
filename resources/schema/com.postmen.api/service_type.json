@@ -1,0 +1,8 @@
+{
+  "$id": "/service_type",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Type",
+  "description": "Service Types",
+  "additionalProperties": false,
+  "type": "string"
+}

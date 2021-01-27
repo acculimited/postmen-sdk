@@ -1,0 +1,27 @@
+{
+  "$id": "/manifest_pdf_file",
+  "title": "A manifest PDF file object",
+  "description": "A manifest PDF file object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "description": "URL of the file"
+    },
+    "paper_size": {
+      "description": "Paper Size",
+      "enum": [
+        "a4"
+      ]
+    },
+    "file_type": {
+      "description": "File Type",
+      "enum": [
+        "pdf"
+      ]
+    }
+  },
+  "required": [
+    "paper_size"
+  ],
+  "additionalProperties": false
+}

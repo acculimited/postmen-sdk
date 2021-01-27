@@ -1,0 +1,16 @@
+{
+  "$id": "/postmen_err_detail",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Postmen meta",
+  "description": "A meta object containing information about what went wrong.",
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string"
+    },
+    "info": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

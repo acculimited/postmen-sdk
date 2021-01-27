@@ -1,0 +1,25 @@
+{
+  "$id": "/service_option_access_point",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option - Access Point",
+  "description": "Access Point Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "access_point"
+      ]
+    },
+    "enabled": {
+      "enum": [
+        true,
+        false
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "enabled"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "$id": "/service_option_pickup",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option - Pickup",
+  "description": "Pickup Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "pickup"
+      ]
+    },
+    "start_time": {
+      "description": "Preferred start of time period for pickup in HH:MM:SS",
+      "type": "string",
+      "formats": [
+        "HH:MM:SS"
+      ],
+      "format": "time"
+    },
+    "end_time": {
+      "description": "Preferred end of time period for pickup in HH:MM:SS",
+      "type": "string",
+      "formats": [
+        "HH:MM:SS"
+      ],
+      "format": "time"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "start_time",
+    "type"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$id": "/service_option_general_type",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option General Type",
+  "description": "Service Option General Type",
+  "type": "string",
+  "enum": [
+    "saturday_delivery",
+    "signature",
+    "paperless_invoice",
+    "rural_delivery",
+    "sameday_evening_delivery",
+    "overnight_evening_delivery",
+    "dangerous_goods"
+  ],
+  "additionalProperties": false
+}

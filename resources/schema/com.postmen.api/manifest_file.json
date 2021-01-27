@@ -1,0 +1,17 @@
+{
+  "$id": "/manifest_file",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "description": "A manifest file object",
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "/manifest_pdf_file"
+    },
+    {
+      "$ref": "/manifest_common_file"
+    }
+  ],
+  "required": [
+    "url"
+  ]
+}

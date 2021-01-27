@@ -1,0 +1,26 @@
+{
+  "$id": "/shipper_account_info",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Shipper Account Information",
+  "description": "Shipper Account (brief information for rate and manifest responses)",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Shipper Account ID"
+    },
+    "slug": {
+      "$ref": "/slug",
+      "description": "The slug of the account"
+    },
+    "description": {
+      "type": "string",
+      "description": "Shipper Account Description"
+    }
+  },
+  "required": [
+    "id",
+    "slug"
+  ],
+  "additionalProperties": false
+}

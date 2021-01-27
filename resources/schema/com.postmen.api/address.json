@@ -1,0 +1,73 @@
+{
+  "$id": "/address",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Address",
+  "type": "object",
+  "description": "Address object",
+  "properties": {
+    "contact_name": {
+      "type": "string",
+      "description": "contact_name of address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "contact_phone of address"
+    },
+    "fax": {
+      "type": "string",
+      "description": "fax_number of address"
+    },
+    "email": {
+      "type": "string",
+      "description": "email of address"
+    },
+    "company_name": {
+      "type": "string",
+      "description": "company_name of address"
+    },
+    "street1": {
+      "type": "string",
+      "description": "address_line1 of address"
+    },
+    "street2": {
+      "type": "string",
+      "description": "address_line2 of address"
+    },
+    "street3": {
+      "type": "string",
+      "description": "address_line3 of address"
+    },
+    "city": {
+      "type": "string",
+      "description": "city of address"
+    },
+    "state": {
+      "type": "string",
+      "description": "state of address"
+    },
+    "postal_code": {
+      "type": "string",
+      "description": "postal_code of address"
+    },
+    "country": {
+      "$ref": "/country",
+      "description": "country of address"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "business",
+        "residential"
+      ],
+      "description": "type of address"
+    },
+    "tax_id": {
+      "type": "string",
+      "description": "tax id"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "country"
+  ]
+}

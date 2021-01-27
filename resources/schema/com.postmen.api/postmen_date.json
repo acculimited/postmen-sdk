@@ -1,0 +1,19 @@
+{
+  "$id": "/postmen_date",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Postmen Date",
+  "description": "A formatted date.",
+  "type": "string",
+  "formats": [
+    "YYYY-MM-DDTHH:mm:ss.SSSZ",
+    "YYYY-MM-DDTHH:mm:ssZ",
+    "YYYY-MM-DDTHH:mm:ss",
+    "YYYY-MM-DDTHH:mmZ",
+    "YYYY-MM-DDTHH:mm",
+    "YYYY-MM-DD",
+    "HH:mm:ss",
+    "HH:mm"
+  ],
+  "format": "postmen-date",
+  "additionalProperties": false
+}
