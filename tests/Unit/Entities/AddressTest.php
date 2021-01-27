@@ -17,7 +17,7 @@ class AddressTest extends TestCase
 
         $schema = Schema::import(
             '/address',
-            new Context(new RemoteRefProvider(__DIR__ . '/../../../resources/schema/com.postmen.api/'))
+            new Context(new RemoteRefProvider(__DIR__ . '/../../../resources/schemas/com.postmen.api/'))
         );
 
         /** @var \Swaggest\JsonSchema\Structure\ObjectItem $validated */
