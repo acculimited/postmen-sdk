@@ -18,6 +18,8 @@ final class Dimension extends PostmenEntity
 {
     use JsonSchema;
 
+    public const JSON_SCHEMA = '/dimension';
+
     public const UNITS = [
         'cm' => 10,
         'in' => 25.4,

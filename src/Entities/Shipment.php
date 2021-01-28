@@ -13,6 +13,8 @@ final class Shipment extends PostmenEntity
 {
     use JsonSchema;
 
+    public const JSON_SCHEMA = '/shipment';
+
     /** @var Parcel[] */
     private $parcels = [];
 

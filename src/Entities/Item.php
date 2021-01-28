@@ -4,7 +4,6 @@ namespace Accu\Postmen\Entities;
 
 use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
-use InvalidArgumentException;
 
 /**
  * Item
@@ -17,6 +16,8 @@ use InvalidArgumentException;
 final class Item extends PostmenEntity
 {
     use JsonSchema;
+
+    public const JSON_SCHEMA = '/item';
 
     /**@var string The description of the item */
     private $description;
@@ -74,10 +75,6 @@ final class Item extends PostmenEntity
      */
     public function setQuantity(int $quantity): Item
     {
-        if ($quantity < 1) {
-            throw new InvalidArgumentException('A positive quantity must be specified.');
-        }
-
         $this->quantity = $quantity;
         return $this;
     }

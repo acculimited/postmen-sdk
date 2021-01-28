@@ -4,7 +4,6 @@ namespace Accu\Postmen\Entities;
 
 use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
-use InvalidArgumentException;
 
 /**
  * Weight
@@ -18,12 +17,7 @@ final class Weight extends PostmenEntity
 {
     use JsonSchema;
 
-    public const ACCEPTABLE_UNITS = [
-        'lb',
-        'kg',
-        'oz',
-        'g',
-    ];
+    public const JSON_SCHEMA = '/weight';
 
     /** @var string Unit of measure */
     private $unit;
@@ -39,38 +33,19 @@ final class Weight extends PostmenEntity
         return $this->unit;
     }
 
-    /**
-     * @param string $unit
-     * @return Weight
-     */
     public function setUnit(?string $unit): Weight
     {
-        if (! in_array($unit, self::ACCEPTABLE_UNITS, true)) {
-            throw new InvalidArgumentException('Invalid unit specified, please use one of the predefined options');
-        }
-
         $this->unit = $unit;
         return $this;
     }
 
-    /**
-     * @return float
-     */
     public function getValue(): ?float
     {
         return $this->value;
     }
 
-    /**
-     * @param float $value
-     * @return Weight
-     */
     public function setValue(float $value): Weight
     {
-        if ($value < 0) {
-            throw new InvalidArgumentException('Weight must have a positive value');
-        }
-
         $this->value = $value;
         return $this;
     }

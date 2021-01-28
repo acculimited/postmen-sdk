@@ -17,6 +17,8 @@ final class Parcel extends PostmenEntity
 {
     use JsonSchema;
 
+    public const JSON_SCHEMA = '/parcel';
+
     /** @var string Type of box / envelope for packaging */
     private $box_type;
 
