@@ -17,7 +17,7 @@ final class Rate extends PostmenEntity
 {
     use JsonSchema;
 
-    public const JSON_SCHEMA = '/rate';
+    public const JSON_SCHEMA = '/rate_type';
 
     /** @var Weight Charge weight */
     private $charge_weight;
@@ -26,7 +26,7 @@ final class Rate extends PostmenEntity
     private $total_charge;
 
     /** @var SimpleShipperAccount Simplified shipper info */
-    private $simple_shipper_account;
+    private $shipper_account;
 
     /** @var string Service type */
     private $service_type;
@@ -79,12 +79,12 @@ final class Rate extends PostmenEntity
 
     public function getSimpleShipperAccount(): ?SimpleShipperAccount
     {
-        return $this->simple_shipper_account;
+        return $this->shipper_account;
     }
 
     public function setSimpleShipperAccount(?SimpleShipperAccount $simple_shipper_account): Rate
     {
-        $this->simple_shipper_account = $simple_shipper_account;
+        $this->shipper_account = $simple_shipper_account;
         return $this;
     }
 

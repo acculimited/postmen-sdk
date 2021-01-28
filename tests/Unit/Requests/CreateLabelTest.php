@@ -123,4 +123,15 @@ class CreateLabelTest extends TestCase
 
         self::assertEquals('75400d65-1c64-4c57-8507-28332a1629ae', $label->getShipperAccount()->getId());
     }
+
+    public function testLabelResponseValidatesJson()
+    {
+        $json = \GuzzleHttp\json_decode(
+            \file_get_contents(__DIR__ . '/../../resources/create-label-response.json'),
+            true
+        );
+
+        $label = (new CreateLabel())->mapResponseData($json);
+        self::assertJson(json_encode($label));
+    }
 }
