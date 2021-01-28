@@ -1,5 +1,5 @@
 {
-  "$id": "/eei_aes",
+  "$id": "/eei",
   "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "aes",
   "description": "EEI Type - aes",
