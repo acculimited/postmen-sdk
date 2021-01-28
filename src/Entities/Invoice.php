@@ -2,12 +2,12 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 final class Invoice extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
     /** @var string */
     private $date;

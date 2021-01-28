@@ -2,9 +2,9 @@
 
 namespace Accu\Postmen\Entities\Customs;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 
 abstract class CustomsType
 {
-    use JsonSerializer;
+    use JsonSchema;
 }

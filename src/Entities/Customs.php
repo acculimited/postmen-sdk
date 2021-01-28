@@ -3,7 +3,7 @@
 namespace Accu\Postmen\Entities;
 
 use Accu\Postmen\Entities\Customs\CustomsType;
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 use InvalidArgumentException;
 
@@ -14,7 +14,7 @@ use InvalidArgumentException;
  */
 final class Customs extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
     public const PURPOSE_CODES = [
         'gift',

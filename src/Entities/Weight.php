@@ -2,7 +2,7 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 use InvalidArgumentException;
 
@@ -16,7 +16,7 @@ use InvalidArgumentException;
  */
 final class Weight extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
     public const ACCEPTABLE_UNITS = [
         'lb',

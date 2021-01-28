@@ -4,7 +4,7 @@ namespace Accu\Postmen\Requests\ShipperAccounts;
 
 use Accu\Postmen\Entities\ShipperAccount;
 use Accu\Postmen\Requests\Request;
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 
 /**
  * List all available shipper accounts.
@@ -12,7 +12,7 @@ use Accu\Postmen\Utility\JsonSerializer;
  */
 class ListAll extends Request
 {
-    use JsonSerializer;
+    use JsonSchema;
 
     public const METHOD = 'GET';
     public const URI = 'shipper-accounts';

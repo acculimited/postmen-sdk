@@ -4,12 +4,12 @@ namespace Accu\Postmen\Requests\Labels;
 
 use Accu\Postmen\Entities\Label;
 use Accu\Postmen\Requests\Request;
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 class Retrieve extends Request
 {
-    use JsonSerializer;
+    use JsonSchema;
 
     public const METHOD = 'GET';
     public const URI = 'labels';

@@ -3,7 +3,7 @@
 namespace Accu\Postmen\Entities;
 
 use Accu\Postmen\Utility\ISOCodes;
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 use InvalidArgumentException;
 
@@ -17,7 +17,7 @@ use InvalidArgumentException;
  */
 final class Money extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
     /** @var float */
     private $amount;

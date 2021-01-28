@@ -2,7 +2,7 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
@@ -15,7 +15,7 @@ use Accu\Postmen\Utility\PostmenEntity;
  */
 final class DetailedCharge extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
     /** @var Money Object with charge details */
     private $charge;

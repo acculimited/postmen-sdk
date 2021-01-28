@@ -2,7 +2,7 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 use UnexpectedValueException;
 
@@ -13,7 +13,7 @@ use UnexpectedValueException;
  */
 final class Files extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
     /**@var Files\Label */
     private $label;

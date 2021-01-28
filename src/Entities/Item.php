@@ -2,7 +2,7 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 use InvalidArgumentException;
 
@@ -16,7 +16,7 @@ use InvalidArgumentException;
  */
 final class Item extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
     /**@var string The description of the item */
     private $description;
