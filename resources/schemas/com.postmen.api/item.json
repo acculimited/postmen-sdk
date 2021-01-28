@@ -35,16 +35,13 @@
     "hs_code": {
       "type": "string",
       "description": "The HS Code (Harmonized Commodity Description and Coding System) of the item.",
-      "maxLength": 13,
-      "pattern": "^\\d{1,4}(\\.?\\d{0,2}){0,3}$",
-      "errorMessage": "Invalid format. Example valid formats: '6301.40', '6301.40.00', '6301.40.00.20'"
+      "maxLength": 20
     }
   },
   "additionalProperties": false,
   "required": [
     "description",
     "quantity",
-    "price",
-    "weight"
+    "price"
   ]
 }

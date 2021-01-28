@@ -26,6 +26,14 @@
           "shipper_account": {
             "description": "account of shipper",
             "$ref": "/postmen_reference"
+          },
+          "label_ids": {
+            "type": "array",
+            "description": "An array of label ids to create a manifest, only available for USPS / Australia Post / StarTrack, will throw error if any label_id does not belong to this shipper_account or cannot be manifested.",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
           }
         },
         "additionalProperties": false,
@@ -2200,7 +2208,7 @@
           "type": "string"
         },
         "created_at_min": {
-          "description": "Start date and time of the record created (default: 24hrs ago)",
+          "description": "Start date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ, default: 24hrs ago)",
           "type": "string",
           "formats": [
             "YYYY-MM-DDTHH:mm:ssZ"
@@ -2208,7 +2216,7 @@
           "format": "date-time"
         },
         "created_at_max": {
-          "description": "End date and time of the record created (default: NOW())",
+          "description": "End date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ, default: NOW())",
           "type": "string",
           "formats": [
             "YYYY-MM-DDTHH:mm:ssZ"

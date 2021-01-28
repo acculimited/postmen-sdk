@@ -1,9 +1,9 @@
 {
-  "$id": "/shipper_account_address",
+  "$id": "/address_validation_payload",
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "Address - Shipper Account",
+  "title": "Address validation",
+  "description": "Address validation request",
   "type": "object",
-  "description": "Address object",
   "properties": {
     "contact_name": {
       "type": "string",
@@ -11,6 +11,7 @@
     },
     "phone": {
       "type": "string",
+      "pattern": "^[0-9()-]+$",
       "description": "contact_phone of address"
     },
     "fax": {
@@ -19,6 +20,7 @@
     },
     "email": {
       "type": "string",
+      "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
       "description": "email of address"
     },
     "company_name": {
@@ -50,7 +52,7 @@
       "description": "postal_code of address"
     },
     "country": {
-      "$ref": "/country",
+      "$ref": "/address_validation_supported_country",
       "description": "country of address"
     },
     "type": {
@@ -66,5 +68,9 @@
       "description": "tax id"
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "required": [
+    "street1",
+    "country"
+  ]
 }

@@ -1,0 +1,7 @@
+{
+  "$id": "/shipper_account_settings",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Shipper Account Settings",
+  "description": "Shipper Account Settings",
+  "type": "object"
+}

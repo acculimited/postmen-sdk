@@ -17,6 +17,16 @@
         "failed"
       ]
     },
+    "refund_status": {
+      "type": "string",
+      "enum": [
+        "requested",
+        "approved",
+        "rejected",
+        "refunded",
+        "expired"
+      ]
+    },
     "label": {
       "description": "Label that is being cancelled",
       "$ref": "/postmen_reference"

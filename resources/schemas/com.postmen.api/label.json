@@ -32,13 +32,13 @@
             "$ref": "/label_paper_size",
             "default": "default"
           },
+          "file_type": {
+            "description": "Label file type",
+            "$ref": "/label_file_type",
+            "default": "pdf"
+          },
           "ship_date": {
-            "description": "Ship Date in YYYY-MM-DD, if not provided, will be today of the shipper account timezone",
-            "type": "string",
-            "formats": [
-              "YYYY-MM-DD"
-            ],
-            "format": "date"
+            "$ref": "/ship_date"
           },
           "service_type": {
             "description": "type of service",
@@ -50,7 +50,7 @@
             "items": {
               "$ref": "/service_option"
             },
-            "maxItems": 4
+            "maxItems": 5
           },
           "is_document": {
             "type": "boolean",
@@ -80,6 +80,10 @@
           "customs": {
             "description": "the customs of label",
             "$ref": "/customs"
+          },
+          "order_number": {
+            "description": "A user-defined order number used to identify an order.",
+            "$ref": "/postmen_order_number"
           }
         },
         "additionalProperties": false,
@@ -1293,7 +1297,7 @@
           "type": "string"
         },
         "created_at_min": {
-          "description": "Start date and time of the record created (default: 24hrs ago)",
+          "description": "Start date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ, default: 24hrs ago)",
           "type": "string",
           "formats": [
             "YYYY-MM-DDTHH:mm:ssZ"
@@ -1301,7 +1305,7 @@
           "format": "date-time"
         },
         "created_at_max": {
-          "description": "End date and time of the record created (default: NOW())",
+          "description": "End date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ, default: NOW())",
           "type": "string",
           "formats": [
             "YYYY-MM-DDTHH:mm:ssZ"

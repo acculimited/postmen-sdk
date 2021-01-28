@@ -2525,7 +2525,7 @@
           "type": "string"
         },
         "created_at_min": {
-          "description": "Start date and time of the record created (default: 24hrs ago)",
+          "description": "Start date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ, default: 24hrs ago)",
           "type": "string",
           "formats": [
             "YYYY-MM-DDTHH:mm:ssZ"
@@ -2533,7 +2533,7 @@
           "format": "date-time"
         },
         "created_at_max": {
-          "description": "End date and time of the record created (default: NOW())",
+          "description": "End date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ, default: NOW())",
           "type": "string",
           "formats": [
             "YYYY-MM-DDTHH:mm:ssZ"

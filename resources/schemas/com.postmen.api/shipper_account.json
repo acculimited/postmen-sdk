@@ -25,7 +25,7 @@
             "type": "string",
             "description": "The description of the account",
             "minLength": 1,
-            "maxLength": 35
+            "maxLength": 200
           },
           "address": {
             "$ref": "/shipper_account_address"
@@ -36,13 +36,14 @@
           },
           "credentials": {
             "$ref": "/shipper_account_credentials"
+          },
+          "settings": {
+            "$ref": "/shipper_account_settings"
           }
         },
         "required": [
           "slug",
           "description",
-          "address",
-          "timezone",
           "credentials"
         ]
       },
@@ -92,6 +93,9 @@
           },
           "created_at": {
             "$ref": "/postmen_date"
+          },
+          "settings": {
+            "$ref": "/shipper_account_settings"
           },
           "updated_at": {
             "$ref": "/postmen_date"
@@ -1338,6 +1342,26 @@
           }
         }
       }
+    },
+    {
+      "title": "Update a shipper account",
+      "description": "Update a shipper account",
+      "href": "/shipper-accounts/:id",
+      "method": "PUT",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Update Shipper Account Settings",
+        "description": "Update Shipper Account Settings",
+        "$ref": "/shipper_account_settings"
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Update Shipper Account Settings",
+        "description": "Update Shipper Account Settings",
+        "$ref": "/shipper_account_settings"
+      },
+      "additionalProperties": false
     }
   ]
 }

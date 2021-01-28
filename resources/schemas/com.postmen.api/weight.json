@@ -37,7 +37,7 @@
             "type": "number",
             "description": "weight value",
             "maximum": 4400,
-            "exclusiveMinimum": 0
+            "minimum": 0
           }
         }
       },
@@ -60,7 +60,7 @@
             "type": "number",
             "description": "weight value",
             "maximum": 2000,
-            "exclusiveMinimum": 0
+            "minimum": 0
           }
         }
       },
@@ -83,7 +83,7 @@
             "type": "number",
             "description": "weight value",
             "maximum": 440000,
-            "exclusiveMinimum": 0
+            "minimum": 0
           }
         }
       },
@@ -106,7 +106,7 @@
             "type": "number",
             "description": "weight value",
             "maximum": 155205,
-            "exclusiveMinimum": 0
+            "minimum": 0
           }
         }
       },

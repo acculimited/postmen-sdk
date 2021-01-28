@@ -1,0 +1,64 @@
+{
+  "$id": "/service_option_dangerous_goods",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option - Dangerous Goods",
+  "description": "Dangerous Goods Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "dangerous_goods"
+      ]
+    },
+    "un_number": {
+      "type": "string",
+      "description": "Four-digit UN/NA/ID numbers that identify dangerous goods, hazardous substances and articles.",
+      "minLength": 4,
+      "maxLenght": 4
+    },
+    "technical_name": {
+      "type": "string",
+      "description": "The technical name for the goods.",
+      "maxLength": 256
+    },
+    "class": {
+      "type": "string",
+      "description": "The class for the goods.",
+      "maxLength": 256
+    },
+    "subsidiary_class": {
+      "type": "string",
+      "description": "The subsidiary class for the goods.",
+      "maxLength": 256
+    },
+    "packing_group": {
+      "type": "string",
+      "description": "Dangerous goods are assigned into 3 packing groups (also known as UN Packing Group) in accordance with the degree of danger they present: Packing Group I: high danger, Packing Group II: medium danger, Packing Group III: low danger.",
+      "enum": [
+        "I",
+        "II",
+        "III"
+      ]
+    },
+    "packing_instruction": {
+      "type": "string",
+      "description": "The packing instruction of the goods, e.g. PI965, PI966",
+      "maxLength": 256
+    },
+    "packing_type": {
+      "type": "string",
+      "description": "The type of this dangerous goods packing, as specified by the IATA packing instructions.For example, carton, steel cylinder, fiberboard box, plastic jerrican and steel drum.",
+      "maxLength": 256
+    },
+    "packing_quantity": {
+      "type": "integer",
+      "description": "The number of packing of the goods.",
+      "default": 1,
+      "minimum": 1
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type"
+  ]
+}

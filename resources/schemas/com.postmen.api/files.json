@@ -8,6 +8,9 @@
     "label": {
       "$ref": "/label_file"
     },
+    "qr_code": {
+      "$ref": "/qrcode_file"
+    },
     "invoice": {
       "$ref": "/invoice_file"
     },

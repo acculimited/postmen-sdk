@@ -9,10 +9,10 @@
       "enum": [
         "cod",
         "signature",
+        "adult_signature",
         "saturday_delivery",
         "paperless_invoice",
         "insurance",
-        "lithium_battery",
         "access_point",
         "pickup",
         "rural_delivery",
@@ -44,7 +44,6 @@
         "properties": {
           "type": {
             "enum": [
-              "signature",
               "saturday_delivery",
               "paperless_invoice"
             ],
@@ -78,14 +77,14 @@
         "properties": {
           "type": {
             "enum": [
-              "lithium_battery"
+              "dangerous_goods"
             ],
-            "description": "lithium_battery"
+            "description": "dangerous_goods"
           }
         }
       },
       "then": {
-        "$ref": "/service_option_lithium_battery"
+        "$ref": "/service_option_dangerous_goods"
       },
       "continue": false
     },
@@ -118,6 +117,23 @@
       },
       "then": {
         "$ref": "/service_option_pickup"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "signature",
+              "adult_signature"
+            ],
+            "description": "delivery confirmation service"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_delivery_confirmation"
       },
       "continue": false
     }

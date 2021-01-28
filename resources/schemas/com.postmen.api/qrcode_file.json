@@ -1,20 +1,25 @@
 {
-  "$id": "/label_file",
+  "$id": "/qrcode_file",
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "A label file object",
-  "description": "A label file object",
+  "title": "A QR code file object",
+  "description": "A QR code file object",
   "type": "object",
   "properties": {
     "paper_size": {
-      "$ref": "/label_paper_size",
-      "default": "default"
+      "description": "Paper Size",
+      "enum": [
+        "1x1"
+      ]
     },
     "url": {
       "type": "string",
       "description": "URL of the file"
     },
     "file_type": {
-      "$ref": "/label_file_type"
+      "description": "File Type",
+      "enum": [
+        "png"
+      ]
     }
   },
   "required": [

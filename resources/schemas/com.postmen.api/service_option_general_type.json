@@ -6,12 +6,10 @@
   "type": "string",
   "enum": [
     "saturday_delivery",
-    "signature",
     "paperless_invoice",
     "rural_delivery",
     "sameday_evening_delivery",
-    "overnight_evening_delivery",
-    "dangerous_goods"
+    "overnight_evening_delivery"
   ],
   "additionalProperties": false
 }

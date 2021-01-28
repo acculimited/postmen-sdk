@@ -1,0 +1,12 @@
+{
+  "$id": "/ship_date",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Ship date",
+  "description": "Ship Date in YYYY-MM-DD, if not provided, will be today of the shipper account timezone",
+  "type": "string",
+  "formats": [
+    "YYYY-MM-DD"
+  ],
+  "format": "date",
+  "additionalProperties": false
+}
