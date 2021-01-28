@@ -2,9 +2,8 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\JsonSerializer;
 use Accu\Postmen\Utility\PostmenEntity;
-use InvalidArgumentException;
+use Accu\Postmen\Schema\JsonSchema;
 
 /**
  * ShipperAccount
@@ -16,21 +15,11 @@ use InvalidArgumentException;
  */
 final class ShipperAccount extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
-    public const TYPES = [
-        'user',
-        'user_prepaid',
-        'default',
-    ];
+    public const JSON_SCHEMA = '/shipper_account';
 
-    public const STATUS = [
-        'enabled',
-        'disabled',
-        'deleted',
-    ];
-
-    /** @var string Shipper ID*/
+    /** @var string Shipper ID */
     private $id;
 
     /** @var Address The address of the shipper */
@@ -97,11 +86,6 @@ final class ShipperAccount extends PostmenEntity
 
     public function setStatus(?string $status): ShipperAccount
     {
-
-        if (! in_array($status, self::STATUS, true)) {
-            throw new InvalidArgumentException('Invalid status specified, use one from predefined options');
-        }
-
         $this->status = $status;
         return $this;
     }
@@ -124,10 +108,6 @@ final class ShipperAccount extends PostmenEntity
 
     public function setType(?string $type): ShipperAccount
     {
-        if (! in_array($type, self::TYPES, true)) {
-            throw new InvalidArgumentException("Invalid type [{$type}] specified, use one from predefined options");
-        }
-
         $this->type = $type;
         return $this;
     }

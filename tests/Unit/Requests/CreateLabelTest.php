@@ -15,21 +15,11 @@ use Accu\Postmen\Entities\Parcel;
 use Accu\Postmen\Entities\Shipment;
 use Accu\Postmen\Entities\ShipperAccount;
 use Accu\Postmen\Entities\Weight;
-use Accu\Postmen\Exceptions\InvalidRequestException;
 use Accu\Postmen\Requests\Labels\Create as CreateLabel;
 use PHPUnit\Framework\TestCase;
 
 class CreateLabelTest extends TestCase
 {
-    public function testMissingShipmentThrowsException()
-    {
-        $this->expectException(InvalidRequestException::class);
-        $this->expectExceptionMessage('Missing Shipment during CreateLabel request');
-
-        $labelRequest = new CreateLabel();
-        $labelRequest->jsonSerialize();
-    }
-
     public function testRequestGeneratesValidJson()
     {
         $shipment = (new Shipment())

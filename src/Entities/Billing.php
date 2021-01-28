@@ -2,22 +2,17 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\JsonSerializer;
 use Accu\Postmen\Utility\PostmenEntity;
-use InvalidArgumentException;
+use Accu\Postmen\Schema\JsonSchema;
 
 /**
  * @see https://docs.postmen.com/api.html#billing
  */
 final class Billing extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
-    public const PAID_BY_OPTIONS = [
-        'shipper',
-        'recipient',
-        'third_party',
-    ];
+    public const JSON_SCHEMA = '/billing';
 
     /** @var string */
     private $paid_by;
@@ -29,10 +24,6 @@ final class Billing extends PostmenEntity
 
     public function setPaidBy(string $paid_by): Billing
     {
-        if (! in_array($paid_by, static::PAID_BY_OPTIONS)) {
-            throw new InvalidArgumentException("Invalid paid by option: [$paid_by]");
-        }
-
         $this->paid_by = $paid_by;
         return $this;
     }
