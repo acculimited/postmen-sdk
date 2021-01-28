@@ -9,6 +9,8 @@ final class Invoice extends PostmenEntity
 {
     use JsonSchema;
 
+    public const JSON_SCHEMA = '/invoice';
+
     /** @var string */
     private $date;
 

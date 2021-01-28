@@ -13,6 +13,8 @@ final class Passport extends PostmenEntity
 {
     use JsonSchema;
 
+    public const JSON_SCHEMA = '/passport';
+
     /** @var string */
     private $number;
 
@@ -37,10 +39,6 @@ final class Passport extends PostmenEntity
 
     public function setIssueDate(string $issue_date): Passport
     {
-        if (! preg_match('/\d{4}-\d{2}-\d{2}/', $issue_date)) {
-            throw new InvalidArgumentException('Issue Date must be in the following format: YYYY-MM-DD');
-        }
-
         $this->issue_date = $issue_date;
         return $this;
     }

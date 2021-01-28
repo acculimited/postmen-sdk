@@ -2,6 +2,7 @@
 
 namespace Accu\Postmen\Entities;
 
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 use InvalidArgumentException;
 
@@ -12,6 +13,10 @@ use InvalidArgumentException;
  */
 final class Reference extends PostmenEntity
 {
+    use JsonSchema;
+
+    public const JSON_SCHEMA = '/postmen_reference';
+
     /** @var PostmenEntity|mixed */
     private $entity;
 
@@ -30,7 +35,7 @@ final class Reference extends PostmenEntity
         return $this;
     }
 
-    public function jsonSerialize()
+    public function toArray()
     {
         return [
             'id' => $this->getEntity()->getId(),

@@ -17,6 +17,8 @@ final class Rate extends PostmenEntity
 {
     use JsonSchema;
 
+    public const JSON_SCHEMA = '/rate';
+
     /** @var Weight Charge weight */
     private $charge_weight;
 

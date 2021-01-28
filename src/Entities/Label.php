@@ -15,6 +15,8 @@ final class Label extends PostmenEntity
 {
     use JsonSchema;
 
+    public const JSON_SCHEMA = '/label#/links/0/targetSchema';
+
     /**@var string Unique label identifier */
     private $id;
 

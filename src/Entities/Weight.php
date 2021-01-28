@@ -25,9 +25,6 @@ final class Weight extends PostmenEntity
     /** @var float */
     private $value;
 
-    /**
-     * @return string
-     */
     public function getUnit(): ?string
     {
         return $this->unit;

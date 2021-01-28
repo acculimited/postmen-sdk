@@ -15,6 +15,8 @@ final class Files extends PostmenEntity
 {
     use JsonSchema;
 
+    public const JSON_SCHEMA = '/files';
+
     /**@var Files\Label */
     private $label;
 
