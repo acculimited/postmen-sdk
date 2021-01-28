@@ -1,10 +1,10 @@
 <?php
 
-namespace Accu\Postmen\Utility\Schema;
+namespace Accu\Postmen\Schema;
 
 use Swaggest\JsonSchema\RemoteRef\BasicFetcher;
 
-class RemoteRefProvider extends BasicFetcher
+class RefProvider extends BasicFetcher
 {
     /** @var string */
     private $basePath;
@@ -16,6 +16,12 @@ class RemoteRefProvider extends BasicFetcher
 
     public function getSchemaData($url)
     {
-        return parent::getSchemaData("{$this->basePath}/{$url}.json");
+        [$url, $path] = array_pad(
+            explode('#', $url, 2),
+            2,
+            null
+        );
+
+        return parent::getSchemaData("{$this->basePath}{$url}.json");
     }
 }

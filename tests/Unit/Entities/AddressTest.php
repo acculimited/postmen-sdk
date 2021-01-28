@@ -3,10 +3,8 @@
 namespace Accu\Postmen\Tests\Unit\Entities;
 
 use Accu\Postmen\Entities\Address;
-use Accu\Postmen\Utility\Schema\RemoteRefProvider;
 use PHPUnit\Framework\TestCase;
-use Swaggest\JsonSchema\Context;
-use Swaggest\JsonSchema\Schema;
+use Swaggest\JsonSchema\InvalidValue;
 
 class AddressTest extends TestCase
 {
@@ -15,14 +13,14 @@ class AddressTest extends TestCase
         $entity = (new Address())
             ->setCountry('GBR');
 
-        $schema = Schema::import(
-            '/address',
-            new Context(new RemoteRefProvider(__DIR__ . '/../../../resources/schemas/com.postmen.api/'))
-        );
+        self::assertJson(json_encode($entity));
+    }
 
-        /** @var \Swaggest\JsonSchema\Structure\ObjectItem $validated */
-        $validated = $schema->in((object) $entity->jsonSerialize());
+    public function testIncompleteAddress()
+    {
+        $entity = (new Address());
 
-        self::assertJson(json_encode($validated));
+        $this->expectException(InvalidValue::class);
+        json_encode($entity);
     }
 }
