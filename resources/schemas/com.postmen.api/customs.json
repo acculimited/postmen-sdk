@@ -27,7 +27,7 @@
       "description": "EEI",
       "oneOf": [
         {
-          "$ref": "/eei"
+          "$ref": "/eei_aes"
         },
         {
           "$ref": "/eei_no_eei"

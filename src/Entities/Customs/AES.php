@@ -11,7 +11,7 @@ use Accu\Postmen\Schema\JsonSchema;
  */
 final class AES extends CustomsType
 {
-    public const JSON_SCHEMA = '/eei';
+    public const JSON_SCHEMA = '/eei_aes';
 
     /** @var string */
     private $type = 'aes';
