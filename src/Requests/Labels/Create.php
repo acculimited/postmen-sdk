@@ -83,6 +83,12 @@ class Create extends Request
             'shipment' => $this->getShipment(),
             'order_number' => $this->getOrderNumber(),
             'ship_date' => $this->getShipDate(),
+            'service_options' => [
+                [
+                    'type' => 'paperless_invoice',
+                    'enabled' => true,
+                ],
+            ],
         ];
 
         foreach ($json as $key => $value) {
