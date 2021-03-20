@@ -74,7 +74,8 @@
     "sendle",
     "dhl-discounted",
     "tipsa",
-    "dpd-be"
+    "dpd-be",
+    "yunexpress"
   ],
   "additionalProperties": false
 }

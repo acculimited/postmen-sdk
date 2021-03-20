@@ -254,18 +254,20 @@
           "type": "string"
         },
         "created_at_min": {
-          "description": "Start date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ, default: 24hrs ago)",
+          "description": "Start date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ or YYYY-MM-DDTHH:MM:SS+00:00, default: 24hrs ago)",
           "type": "string",
           "formats": [
-            "YYYY-MM-DDTHH:mm:ssZ"
+            "YYYY-MM-DDTHH:mm:ssZ",
+            "YYYY-MM-DDTHH:mm:ss+00:00"
           ],
           "format": "date-time"
         },
         "created_at_max": {
-          "description": "End date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ, default: NOW())",
+          "description": "End date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ or YYYY-MM-DDTHH:MM:SS+00:00, default: NOW())",
           "type": "string",
           "formats": [
-            "YYYY-MM-DDTHH:mm:ssZ"
+            "YYYY-MM-DDTHH:mm:ssZ",
+            "YYYY-MM-DDTHH:mm:ss+00:00"
           ],
           "format": "date-time"
         },
