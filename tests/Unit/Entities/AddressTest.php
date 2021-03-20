@@ -11,7 +11,7 @@ class AddressTest extends TestCase
     public function testBasicSchema()
     {
         $entity = (new Address())
-            ->setCountry('GBR1');
+            ->setCountry('GBR');
 
         self::assertJson(json_encode($entity));
     }
