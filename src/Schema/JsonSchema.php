@@ -4,6 +4,7 @@ namespace Accu\Postmen\Schema;
 
 use Accu\Postmen\Exceptions\PostmenException;
 use Swaggest\JsonSchema\Context;
+use Swaggest\JsonSchema\InvalidValue;
 use Swaggest\JsonSchema\Schema;
 
 trait JsonSchema
@@ -19,10 +20,14 @@ trait JsonSchema
         ));
 
         // Casting as an (object) does not work recursively here.
-        $validated = $schema->in(json_decode(
-            json_encode($this->toArray()),
-            false
-        ));
+        try {
+            $validated = $schema->in(json_decode(
+                json_encode($this->toArray()),
+                false
+            ));
+        } catch (InvalidValue $exception) {
+            throw new PostmenException('Data failed JSON schema validation', $exception->getCode(), $exception);
+        }
 
         return $validated->jsonSerialize();
     }

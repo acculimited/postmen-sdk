@@ -3,15 +3,15 @@
 namespace Accu\Postmen\Tests\Unit\Entities;
 
 use Accu\Postmen\Entities\Address;
+use Accu\Postmen\Exceptions\PostmenException;
 use PHPUnit\Framework\TestCase;
-use Swaggest\JsonSchema\InvalidValue;
 
 class AddressTest extends TestCase
 {
     public function testBasicSchema()
     {
         $entity = (new Address())
-            ->setCountry('GBR');
+            ->setCountry('GBR1');
 
         self::assertJson(json_encode($entity));
     }
@@ -20,7 +20,7 @@ class AddressTest extends TestCase
     {
         $entity = (new Address());
 
-        $this->expectException(InvalidValue::class);
+        $this->expectException(PostmenException::class);
         json_encode($entity);
     }
 }
