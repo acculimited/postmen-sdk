@@ -26,7 +26,11 @@ trait JsonSchema
                 false
             ));
         } catch (InvalidValue $exception) {
-            throw new PostmenException('Data failed JSON schema validation', $exception->getCode(), $exception);
+            throw new PostmenException(
+                "Data failed JSON schema validation for [{$exception->getSchemaPointer()}]",
+                $exception->getCode(),
+                $exception
+            );
         }
 
         return $validated->jsonSerialize();
