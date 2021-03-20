@@ -6,6 +6,7 @@ use Accu\Postmen\Entities\Billing;
 use Accu\Postmen\Entities\Customs;
 use Accu\Postmen\Entities\Invoice;
 use Accu\Postmen\Entities\Label;
+use Accu\Postmen\Entities\ServiceOptions\ServiceOption;
 use Accu\Postmen\Entities\Shipment;
 use Accu\Postmen\Entities\ShipperAccount;
 use Accu\Postmen\Requests\Request;
@@ -64,6 +65,9 @@ class Create extends Request
 
     /** @var string */
     private $ship_date;
+
+    /** @var array */
+    private $service_options = [];
 
     public function getShipperAccount(): ShipperAccount
     {
@@ -201,6 +205,20 @@ class Create extends Request
     {
         $this->ship_date = $ship_date;
         return $this;
+    }
+
+    public function addServiceOption(ServiceOption $serviceOption): Create
+    {
+        $this->service_options[] = $serviceOption;
+        return $this;
+    }
+
+    /**
+     * @return ServiceOption[]
+     */
+    public function getServiceOptions(): array
+    {
+        return $this->service_options;
     }
 
     /**
