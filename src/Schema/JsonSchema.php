@@ -4,6 +4,7 @@ namespace Accu\Postmen\Schema;
 
 use Accu\Postmen\Exceptions\PostmenException;
 use Swaggest\JsonSchema\Context;
+use Swaggest\JsonSchema\Exception as SchemaException;
 use Swaggest\JsonSchema\InvalidValue;
 use Swaggest\JsonSchema\Schema;
 
@@ -15,12 +16,12 @@ trait JsonSchema
             throw new PostmenException(static::class . ' must define a public JSON_SCHEMA.');
         }
 
-        $schema = Schema::import(static::JSON_SCHEMA, new Context(
-            new RefProvider(__DIR__ . '/../../resources/schemas/com.postmen.api')
-        ));
-
-        // Casting as an (object) does not work recursively here.
         try {
+            $schema = Schema::import(static::JSON_SCHEMA, new Context(
+                new RefProvider(__DIR__ . '/../../resources/schemas/com.postmen.api')
+            ));
+
+            // Casting as an (object) does not work recursively here.
             $validated = $schema->in(json_decode(
                 json_encode($this->toArray()),
                 false
@@ -31,6 +32,8 @@ trait JsonSchema
                 $exception->getCode(),
                 $exception
             );
+        } catch (SchemaException $exception) {
+            throw new PostmenException('JSON schema validation failed', $exception->getCode(), $exception);
         }
 
         return $validated->jsonSerialize();
