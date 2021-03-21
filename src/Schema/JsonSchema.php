@@ -17,9 +17,13 @@ trait JsonSchema
         }
 
         try {
-            $schema = Schema::import(static::JSON_SCHEMA, new Context(
-                new RefProvider(__DIR__ . '/../../resources/schemas/com.postmen.api')
-            ));
+            static $schema = null;
+
+            if (! $schema) {
+                $schema = Schema::import(static::JSON_SCHEMA, new Context(
+                    new RefProvider(__DIR__ . '/../../resources/schemas/com.postmen.api')
+                ));
+            }
 
             // Casting as an (object) does not work recursively here.
             $validated = $schema->in(json_decode(
