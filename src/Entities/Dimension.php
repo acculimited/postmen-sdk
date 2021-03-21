@@ -4,7 +4,6 @@ namespace Accu\Postmen\Entities;
 
 use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
-use InvalidArgumentException;
 
 /**
  * Dimension
