@@ -7,6 +7,7 @@ use UnexpectedValueException;
 class FileFactory
 {
     public const FILE_TYPE_MAP = [
+        'customs_declaration' => CustomsDeclaration::class,
         'invoice' => Invoice::class,
         'label' => Label::class,
     ];
