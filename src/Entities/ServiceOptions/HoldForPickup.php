@@ -2,12 +2,12 @@
 
 namespace Accu\Postmen\Entities\ServiceOptions;
 
-final class AccessPoint extends ServiceOption
+final class HoldForPickup extends ServiceOption
 {
-    public const JSON_SCHEMA = '/service_option_access_point';
+    public const JSON_SCHEMA = '/service_option_hold_for_pickup';
 
     /** @var string */
-    protected $type = 'access_point';
+    protected $type = 'hold_for_pickup';
 
     /** @var bool */
     protected $enabled = true;
@@ -17,7 +17,7 @@ final class AccessPoint extends ServiceOption
         return $this->enabled;
     }
 
-    public function setEnabled(bool $enabled): AccessPoint
+    public function setEnabled(bool $enabled): HoldForPickup
     {
         $this->enabled = $enabled;
         return $this;
