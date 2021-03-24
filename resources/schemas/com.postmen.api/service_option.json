@@ -13,7 +13,7 @@
         "saturday_delivery",
         "paperless_invoice",
         "insurance",
-        "access_point",
+        "hold_for_pickup",
         "pickup",
         "rural_delivery",
         "sameday_evening_delivery",
@@ -93,14 +93,14 @@
         "properties": {
           "type": {
             "enum": [
-              "access_point"
+              "hold_for_pickup"
             ],
-            "description": "access point"
+            "description": "hold for pickup"
           }
         }
       },
       "then": {
-        "$ref": "/service_option_access_point"
+        "$ref": "/service_option_hold_for_pickup"
       },
       "continue": false
     },
