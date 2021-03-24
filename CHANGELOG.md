@@ -1,5 +1,16 @@
 # Postmen SDK Change Log
 
+## 1.2.1 (2021-03-10)
+### Added
+ - Ability to add Service Options to a label creation request
+### Removed
+ - Paperless invoice service option on all requests.
+   This is not supported for all carriers!
+
+## ⚠️ 1.2.0 ⚠️ (2021-03-10)
+### Added
+ - Paperless invoice service option
+
 ## 1.1.0 (2021-01-08)
 ## Added
  - Introduced new unit tests for error handling
