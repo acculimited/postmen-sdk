@@ -1,0 +1,14 @@
+{
+  "$id": "/signature",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Signature",
+  "description": "Signature object",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "id of referring object"
+    }
+  },
+  "additionalProperties": false
+}

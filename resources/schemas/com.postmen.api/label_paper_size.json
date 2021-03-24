@@ -1,0 +1,16 @@
+{
+  "$id": "/label_paper_size",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Label Paper Size",
+  "description": "Label Paper Size",
+  "enum": [
+    "4x4",
+    "4x6",
+    "4x6.75",
+    "4x8",
+    "a4",
+    "default"
+  ],
+  "default": "default",
+  "additionalProperties": false
+}

@@ -1,0 +1,17 @@
+{
+  "$id": "/postmen_reference",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "reference",
+  "description": "Object reference",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "id of referring object"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id"
+  ]
+}

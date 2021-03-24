@@ -2,7 +2,7 @@
 
 namespace Accu\Postmen\Entities\ServiceOptions;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
@@ -13,5 +13,5 @@ use Accu\Postmen\Utility\PostmenEntity;
  */
 abstract class ServiceOption extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 }

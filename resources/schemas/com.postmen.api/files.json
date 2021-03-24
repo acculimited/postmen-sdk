@@ -1,0 +1,25 @@
+{
+  "$id": "/files",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "A files object",
+  "description": "A files object",
+  "type": "object",
+  "properties": {
+    "label": {
+      "$ref": "/label_file"
+    },
+    "qr_code": {
+      "$ref": "/qrcode_file"
+    },
+    "invoice": {
+      "$ref": "/invoice_file"
+    },
+    "customs_declaration": {
+      "$ref": "/customs_declaration_file"
+    },
+    "manifest": {
+      "$ref": "/manifest_file"
+    }
+  },
+  "additionalProperties": false
+}

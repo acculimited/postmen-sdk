@@ -2,7 +2,7 @@
 
 namespace Accu\Postmen\Entities\Files;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
@@ -13,7 +13,7 @@ use Accu\Postmen\Utility\PostmenEntity;
  */
 abstract class FileObject extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
     /**@var string */
     protected $file_type = 'pdf';

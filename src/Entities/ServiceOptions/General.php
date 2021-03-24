@@ -2,8 +2,10 @@
 
 namespace Accu\Postmen\Entities\ServiceOptions;
 
-class General extends ServiceOption
+final class General extends ServiceOption
 {
+    public const JSON_SCHEMA = '/service_option_general';
+
     /** @var string */
     protected $type;
 

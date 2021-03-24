@@ -1,0 +1,47 @@
+{
+  "$id": "/item",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Item",
+  "type": "object",
+  "description": "Item object, use to describe product to ship",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "description": "The ID of the item"
+    },
+    "description": {
+      "type": "string",
+      "description": "The description of the item"
+    },
+    "origin_country": {
+      "$ref": "/country",
+      "description": "The country origin of the item"
+    },
+    "quantity": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The quantity for the item"
+    },
+    "price": {
+      "$ref": "/money"
+    },
+    "weight": {
+      "$ref": "/weight"
+    },
+    "sku": {
+      "type": "string",
+      "description": "The sku of the item."
+    },
+    "hs_code": {
+      "type": "string",
+      "description": "The HS Code (Harmonized Commodity Description and Coding System) of the item.",
+      "maxLength": 20
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "description",
+    "quantity",
+    "price"
+  ]
+}

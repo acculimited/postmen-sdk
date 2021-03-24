@@ -9,9 +9,9 @@ use Accu\Postmen\Entities\Label;
 use Accu\Postmen\Entities\ServiceOptions\ServiceOption;
 use Accu\Postmen\Entities\Shipment;
 use Accu\Postmen\Entities\ShipperAccount;
-use Accu\Postmen\Exceptions\InvalidRequestException;
 use Accu\Postmen\Requests\Request;
 use Accu\Postmen\Utility\PostmenEntity;
+use Accu\Postmen\Schema\JsonSchema;
 
 /**
  * Builds a Label\Create request.
@@ -20,6 +20,10 @@ use Accu\Postmen\Utility\PostmenEntity;
  */
 class Create extends Request
 {
+    use JsonSchema;
+
+    public const JSON_SCHEMA = '/label#/links/0/schema';
+
     public const METHOD = 'POST';
     public const URI = 'labels';
 
@@ -64,41 +68,6 @@ class Create extends Request
 
     /** @var array */
     private $service_options = [];
-
-    public function jsonSerialize()
-    {
-        if (! $this->getShipment()) {
-            throw new InvalidRequestException('Missing Shipment during CreateLabel request');
-        }
-
-        $json = [
-            'async' => $this->async,
-            'billing' => $this->getBilling() ?? (new Billing())->setPaidBy('shipper'),
-            'customs' => $this->getCustoms(),
-            'return_shipment' => $this->isReturnShipment(),
-            'is_document' => $this->isDocument(),
-            'service_type' => $this->getServiceType(),
-            'paper_size' => $this->getPaperSize(),
-            'shipper_account' => [
-                'id' => $this->getShipperAccount()->getId(),
-            ],
-            'invoice' => $this->getInvoice(),
-            'references' => $this->getReferences(),
-            'shipment' => $this->getShipment(),
-            'order_number' => $this->getOrderNumber(),
-            'ship_date' => $this->getShipDate(),
-            'service_options' => $this->getServiceOptions(),
-        ];
-
-        foreach ($json as $key => $value) {
-            // Emptiness check, excluding boolean values.
-            if (!is_bool($value) && ($value === null || $value === [] || $value === '')) {
-                unset($json[$key]);
-            }
-        }
-
-        return $json;
-    }
 
     public function getShipperAccount(): ShipperAccount
     {

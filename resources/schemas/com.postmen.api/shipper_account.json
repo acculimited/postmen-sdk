@@ -1,0 +1,1367 @@
+{
+  "$id": "/shipper_account",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Shipper Accounts",
+  "description": "Shipper Accounts",
+  "properties": {},
+  "links": [
+    {
+      "title": "Create a shipper account",
+      "description": "Create a shipper account",
+      "href": "/shipper-accounts",
+      "method": "POST",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Shipper Account",
+        "description": "Account of shipper",
+        "type": "object",
+        "properties": {
+          "slug": {
+            "$ref": "/slug",
+            "description": "The slug of the account"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the account",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "address": {
+            "$ref": "/shipper_account_address"
+          },
+          "timezone": {
+            "$ref": "/timezone",
+            "description": "Use IANA — Time Zone Database"
+          },
+          "credentials": {
+            "$ref": "/shipper_account_credentials"
+          },
+          "settings": {
+            "$ref": "/shipper_account_settings"
+          }
+        },
+        "required": [
+          "slug",
+          "description",
+          "credentials"
+        ]
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Shipper Account",
+        "description": "Account of shipper",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Shipper Account ID"
+          },
+          "address": {
+            "$ref": "/shipper_account_address"
+          },
+          "slug": {
+            "type": "string",
+            "description": "The slug of the shipper_account"
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the shipper account",
+            "enum": [
+              "enabled",
+              "disabled",
+              "deleted"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the account",
+            "minLength": 1,
+            "maxLength": 35
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the shipper_account",
+            "enum": [
+              "user",
+              "user_prepaid"
+            ]
+          },
+          "timezone": {
+            "type": "string",
+            "description": "Use IANA — Time Zone Database"
+          },
+          "created_at": {
+            "$ref": "/postmen_date"
+          },
+          "settings": {
+            "$ref": "/shipper_account_settings"
+          },
+          "updated_at": {
+            "$ref": "/postmen_date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "live_example": {
+        "$id": "/create_a_shipper_account",
+        "resource_id": "00000000-0000-0000-0000-000000000000",
+        "url": "/shipper-accounts",
+        "body": {
+          "slug": "dhl",
+          "description": "My Shipper Account",
+          "timezone": "Asia/Hong_Kong",
+          "credentials": {
+            "account_number": "******",
+            "password": "******",
+            "site_id": "******"
+          },
+          "address": {
+            "country": "HKG",
+            "contact_name": "Sir Foo",
+            "phone": "11111111",
+            "fax": "+1 206-654-3100",
+            "email": "foo@foo.com",
+            "company_name": "Foo Store",
+            "street1": "Workshop A, 10/F, Wah Shing Industrial Building",
+            "street2": "18 Cheung Shun Street, Lai Chi Kok",
+            "city": "Lai Chi Kok",
+            "type": "business",
+            "postal_code": null,
+            "state": null,
+            "street3": null,
+            "tax_id": null
+          }
+        },
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "description": "My Shipper Account",
+            "slug": "dhl",
+            "status": "enabled",
+            "timezone": "Asia/Hong_Kong",
+            "type": "user",
+            "created_at": "2016-02-12T10:30:50+00:00",
+            "updated_at": "2016-09-23T04:56:26+00:00",
+            "address": {
+              "country": "HKG",
+              "contact_name": "Sir Foo",
+              "phone": "11111111",
+              "fax": "+1 206-654-3100",
+              "email": "foo@foo.com",
+              "company_name": "Foo Store",
+              "street1": "Workshop A, 10/F, Wah Shing Industrial Building",
+              "street2": "18 Cheung Shun Street, Lai Chi Kok",
+              "city": "Lai Chi Kok",
+              "type": "business",
+              "postal_code": null,
+              "state": null,
+              "street3": null,
+              "tax_id": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Delete a shipper account",
+      "description": "Delete a shipper account",
+      "href": "/shipper-accounts/:id",
+      "method": "DELETE",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Delete a shipper_account",
+        "description": "Delete a shipper_account",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Delete a shipper_account",
+        "description": "Delete a shipper_account",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "id of referring object"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "live_example": {
+        "$id": "/delete_a_shipper_accounts",
+        "resource_id": "",
+        "url": "/shipper-accounts/:id",
+        "body": {},
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "id": "00000000-0000-0000-0000-000000000000"
+          }
+        }
+      }
+    },
+    {
+      "title": "List all shipper accounts",
+      "description": "List all shipper accounts",
+      "href": "/shipper-accounts",
+      "method": "GET",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "List Shipper Accounts",
+        "description": "List Shipper Accounts",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "List Shipper Accounts",
+        "description": "List Shipper Accounts",
+        "type": "object",
+        "properties": {
+          "next_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "limit": {
+            "description": "Number of records per page",
+            "type": "string"
+          },
+          "shipper_accounts": {
+            "type": "array",
+            "items": {
+              "$ref": "/shipper_account_type"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "live_example": {
+        "$id": "/list_all_shipper_accounts",
+        "resource_id": "",
+        "url": "/shipper-accounts",
+        "body": {},
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "next_token": "1",
+            "limit": 30,
+            "shipper_accounts": [
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "royal-mail",
+                "slug": "royal-mail",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-08-25T08:48:46+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "USA",
+                  "contact_name": "jesus",
+                  "phone": null,
+                  "fax": null,
+                  "email": null,
+                  "company_name": "jesus company",
+                  "street1": "one street in the USA",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Los Angeles",
+                  "state": "CA",
+                  "postal_code": "90210",
+                  "type": null,
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "will_not_delete",
+                "slug": "aramex",
+                "status": "enabled",
+                "timezone": "America/Vancouver",
+                "type": "user",
+                "created_at": "2016-07-29T10:37:18+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "JOR",
+                  "contact_name": "Sir Foo",
+                  "phone": "+1 206-654-3100",
+                  "fax": "+1 206-654-3100",
+                  "email": "foo@foo.com",
+                  "company_name": "Foo Store",
+                  "street1": "100 MAIN ST",
+                  "street2": "PO BOX 1022",
+                  "street3": "SEATTLE WA 98104",
+                  "city": "Seattle",
+                  "state": "TX",
+                  "postal_code": "77055",
+                  "type": "business",
+                  "tax_id": "911-70-1234"
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "ups",
+                "slug": "ups",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-07-14T09:36:35+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "CHN",
+                  "contact_name": "hello",
+                  "phone": "0601997749",
+                  "fax": null,
+                  "email": "Tian.Yu@8example.com",
+                  "company_name": "天俞",
+                  "street1": "150 Kennedy Road",
+                  "street2": "Flat 25, 12/F, Acacia Building",
+                  "street3": null,
+                  "city": "Wan Chai",
+                  "state": null,
+                  "postal_code": "000852",
+                  "type": "business",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "Bring sandbox",
+                "slug": "bring",
+                "status": "enabled",
+                "timezone": "Europe/Amsterdam",
+                "type": "user",
+                "created_at": "2016-07-12T08:57:03+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "NOR",
+                  "contact_name": "Sir Foo",
+                  "phone": "+1 206-654-3100",
+                  "fax": "+1 206-654-3100",
+                  "email": "edward+mybring@aftership.com",
+                  "company_name": "Demo Parcel Norway Customer",
+                  "street1": "100 MAIN ST",
+                  "street2": "PO BOX 1022",
+                  "street3": "SEATTLE WA 98104",
+                  "city": "Seattle",
+                  "state": "TX",
+                  "postal_code": "7600",
+                  "type": "business",
+                  "tax_id": "911-70-1234"
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "Bring sandbox",
+                "slug": "bring",
+                "status": "enabled",
+                "timezone": "Europe/Amsterdam",
+                "type": "user",
+                "created_at": "2016-07-12T08:56:54+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "NOR",
+                  "contact_name": "Sir Foo",
+                  "phone": "+1 206-654-3100",
+                  "fax": "+1 206-654-3100",
+                  "email": "edward+mybring@aftership.com",
+                  "company_name": "Demo Parcel Norway Customer",
+                  "street1": "100 MAIN ST",
+                  "street2": "PO BOX 1022",
+                  "street3": "SEATTLE WA 98104",
+                  "city": "Seattle",
+                  "state": "TX",
+                  "postal_code": "7600",
+                  "type": "business",
+                  "tax_id": "911-70-1234"
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "dpd-uk",
+                "slug": "dpd-uk",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-06-30T05:02:52+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "USA",
+                  "contact_name": "jesus",
+                  "phone": null,
+                  "fax": null,
+                  "email": null,
+                  "company_name": "jesus",
+                  "street1": "one street in the USA",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Los Angeles",
+                  "state": "CA",
+                  "postal_code": "90210",
+                  "type": null,
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "fedex-smartpost",
+                "slug": "fedex-smartpost",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-06-29T08:53:44+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "USA",
+                  "contact_name": "Sir Foo",
+                  "phone": "+1 206-654-3100",
+                  "fax": "+1 206-654-3100",
+                  "email": "foo@foo.com",
+                  "company_name": "Foo Store",
+                  "street1": "100 MAIN ST",
+                  "street2": "PO BOX 1022",
+                  "street3": "SEATTLE WA 98104",
+                  "city": "Seattle",
+                  "state": "TX",
+                  "postal_code": "77055",
+                  "type": "business",
+                  "tax_id": "911-70-1234"
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "bluedart",
+                "slug": "bluedart",
+                "status": "enabled",
+                "timezone": "Asia/Kolkata",
+                "type": "user",
+                "created_at": "2016-06-27T09:04:41+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "HKG",
+                  "contact_name": "Buckinghamshire Livingstone West",
+                  "phone": null,
+                  "fax": null,
+                  "email": "buckstonewest@royalfamily.com",
+                  "company_name": "The Royal Family",
+                  "street1": "No.1 Northwesthamsexshirecaster Boulevard",
+                  "street2": "Turing Test Town",
+                  "street3": null,
+                  "city": "Thisisalongnameingshumshire",
+                  "state": "Sussex",
+                  "postal_code": "560084",
+                  "type": "residential",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "dpd-uk",
+                "slug": "dpd-uk",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-06-24T05:59:57+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "USA",
+                  "contact_name": "jesus",
+                  "phone": null,
+                  "fax": null,
+                  "email": null,
+                  "company_name": "asas",
+                  "street1": "one street in the USA",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Los Angeles",
+                  "state": "NY",
+                  "postal_code": "90210",
+                  "type": null,
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "gls-ireland",
+                "slug": "gls-ireland",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-06-23T09:47:59+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "BEL",
+                  "contact_name": "Buckinghamshire Livingstone West",
+                  "phone": null,
+                  "fax": null,
+                  "email": "buckstonewest@royalfamily.com",
+                  "company_name": "The Royal Family",
+                  "street1": "Elsensesteenweg 21",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Brussel",
+                  "state": "Abcde",
+                  "postal_code": "1050",
+                  "type": "residential",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "sf-express",
+                "slug": "sf-express",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-06-23T09:43:37+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "HKG",
+                  "contact_name": "Sir Pudgu",
+                  "phone": "+1 206-654-3100",
+                  "fax": "+1 206-654-3100",
+                  "email": "foo@foo.com",
+                  "company_name": "Foo Store",
+                  "street1": "Tsuen Wan",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Mississauga",
+                  "state": null,
+                  "postal_code": "L4W5M8",
+                  "type": "business",
+                  "tax_id": "911-70-1234"
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "ups-mi",
+                "slug": "ups-mi",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-06-23T09:29:56+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "HKG",
+                  "contact_name": "Elmira Zulauf",
+                  "phone": "2433-1212",
+                  "fax": null,
+                  "email": null,
+                  "company_name": "Kemmer-Gerhold",
+                  "street1": "662 Flatley Manors",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Hong Kong",
+                  "state": null,
+                  "postal_code": null,
+                  "type": "business",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "purolator",
+                "slug": "purolator",
+                "status": "enabled",
+                "timezone": "America/Vancouver",
+                "type": "user",
+                "created_at": "2016-06-17T08:06:05+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "CAN",
+                  "contact_name": "Sir Foo",
+                  "phone": "+1 206-654-3100",
+                  "fax": "+1 206-654-3100",
+                  "email": "foo@foo.com",
+                  "company_name": "Foo Store",
+                  "street1": "Tsuen Wan",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Mississauga",
+                  "state": "BC",
+                  "postal_code": "L4W 5M8",
+                  "type": "business",
+                  "tax_id": "911-70-1234"
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "ups",
+                "slug": "ups",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-06-16T09:02:27+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "HKG",
+                  "contact_name": "Sir Foo",
+                  "phone": "+1 206-654-3100",
+                  "fax": "+1 206-654-3100",
+                  "email": "foo@foo.com",
+                  "company_name": "Foo Store",
+                  "street1": "Tsuen Wan",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Hong Kong",
+                  "state": null,
+                  "postal_code": "77055",
+                  "type": "business",
+                  "tax_id": "911-70-1234"
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "canpar-01",
+                "slug": "canpar",
+                "status": "enabled",
+                "timezone": "Canada/Central",
+                "type": "user",
+                "created_at": "2016-06-14T07:17:23+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "CAN",
+                  "contact_name": "Ada",
+                  "phone": "+16476942677",
+                  "fax": null,
+                  "email": "ada@seller.com",
+                  "company_name": "Testing Company",
+                  "street1": "330-340 W 34th St",
+                  "street2": "Can Ada stop, Canada",
+                  "street3": null,
+                  "city": "Central",
+                  "state": "AB",
+                  "postal_code": "T5A 1H1",
+                  "type": "residential",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "bring 2",
+                "slug": "bring",
+                "status": "enabled",
+                "timezone": "Africa/Abidjan",
+                "type": "user",
+                "created_at": "2016-06-08T11:40:45+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "SWE",
+                  "contact_name": "qqqqq",
+                  "phone": null,
+                  "fax": null,
+                  "email": null,
+                  "company_name": "wwww",
+                  "street1": "eee",
+                  "street2": null,
+                  "street3": null,
+                  "city": null,
+                  "state": null,
+                  "postal_code": null,
+                  "type": "business",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "fedex",
+                "slug": "fedex",
+                "status": "enabled",
+                "timezone": "Asia/Kolkata",
+                "type": "user",
+                "created_at": "2016-06-08T10:13:18+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "IND",
+                  "contact_name": "Sir Foo",
+                  "phone": "+1 206-654-3100",
+                  "fax": "+1 206-654-3100",
+                  "email": "edward@aftership.com",
+                  "company_name": "Demo Parcel Norway Customer",
+                  "street1": "100 MAIN ST",
+                  "street2": "PO BOX 1022",
+                  "street3": "SEATTLE WA 98104",
+                  "city": "Bangalore",
+                  "state": "Karnataka",
+                  "postal_code": "560034",
+                  "type": "business",
+                  "tax_id": "911-70-1234"
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "bondscouriers",
+                "slug": "bondscouriers",
+                "status": "enabled",
+                "timezone": "Australia/Brisbane",
+                "type": "user",
+                "created_at": "2016-06-07T08:50:05+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "AUS",
+                  "contact_name": "Buckinghamshire Livingstone West",
+                  "phone": null,
+                  "fax": null,
+                  "email": "buckstonewest@royalfamily.com",
+                  "company_name": "SICAB PTY LTD",
+                  "street1": "Level 2, Suite 4, 55 Norton St.",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Leichhardt",
+                  "state": "NSW",
+                  "postal_code": "1050",
+                  "type": "residential",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "bluedart",
+                "slug": "courex",
+                "status": "enabled",
+                "timezone": "Asia/Singapore",
+                "type": "user",
+                "created_at": "2016-06-07T08:48:51+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "SGP",
+                  "contact_name": "Buckinghamshire Livingstone West",
+                  "phone": null,
+                  "fax": null,
+                  "email": "buckstonewest@royalfamily.com",
+                  "company_name": "The Royal Family",
+                  "street1": "No.1 Northwesthamsexshirecaster Boulevard",
+                  "street2": "Turing Test Town",
+                  "street3": null,
+                  "city": "Thisisalongnameingshumshire",
+                  "state": "Sussex",
+                  "postal_code": "560084",
+                  "type": "residential",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "delhivery description",
+                "slug": "delhivery",
+                "status": "enabled",
+                "timezone": "Asia/Kolkata",
+                "type": "user",
+                "created_at": "2016-05-13T10:09:43+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "IND",
+                  "contact_name": "Buckinghamshire Livingstone West",
+                  "phone": null,
+                  "fax": null,
+                  "email": "buckstonewest@delhivery.com",
+                  "company_name": "The Royal Family",
+                  "street1": "113 Barthal, Dundahera",
+                  "street2": null,
+                  "street3": null,
+                  "city": "New Delhi",
+                  "state": "Delhi",
+                  "postal_code": "110070",
+                  "type": "residential",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "endicia",
+                "slug": "endicia",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-05-13T10:08:18+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "USA",
+                  "contact_name": "jesus",
+                  "phone": null,
+                  "fax": null,
+                  "email": null,
+                  "company_name": "My Company",
+                  "street1": "one street in the USA",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Los Angeles",
+                  "state": "CA",
+                  "postal_code": "90210",
+                  "type": null,
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "Bring sandbox",
+                "slug": "bring",
+                "status": "enabled",
+                "timezone": "Europe/Amsterdam",
+                "type": "user",
+                "created_at": "2016-05-10T09:42:23+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "NOR",
+                  "contact_name": "Sir Foo",
+                  "phone": "+1 206-654-3100",
+                  "fax": "+1 206-654-3100",
+                  "email": "edward+mybring@aftership.com",
+                  "company_name": "Demo Parcel Norway Customer",
+                  "street1": "100 MAIN ST",
+                  "street2": "PO BOX 1022",
+                  "street3": "SEATTLE WA 98104",
+                  "city": "Seattle",
+                  "state": "TX",
+                  "postal_code": "7600",
+                  "type": "business",
+                  "tax_id": "911-70-1234"
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "DHL Express",
+                "slug": "dhl",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-04-28T11:00:37+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "NLD",
+                  "contact_name": "Hombre Amsterdam",
+                  "phone": "+31 (0)20 683 8558",
+                  "fax": null,
+                  "email": "support@hombreamsterdam.com",
+                  "company_name": "Hombre Amsterdam",
+                  "street1": "Jan Evertsenstraat 70",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Amsterdam",
+                  "state": null,
+                  "postal_code": "1056 EE",
+                  "type": "business",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "dhl-global-mail-asia account",
+                "slug": "dhl-global-mail-asia",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-04-06T09:07:25+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "HKG",
+                  "contact_name": "Buyer Name",
+                  "phone": "+85221234568",
+                  "fax": null,
+                  "email": "support@seller.com",
+                  "company_name": "Testing Company",
+                  "street1": "330-340 W 34th St",
+                  "street2": "Super smart building, Hong Kong",
+                  "street3": null,
+                  "city": "Hong Kong",
+                  "state": null,
+                  "postal_code": null,
+                  "type": "residential",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "fedex-for-cod-india",
+                "slug": "fedex",
+                "status": "enabled",
+                "timezone": "Asia/Kolkata",
+                "type": "user",
+                "created_at": "2016-03-10T07:09:51+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "IND",
+                  "contact_name": "Sir Foo",
+                  "phone": "+1 206-654-3100",
+                  "fax": "+1 206-654-3100",
+                  "email": "edward@aftership.com",
+                  "company_name": "Demo Parcel Norway Customer",
+                  "street1": "100 MAIN ST",
+                  "street2": "PO BOX 1022",
+                  "street3": "SEATTLE WA 98104",
+                  "city": "Bangalore",
+                  "state": "Karnataka",
+                  "postal_code": "560034",
+                  "type": "business",
+                  "tax_id": "911-70-1234"
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "will_not_delete",
+                "slug": "fedex",
+                "status": "enabled",
+                "timezone": "America/Vancouver",
+                "type": "user",
+                "created_at": "2016-03-07T09:44:47+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "CAN",
+                  "contact_name": "Ada",
+                  "phone": "+16476942677",
+                  "fax": null,
+                  "email": "ada@seller.com",
+                  "company_name": "Testing Company",
+                  "street1": "330-340 W 34th St",
+                  "street2": "Can Ada stop, Canada",
+                  "street3": null,
+                  "city": "Central",
+                  "state": "AB",
+                  "postal_code": "T5A 1H1",
+                  "type": "residential",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "bpost",
+                "slug": "bpost",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-02-17T10:28:52+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "BEL",
+                  "contact_name": "Buckinghamshire Livingstone West",
+                  "phone": null,
+                  "fax": null,
+                  "email": "buckstonewest@royalfamily.com",
+                  "company_name": "The Royal Family",
+                  "street1": "Elsensesteenweg 21",
+                  "street2": null,
+                  "street3": null,
+                  "city": "Brussel",
+                  "state": "Abcde",
+                  "postal_code": "1050",
+                  "type": "residential",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "tnt",
+                "slug": "tnt",
+                "status": "enabled",
+                "timezone": "Asia/Hong_Kong",
+                "type": "user",
+                "created_at": "2016-02-12T10:30:50+00:00",
+                "updated_at": "2016-09-23T04:56:26+00:00",
+                "address": {
+                  "country": "HKG",
+                  "contact_name": "Sir Foo",
+                  "phone": "11111111",
+                  "fax": "+1 206-654-3100",
+                  "email": "foo@foo.com",
+                  "company_name": "Foo Store",
+                  "street1": "Workshop A, 10/F, Wah Shing Industrial Building",
+                  "street2": "18 Cheung Shun Street, Lai Chi Kok",
+                  "street3": null,
+                  "city": "Lai Chi Kok",
+                  "state": null,
+                  "postal_code": null,
+                  "type": "business",
+                  "tax_id": null
+                }
+              },
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "description": "myhermes-uk",
+                "slug": "hermes",
+                "status": "enabled",
+                "timezone": "Europe/London",
+                "type": "user",
+                "created_at": "2016-02-12T10:28:31+00:00",
+                "updated_at": "2016-09-23T04:56:25+00:00",
+                "address": {
+                  "country": "GBR",
+                  "contact_name": "Buckinghamshire Livingstone West",
+                  "phone": null,
+                  "fax": null,
+                  "email": "buckstonewest@royalfamily.com",
+                  "company_name": "The Royal Family",
+                  "street1": "No.1 Northwesthamsexshirecaster Boulevard",
+                  "street2": "Turing Test Town",
+                  "street3": null,
+                  "city": "Thisisalongnameingshumshire",
+                  "state": "Sussex",
+                  "postal_code": "B17 0WD",
+                  "type": "residential",
+                  "tax_id": null
+                }
+              }
+            ]
+          }
+        }
+      },
+      "encType": "application/x-www-form-urlencoded",
+      "properties": {
+        "slug": {
+          "description": "Courier slug",
+          "type": "string"
+        },
+        "limit": {
+          "description": "Number of records per page",
+          "type": "string"
+        },
+        "next_token": {
+          "description": "Next token",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "Retrieve a shipper account",
+      "description": "Retrieve a shipper account",
+      "href": "/shipper-accounts/:id",
+      "method": "GET",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Retrieve a shipper_account",
+        "description": "Retrieve a shipper_account",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Retrieve a shipper_account",
+        "description": "Retrieve a shipper_account",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Shipper Account ID"
+          },
+          "address": {
+            "$ref": "/shipper_account_address"
+          },
+          "slug": {
+            "type": "string",
+            "description": "The slug of the shipper_account"
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the shipper account",
+            "enum": [
+              "enabled",
+              "disabled",
+              "deleted"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the account",
+            "minLength": 1,
+            "maxLength": 35
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the shipper_account",
+            "enum": [
+              "user",
+              "user_prepaid"
+            ]
+          },
+          "timezone": {
+            "type": "string",
+            "description": "Use IANA — Time Zone Database"
+          },
+          "created_at": {
+            "$ref": "/postmen_date"
+          },
+          "updated_at": {
+            "$ref": "/postmen_date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "live_example": {
+        "$id": "/retrieve_a_shipper_account",
+        "resource_id": "00000000-0000-0000-0000-000000000000",
+        "url": "/shipper-accounts/:id",
+        "body": {},
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "description": "My Shipper Account",
+            "slug": "dhl",
+            "status": "enabled",
+            "timezone": "Asia/Hong_Kong",
+            "type": "user",
+            "created_at": "2016-02-12T10:30:50+00:00",
+            "updated_at": "2016-09-23T04:56:26+00:00",
+            "address": {
+              "country": "HKG",
+              "contact_name": "Sir Foo",
+              "phone": "11111111",
+              "fax": "+1 206-654-3100",
+              "email": "foo@foo.com",
+              "company_name": "Foo Store",
+              "street1": "Workshop A, 10/F, Wah Shing Industrial Building",
+              "street2": "18 Cheung Shun Street, Lai Chi Kok",
+              "street3": null,
+              "city": "Lai Chi Kok",
+              "state": null,
+              "postal_code": null,
+              "type": "business",
+              "tax_id": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Update a shipper account credentials",
+      "description": "Update a shipper account credentials",
+      "href": "/shipper-accounts/:id/credentials",
+      "method": "PUT",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Update Shipper Account Credentials",
+        "description": "Update Shipper Account Credentials",
+        "$ref": "/shipper_account_credentials"
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Update Shipper Account Credentials",
+        "description": "Update Shipper Account Credentials",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "id of referring object"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "live_example": {
+        "$id": "/update_a_shipper_account_credentials",
+        "resource_id": "00000000-0000-0000-0000-000000000000",
+        "url": "/shipper-accounts/:id/credentials",
+        "body": {
+          "account_number": "******",
+          "password": "******",
+          "site_id": "******"
+        },
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "id": "00000000-0000-0000-0000-000000000000"
+          }
+        }
+      }
+    },
+    {
+      "title": "Update a shipper account information",
+      "description": "Update a shipper account information",
+      "href": "/shipper-accounts/:id/info",
+      "method": "PUT",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Shipper Account",
+        "description": "Account of shipper",
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "The description of the account",
+            "minLength": 1,
+            "maxLength": 35
+          },
+          "timezone": {
+            "type": "string",
+            "description": "Use IANA — Time Zone Database"
+          },
+          "address": {
+            "$ref": "/shipper_account_address"
+          }
+        },
+        "additionalProperties": false
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Shipper Account",
+        "description": "Account of shipper",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Shipper Account ID"
+          },
+          "address": {
+            "$ref": "/shipper_account_address"
+          },
+          "slug": {
+            "type": "string",
+            "description": "The slug of the shipper_account"
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the shipper account",
+            "enum": [
+              "enabled",
+              "disabled",
+              "deleted"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the account",
+            "minLength": 1,
+            "maxLength": 35
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the shipper_account",
+            "enum": [
+              "user",
+              "user_prepaid"
+            ]
+          },
+          "timezone": {
+            "type": "string",
+            "description": "Use IANA — Time Zone Database"
+          },
+          "created_at": {
+            "$ref": "/postmen_date"
+          },
+          "updated_at": {
+            "$ref": "/postmen_date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "live_example": {
+        "$id": "/update_a_shipper_account_info",
+        "resource_id": "00000000-0000-0000-0000-000000000000",
+        "url": "/shipper-accounts/:id/info",
+        "body": {
+          "description": "My Shipper Account",
+          "timezone": "Asia/Hong_Kong",
+          "address": {
+            "country": "HKG",
+            "contact_name": "Sir Foo",
+            "phone": "11111111",
+            "fax": "+1 206-654-3100",
+            "email": "foo@foo.com",
+            "company_name": "Foo Store",
+            "street1": "Workshop A, 10/F, Wah Shing Industrial Building",
+            "street2": "18 Cheung Shun Street, Lai Chi Kok",
+            "city": "Lai Chi Kok",
+            "type": "business",
+            "street3": null,
+            "state": null,
+            "postal_code": null,
+            "tax_id": null
+          }
+        },
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "description": "My Shipper Account",
+            "slug": "dhl",
+            "status": "enabled",
+            "timezone": "Asia/Hong_Kong",
+            "type": "user",
+            "created_at": "2016-02-12T10:30:50+00:00",
+            "updated_at": "2016-09-23T04:56:26+00:00",
+            "address": {
+              "country": "HKG",
+              "contact_name": "Sir Foo",
+              "phone": "11111111",
+              "fax": "+1 206-654-3100",
+              "email": "foo@foo.com",
+              "company_name": "Foo Store",
+              "street1": "Workshop A, 10/F, Wah Shing Industrial Building",
+              "street2": "18 Cheung Shun Street, Lai Chi Kok",
+              "city": "Lai Chi Kok",
+              "type": "business",
+              "street3": null,
+              "state": null,
+              "postal_code": null,
+              "tax_id": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Update a shipper account",
+      "description": "Update a shipper account",
+      "href": "/shipper-accounts/:id",
+      "method": "PUT",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Update Shipper Account Settings",
+        "description": "Update Shipper Account Settings",
+        "$ref": "/shipper_account_settings"
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Update Shipper Account Settings",
+        "description": "Update Shipper Account Settings",
+        "$ref": "/shipper_account_settings"
+      },
+      "additionalProperties": false
+    }
+  ]
+}

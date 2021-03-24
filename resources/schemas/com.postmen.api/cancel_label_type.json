@@ -1,0 +1,42 @@
+{
+  "$id": "/cancel_label_type",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "A cancel label object",
+  "description": "A cancel label object",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Label ID"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "cancelling",
+        "cancelled",
+        "failed"
+      ]
+    },
+    "refund_status": {
+      "type": "string",
+      "enum": [
+        "requested",
+        "approved",
+        "rejected",
+        "refunded",
+        "expired"
+      ]
+    },
+    "label": {
+      "description": "Label that is being cancelled",
+      "$ref": "/postmen_reference"
+    },
+    "created_at": {
+      "$ref": "/postmen_date"
+    },
+    "updated_at": {
+      "$ref": "/postmen_date"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,384 @@
+{
+  "$id": "/bulk_download",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Bulk Downloads",
+  "description": "Bulk Downloads",
+  "type": "object",
+  "properties": {},
+  "links": [
+    {
+      "title": "Create a bulk download",
+      "description": "Create a bulk download",
+      "href": "/bulk-downloads",
+      "method": "POST",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Bulk Download Labels",
+        "description": "Bulk Download Labels Request",
+        "type": "object",
+        "properties": {
+          "async": {
+            "type": "boolean",
+            "description": "enable async mode or not",
+            "default": false
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "$ref": "/postmen_reference"
+            },
+            "minItems": 2,
+            "maxItems": 100
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "labels"
+        ]
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Bulk Download Labels",
+        "description": "Bulk Download Labels Response",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Bulk download label ID"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "creating",
+              "created",
+              "failed"
+            ]
+          },
+          "files": {
+            "$ref": "/files"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "$ref": "/postmen_reference"
+            }
+          },
+          "invalid_labels": {
+            "type": "array",
+            "items": {
+              "$ref": "/postmen_reference"
+            }
+          },
+          "created_at": {
+            "$ref": "/postmen_date"
+          },
+          "updated_at": {
+            "$ref": "/postmen_date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "required": [
+        "labels"
+      ],
+      "live_example": {
+        "$id": "/create_a_bulk_download",
+        "resource_id": "",
+        "url": "/bulk-downloads",
+        "body": {
+          "async": false,
+          "labels": [
+            {
+              "id": "10000000-0000-0000-0000-000000000000"
+            },
+            {
+              "id": "20000000-0000-0000-0000-000000000000"
+            },
+            {
+              "id": "30000000-0000-0000-0000-000000000000"
+            }
+          ]
+        },
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "created_at": "2017-09-14T12:04:57+00:00",
+            "updated_at": "2017-09-14T12:04:58+00:00",
+            "status": "created",
+            "files": {
+              "label": {
+                "paper_size": "default",
+                "url": "https://sandbox-download.postmen.com/bulk-download/2017-09-14/00000000-0000-0000-0000-000000000000-0000000000000000.pdf",
+                "file_type": "pdf"
+              },
+              "invoice": null,
+              "customs_declaration": null,
+              "manifest": null
+            },
+            "labels": [
+              {
+                "id": "10000000-0000-0000-0000-000000000000"
+              },
+              {
+                "id": "20000000-0000-0000-0000-000000000000"
+              }
+            ],
+            "invalid_labels": [
+              {
+                "id": "30000000-0000-0000-0000-000000000000"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "title": "List all bulk downloads",
+      "description": "List all bulk downloads",
+      "href": "/bulk-downloads",
+      "method": "GET",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "List all bulk downloads",
+        "description": "List all bulk downloads",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "List all labels",
+        "description": "List all bulk downloads",
+        "type": "object",
+        "properties": {
+          "bulk_downloads": {
+            "type": "array",
+            "items": {
+              "$ref": "/bulk_download_type"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "required": [
+        "labels"
+      ],
+      "live_example": {
+        "$id": "/list_all_bulk_download",
+        "resource_id": "",
+        "url": "/bulk-downloads",
+        "body": {},
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "bulk_downloads": [
+              {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "created_at": "2017-09-14T12:04:57+00:00",
+                "updated_at": "2017-09-14T12:04:58+00:00",
+                "status": "created",
+                "files": {
+                  "label": {
+                    "paper_size": "default",
+                    "url": "https://sandbox-download.postmen.com/bulk-download/2017-09-14/00000000-0000-0000-0000-000000000000-0000000000000000.pdf",
+                    "file_type": "pdf"
+                  },
+                  "invoice": null,
+                  "customs_declaration": null,
+                  "manifest": null
+                },
+                "labels": [
+                  {
+                    "id": "10000000-0000-0000-0000-000000000000"
+                  },
+                  {
+                    "id": "20000000-0000-0000-0000-000000000000"
+                  }
+                ],
+                "invalid_labels": [
+                  {
+                    "id": "30000000-0000-0000-0000-000000000000"
+                  }
+                ]
+              },
+              {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "created_at": "2017-09-14T12:04:57+00:00",
+                "updated_at": "2017-09-14T12:04:58+00:00",
+                "status": "created",
+                "files": {
+                  "label": {
+                    "paper_size": "default",
+                    "url": "https://sandbox-download.postmen.com/bulk-download/2017-09-14/00000000-0000-0000-0000-000000000000-1111111111111111.pdf",
+                    "file_type": "pdf"
+                  },
+                  "invoice": null,
+                  "customs_declaration": null,
+                  "manifest": null
+                },
+                "labels": [
+                  {
+                    "id": "10000000-0000-0000-0000-000000000000"
+                  },
+                  {
+                    "id": "20000000-0000-0000-0000-000000000000"
+                  }
+                ],
+                "invalid_labels": []
+              }
+            ]
+          }
+        }
+      },
+      "encType": "application/x-www-form-urlencoded",
+      "properties": {
+        "status": {
+          "description": "Bulk download status",
+          "$ref": "/bulk_download_status"
+        },
+        "limit": {
+          "description": "Number of records per page",
+          "type": "string"
+        },
+        "created_at_min": {
+          "description": "Start date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ or YYYY-MM-DDTHH:MM:SS+00:00, default: 24hrs ago)",
+          "type": "string",
+          "formats": [
+            "YYYY-MM-DDTHH:mm:ssZ",
+            "YYYY-MM-DDTHH:mm:ss+00:00"
+          ],
+          "format": "date-time"
+        },
+        "created_at_max": {
+          "description": "End date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ or YYYY-MM-DDTHH:MM:SS+00:00, default: NOW())",
+          "type": "string",
+          "formats": [
+            "YYYY-MM-DDTHH:mm:ssZ",
+            "YYYY-MM-DDTHH:mm:ss+00:00"
+          ],
+          "format": "date-time"
+        },
+        "next_token": {
+          "description": "Next token",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "Retrieve a bulk download",
+      "description": "Retrieve a bulk download",
+      "href": "/bulk-downloads/:id",
+      "method": "GET",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Retrieve a bulk download",
+        "description": "Retrieve a bulk download",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Retrieve a bulk download",
+        "description": "Retrieve a bulk download",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Bulk download label ID"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "creating",
+              "created",
+              "failed"
+            ]
+          },
+          "files": {
+            "$ref": "/files"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "$ref": "/postmen_reference"
+            }
+          },
+          "invalid_labels": {
+            "type": "array",
+            "items": {
+              "$ref": "/postmen_reference"
+            }
+          },
+          "created_at": {
+            "$ref": "/postmen_date"
+          },
+          "updated_at": {
+            "$ref": "/postmen_date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "required": [
+        "labels"
+      ],
+      "live_example": {
+        "$id": "/retrieve_a_bulk_download",
+        "resource_id": "00000000-0000-0000-0000-000000000000",
+        "url": "/bulk-downloads/:id",
+        "body": {},
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "created_at": "2017-09-14T12:04:57+00:00",
+            "updated_at": "2017-09-14T12:04:58+00:00",
+            "status": "created",
+            "files": {
+              "label": {
+                "paper_size": "default",
+                "url": "https://sandbox-download.postmen.com/bulk-download/2017-09-14/00000000-0000-0000-0000-000000000000-0000000000000000.pdf",
+                "file_type": "pdf"
+              },
+              "invoice": null,
+              "customs_declaration": null,
+              "manifest": null
+            },
+            "labels": [
+              {
+                "id": "10000000-0000-0000-0000-000000000000"
+              },
+              {
+                "id": "20000000-0000-0000-0000-000000000000"
+              }
+            ],
+            "invalid_labels": [
+              {
+                "id": "30000000-0000-0000-0000-000000000000"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

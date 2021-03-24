@@ -1,0 +1,31 @@
+{
+  "$id": "/payment_method_account",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Payment Method - Account",
+  "description": "Payment Method - Account",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "account"
+      ]
+    },
+    "account_number": {
+      "type": "string",
+      "description": "account number"
+    },
+    "postal_code": {
+      "type": "string",
+      "description": "Postal code"
+    },
+    "country": {
+      "$ref": "/country",
+      "description": "Country"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "account_number"
+  ]
+}

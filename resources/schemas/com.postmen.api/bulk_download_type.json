@@ -1,0 +1,43 @@
+{
+  "$id": "/bulk_download_type",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "A bulk download object",
+  "description": "A bulk download object",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Bulk download label ID"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "creating",
+        "created",
+        "failed"
+      ]
+    },
+    "files": {
+      "$ref": "/files"
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "$ref": "/postmen_reference"
+      }
+    },
+    "invalid_labels": {
+      "type": "array",
+      "items": {
+        "$ref": "/postmen_reference"
+      }
+    },
+    "created_at": {
+      "$ref": "/postmen_date"
+    },
+    "updated_at": {
+      "$ref": "/postmen_date"
+    }
+  },
+  "additionalProperties": false
+}

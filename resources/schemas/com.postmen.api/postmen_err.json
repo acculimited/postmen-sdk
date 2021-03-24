@@ -1,0 +1,25 @@
+{
+  "$id": "/postmen_err",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Postmen error",
+  "description": "An error object containing information about what went wrong.",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "message": {
+      "type": "string"
+    },
+    "details": {
+      "type": "array",
+      "items": {
+        "$ref": "/postmen_err_detail"
+      }
+    },
+    "retryable": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

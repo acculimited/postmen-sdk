@@ -15,7 +15,8 @@
     "require": {
         "php": "^7.1",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^6.5|^7.0"
+        "guzzlehttp/guzzle": "^6.5|^7.0",
+        "swaggest/json-schema": "^0.12.31"
     },
     "autoload": {
         "psr-4": {
@@ -31,6 +32,6 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit tests"
+        "test": "php vendor/bin/phpunit tests"
     }
 }

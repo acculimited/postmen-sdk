@@ -1,0 +1,144 @@
+{
+  "$id": "/service_option",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option",
+  "description": "Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "cod",
+        "signature",
+        "adult_signature",
+        "saturday_delivery",
+        "paperless_invoice",
+        "insurance",
+        "hold_for_pickup",
+        "pickup",
+        "rural_delivery",
+        "sameday_evening_delivery",
+        "overnight_evening_delivery",
+        "dangerous_goods"
+      ]
+    }
+  },
+  "switch": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "cod"
+            ],
+            "description": "cod"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_cod"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "saturday_delivery",
+              "paperless_invoice"
+            ],
+            "description": "general"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_general"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "insurance"
+            ],
+            "description": "insurance"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_insurance"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "dangerous_goods"
+            ],
+            "description": "dangerous_goods"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_dangerous_goods"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "hold_for_pickup"
+            ],
+            "description": "hold for pickup"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_hold_for_pickup"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "pickup"
+            ],
+            "description": "pickup service"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_pickup"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "signature",
+              "adult_signature"
+            ],
+            "description": "delivery confirmation service"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_delivery_confirmation"
+      },
+      "continue": false
+    }
+  ],
+  "required": [
+    "type"
+  ]
+}

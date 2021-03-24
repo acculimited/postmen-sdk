@@ -1,0 +1,22 @@
+{
+  "$id": "/service_option_cod",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option - COD",
+  "description": "COD Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "cod"
+      ]
+    },
+    "cod_value": {
+      "$ref": "/money"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "cod_value",
+    "type"
+  ]
+}

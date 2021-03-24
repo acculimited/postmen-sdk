@@ -1,0 +1,26 @@
+{
+  "$id": "/service_option_delivery_confirmation",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option - Delivery Confirmation",
+  "description": "Delivery Confirmation Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "signature",
+        "adult_signature"
+      ]
+    },
+    "enabled": {
+      "enum": [
+        true,
+        false
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "enabled"
+  ]
+}

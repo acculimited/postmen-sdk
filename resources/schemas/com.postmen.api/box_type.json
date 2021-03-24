@@ -1,0 +1,8 @@
+{
+  "$id": "/box_type",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Box Type",
+  "description": "Type of box for packaging",
+  "type": "string",
+  "additionalProperties": false
+}

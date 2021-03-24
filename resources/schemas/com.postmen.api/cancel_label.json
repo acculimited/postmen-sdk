@@ -1,0 +1,459 @@
+{
+  "$id": "/cancel_label",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Cancel Labels",
+  "description": "Cancel Labels",
+  "type": "object",
+  "properties": {},
+  "links": [
+    {
+      "title": "Cancel a label",
+      "description": "Cancel a label",
+      "href": "/cancel-labels",
+      "method": "POST",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Label",
+        "description": "Cancel Label Request",
+        "type": "object",
+        "properties": {
+          "async": {
+            "type": "boolean",
+            "description": "enable async mode or not",
+            "default": false
+          },
+          "label": {
+            "description": "Label that is being cancelled",
+            "$ref": "/postmen_reference"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "label"
+        ]
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Label",
+        "description": "Cancel Label Response",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Cancel Label ID"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "cancelling",
+              "cancelled",
+              "failed"
+            ]
+          },
+          "refund_status": {
+            "type": "string",
+            "enum": [
+              "requested"
+            ]
+          },
+          "label": {
+            "description": "Label that is being cancelled",
+            "$ref": "/postmen_reference"
+          },
+          "created_at": {
+            "$ref": "/postmen_date"
+          },
+          "updated_at": {
+            "$ref": "/postmen_date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "required": [
+        "label"
+      ],
+      "live_example": {
+        "$id": "/create_a_cancel_label",
+        "resource_id": "",
+        "url": "/cancel-labels",
+        "body": {
+          "async": false,
+          "label": {
+            "id": "00000000-0000-0000-0000-000000000000"
+          }
+        },
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "status": "cancelled",
+            "label": {
+              "id": "00000000-0000-0000-0000-000000000000"
+            },
+            "created_at": "2015-11-20T09:13:09+00:00",
+            "updated_at": "2015-11-20T09:13:09+00:00"
+          }
+        }
+      }
+    },
+    {
+      "title": "List all cancel labels",
+      "description": "List all cancel labels",
+      "href": "/cancel-labels",
+      "method": "GET",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "List all cancel labels",
+        "description": "List all cancel labels",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "List all cancel labels",
+        "description": "List all cancel labels",
+        "type": "object",
+        "properties": {
+          "next_token": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "limit": {
+            "description": "Number of records per page",
+            "type": "number"
+          },
+          "cancel_labels": {
+            "type": "array",
+            "items": {
+              "$ref": "/cancel_label_type"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "required": [
+        "label"
+      ],
+      "live_example": {
+        "$id": "/list_all_cancel_labels",
+        "resource_id": "",
+        "url": "/cancel-labels",
+        "body": {},
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "next_token": "eyJjcmVhdGVkX2F0IjoiMjAxNS0000000000Njo1MjozNC4zNjFaIiwiaWQiOiIwNGZlNDgz0000000000QxYzItYWUxOC1kNTEzZjNmMWNmMWEiLCJ1c2Vy0000000000RjNDY4NTAtNjIyNS00ZTBiLTg5ZTQtZTM3N2M3YWM5ZDk4In0=",
+            "limit": 20,
+            "created_at_min": "2015-11-26T08:58:59+00:00",
+            "created_at_max": "2015-11-27T08:58:59+00:00",
+            "cancel-labels": [
+              {
+                "id": "0e37b87a-684e-43cd-aaba-f0718e066519",
+                "status": "cancelled",
+                "label": {
+                  "id": "166218cd-3e0a-4753-ac26-89ddabcd1dda"
+                },
+                "created_at": "2015-11-27T08:55:13+00:00",
+                "updated_at": "2015-11-27T08:55:14+00:00"
+              },
+              {
+                "id": "d05971fb-fddf-4243-ad58-7f34401b1da9",
+                "status": "cancelled",
+                "label": {
+                  "id": "0426d03a-ae0d-4818-801c-4e92b31450da"
+                },
+                "created_at": "2015-11-27T08:52:35+00:00",
+                "updated_at": "2015-11-27T08:52:37+00:00"
+              },
+              {
+                "id": "cb404620-890b-4d37-9692-34ea08c4f111",
+                "status": "cancelled",
+                "label": {
+                  "id": "df5769b0-60d0-4daf-8bad-bd164d64e12b"
+                },
+                "created_at": "2015-11-27T08:52:08+00:00",
+                "updated_at": "2015-11-27T08:52:09+00:00"
+              },
+              {
+                "id": "5472583e-3e55-492f-b1ab-5208de524e4e",
+                "status": "cancelled",
+                "label": {
+                  "id": "72393fe3-be8e-4a7a-8434-1f0b5b56c09e"
+                },
+                "created_at": "2015-11-27T08:47:01+00:00",
+                "updated_at": "2015-11-27T08:47:02+00:00"
+              },
+              {
+                "id": "d4811447-fa1b-42a9-9820-09dfd57ed8e0",
+                "status": "cancelled",
+                "label": null,
+                "created_at": "2015-11-27T08:41:05+00:00",
+                "updated_at": "2015-11-27T08:41:05+00:00"
+              },
+              {
+                "id": "28e02aea-cd0c-4553-8a63-52bc98c29420",
+                "status": "cancelled",
+                "label": {
+                  "id": "b3d75a21-9d27-4b1b-9592-485667f59e3f"
+                },
+                "created_at": "2015-11-27T08:25:12+00:00",
+                "updated_at": "2015-11-27T08:25:13+00:00"
+              },
+              {
+                "id": "39b4be71-f3d8-4d33-be15-fbf7be0b41d0",
+                "status": "cancelled",
+                "label": {
+                  "id": "d88e9447-c84e-4e97-8d1f-ba98038a7a9e"
+                },
+                "created_at": "2015-11-27T08:22:35+00:00",
+                "updated_at": "2015-11-27T08:22:37+00:00"
+              },
+              {
+                "id": "6941fcfa-6e14-406c-9e9f-4a6f4fb550c1",
+                "status": "cancelled",
+                "label": {
+                  "id": "2d4caaf4-1231-412d-bb94-62bae88ba785"
+                },
+                "created_at": "2015-11-27T08:22:09+00:00",
+                "updated_at": "2015-11-27T08:22:09+00:00"
+              },
+              {
+                "id": "263123da-c0c0-4fd1-bf1d-3936a788d272",
+                "status": "cancelled",
+                "label": {
+                  "id": "9fc1f61b-7542-4015-a3dd-5dc4d4e8689b"
+                },
+                "created_at": "2015-11-27T08:17:00+00:00",
+                "updated_at": "2015-11-27T08:17:01+00:00"
+              },
+              {
+                "id": "38b34575-2081-4333-8779-78cab4d9a642",
+                "status": "cancelled",
+                "label": null,
+                "created_at": "2015-11-27T08:11:04+00:00",
+                "updated_at": "2015-11-27T08:11:04+00:00"
+              },
+              {
+                "id": "2944f236-6420-4f9f-8c20-b06daaf39f39",
+                "status": "cancelled",
+                "label": {
+                  "id": "b05b2f29-9ed1-4844-90f6-a1ff13af56bb"
+                },
+                "created_at": "2015-11-27T07:55:12+00:00",
+                "updated_at": "2015-11-27T07:55:13+00:00"
+              },
+              {
+                "id": "0c074025-c4d9-47ce-bb89-ae854abe1a1b",
+                "status": "cancelled",
+                "label": {
+                  "id": "04b151b1-deb1-41e8-afbe-726df8a7ff54"
+                },
+                "created_at": "2015-11-27T07:52:37+00:00",
+                "updated_at": "2015-11-27T07:52:38+00:00"
+              },
+              {
+                "id": "7c78c2a8-0ff0-4c80-bb99-9ae9037034e4",
+                "status": "cancelled",
+                "label": {
+                  "id": "2afe41d0-70fe-4130-8e76-8d305e1f15dc"
+                },
+                "created_at": "2015-11-27T07:47:02+00:00",
+                "updated_at": "2015-11-27T07:47:02+00:00"
+              },
+              {
+                "id": "a0dd6cd0-00c6-4502-ba45-73369a010ca7",
+                "status": "cancelled",
+                "label": null,
+                "created_at": "2015-11-27T07:41:04+00:00",
+                "updated_at": "2015-11-27T07:41:04+00:00"
+              },
+              {
+                "id": "78e50de5-f5e9-455c-922d-2de14fe91952",
+                "status": "cancelled",
+                "label": {
+                  "id": "b09f1969-e77f-42dc-94d0-32fe5d4b3337"
+                },
+                "created_at": "2015-11-27T07:25:13+00:00",
+                "updated_at": "2015-11-27T07:25:14+00:00"
+              },
+              {
+                "id": "a4a13f7a-66b1-410c-824c-b9edf9aada3a",
+                "status": "cancelled",
+                "label": {
+                  "id": "9f783f53-c336-4de7-ad6d-b617614ba269"
+                },
+                "created_at": "2015-11-27T07:22:35+00:00",
+                "updated_at": "2015-11-27T07:22:36+00:00"
+              },
+              {
+                "id": "f3a97cbe-8792-478c-bfc2-7ab9be026760",
+                "status": "cancelled",
+                "label": {
+                  "id": "7350085b-a11c-4b63-874e-15a542ee73d2"
+                },
+                "created_at": "2015-11-27T07:17:00+00:00",
+                "updated_at": "2015-11-27T07:17:00+00:00"
+              },
+              {
+                "id": "0f3f06c6-b52d-4fcb-a6a9-7f606991d79c",
+                "status": "cancelled",
+                "label": null,
+                "created_at": "2015-11-27T07:11:04+00:00",
+                "updated_at": "2015-11-27T07:11:04+00:00"
+              },
+              {
+                "id": "371186a1-67f3-434c-af79-18ce78ece73e",
+                "status": "cancelled",
+                "label": {
+                  "id": "1e0af41f-e3d8-42ce-958c-117ebb72ebc5"
+                },
+                "created_at": "2015-11-27T06:55:13+00:00",
+                "updated_at": "2015-11-27T06:55:13+00:00"
+              },
+              {
+                "id": "04fe4835-8527-41c2-ae18-d513f3f1cf1a",
+                "status": "cancelled",
+                "label": {
+                  "id": "f6a3d017-dd7f-42b9-abeb-c8104c130e0a"
+                },
+                "created_at": "2015-11-27T06:52:34+00:00",
+                "updated_at": "2015-11-27T06:52:35+00:00"
+              }
+            ]
+          }
+        }
+      },
+      "encType": "application/x-www-form-urlencoded",
+      "properties": {
+        "shipper_account_id": {
+          "description": "Shipper account ID",
+          "type": "string"
+        },
+        "status": {
+          "description": "Cancel Label status",
+          "type": "string",
+          "enum": [
+            "cancelling",
+            "cancelled",
+            "failed"
+          ]
+        },
+        "limit": {
+          "description": "Number of records per page",
+          "type": "string"
+        },
+        "created_at_min": {
+          "description": "Start date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ or YYYY-MM-DDTHH:MM:SS+00:00, default: 24hrs ago)",
+          "type": "string",
+          "formats": [
+            "YYYY-MM-DDTHH:mm:ssZ",
+            "YYYY-MM-DDTHH:mm:ss+00:00"
+          ],
+          "format": "date-time"
+        },
+        "created_at_max": {
+          "description": "End date and time of the record created (format YYYY-MM-DDTHH:MM:SSZ or YYYY-MM-DDTHH:MM:SS+00:00, default: NOW())",
+          "type": "string",
+          "formats": [
+            "YYYY-MM-DDTHH:mm:ssZ",
+            "YYYY-MM-DDTHH:mm:ss+00:00"
+          ],
+          "format": "date-time"
+        },
+        "next_token": {
+          "description": "Next token",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "title": "Retrieve a cancel label",
+      "description": "Retrieve a cancel label",
+      "href": "/cancel-labels/:id",
+      "method": "GET",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Retrieve a cancel label",
+        "description": "Retrieve a cancel label request",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Retrieve a cancel label",
+        "description": "Retrieve a cancel label response",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Label ID"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "cancelling",
+              "cancelled",
+              "failed"
+            ]
+          },
+          "label": {
+            "description": "Label that is being cancelled",
+            "$ref": "/postmen_reference"
+          },
+          "created_at": {
+            "$ref": "/postmen_date"
+          },
+          "updated_at": {
+            "$ref": "/postmen_date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalProperties": false,
+      "required": [
+        "label"
+      ],
+      "live_example": {
+        "$id": "/retrieve_a_cancel_label",
+        "resource_id": "00000000-0000-0000-0000-000000000000",
+        "url": "/cancel-labels/:id",
+        "body": {},
+        "response": {
+          "meta": {
+            "code": 200,
+            "message": "OK",
+            "details": []
+          },
+          "data": {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "status": "cancelled",
+            "label": null,
+            "created_at": "2015-11-20T09:13:09+00:00",
+            "updated_at": "2015-11-20T09:13:09+00:00"
+          }
+        }
+      }
+    }
+  ]
+}

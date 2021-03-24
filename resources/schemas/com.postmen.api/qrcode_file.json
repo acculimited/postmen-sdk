@@ -1,0 +1,31 @@
+{
+  "$id": "/qrcode_file",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "A QR code file object",
+  "description": "A QR code file object",
+  "type": "object",
+  "properties": {
+    "paper_size": {
+      "description": "Paper Size",
+      "enum": [
+        "1x1"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "description": "URL of the file"
+    },
+    "file_type": {
+      "description": "File Type",
+      "enum": [
+        "png"
+      ]
+    }
+  },
+  "required": [
+    "paper_size",
+    "url",
+    "file_type"
+  ],
+  "additionalProperties": false
+}

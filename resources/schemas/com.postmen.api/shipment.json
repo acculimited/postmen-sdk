@@ -1,0 +1,41 @@
+{
+  "$id": "/shipment",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Shipment",
+  "description": "An instance of shipping freight or cargo",
+  "type": "object",
+  "properties": {
+    "ship_from": {
+      "$ref": "/ship_from_address",
+      "description": "ship from address"
+    },
+    "ship_to": {
+      "$ref": "/ship_to_address",
+      "description": "ship to address"
+    },
+    "return_to": {
+      "$ref": "/return_to_address",
+      "description": "return to address"
+    },
+    "delivery_instructions": {
+      "type": "string",
+      "maxLength": 128,
+      "description": "Instructions to aid in prompt delivery of the shipment."
+    },
+    "parcels": {
+      "description": "packages of shipment",
+      "type": "array",
+      "items": {
+        "$ref": "/parcel"
+      },
+      "minItems": 1,
+      "maxItems": 50
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "ship_from",
+    "ship_to",
+    "parcels"
+  ]
+}

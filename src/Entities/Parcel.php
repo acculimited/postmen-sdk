@@ -2,7 +2,7 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
@@ -15,7 +15,9 @@ use Accu\Postmen\Utility\PostmenEntity;
  */
 final class Parcel extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
+
+    public const JSON_SCHEMA = '/parcel';
 
     /** @var string Type of box / envelope for packaging */
     private $box_type;

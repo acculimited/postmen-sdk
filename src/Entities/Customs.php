@@ -3,9 +3,8 @@
 namespace Accu\Postmen\Entities;
 
 use Accu\Postmen\Entities\Customs\CustomsType;
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
-use InvalidArgumentException;
 
 /**
  * Customs object which stores information related to shipping to another country.
@@ -14,23 +13,9 @@ use InvalidArgumentException;
  */
 final class Customs extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
-    public const PURPOSE_CODES = [
-        'gift',
-        'merchandise',
-        'personal',
-        'sample',
-        'return',
-        'repair',
-    ];
-
-    public const TERMS_OF_TRADE_CODES = [
-        'dat',
-        'ddu',
-        'ddp',
-        'dap',
-    ];
+    public const JSON_SCHEMA = '/customs';
 
     /** @var Billing */
     private $billing;
@@ -57,10 +42,6 @@ final class Customs extends PostmenEntity
 
     public function setPurpose(string $purpose): Customs
     {
-        if (! in_array($purpose, static::PURPOSE_CODES)) {
-            throw new InvalidArgumentException("Invalid purpose code: [{$purpose}]");
-        }
-
         $this->purpose = $purpose;
         return $this;
     }
@@ -72,10 +53,6 @@ final class Customs extends PostmenEntity
 
     public function setTermsOfTrade(string $terms_of_trade): Customs
     {
-        if (! in_array($terms_of_trade, static::TERMS_OF_TRADE_CODES)) {
-            throw new InvalidArgumentException("Invalid terms of trade code: [{$terms_of_trade}]");
-        }
-
         $this->terms_of_trade = $terms_of_trade;
         return $this;
     }

@@ -2,7 +2,7 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 use UnexpectedValueException;
 
@@ -13,13 +13,29 @@ use UnexpectedValueException;
  */
 final class Files extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
-    /**@var Files\Label */
+    public const JSON_SCHEMA = '/files';
+
+    /** @var Files\CustomsDeclaration */
+    private $customs_declaration;
+
+    /** @var Files\Label */
     private $label;
 
     /** @var Files\Invoice */
     private $invoice;
+
+    public function getCustomsDeclaration(): ?Files\CustomsDeclaration
+    {
+        return $this->customs_declaration;
+    }
+
+    public function setCustomsDeclaration(Files\CustomsDeclaration $customsDeclaration): Files
+    {
+        $this->customs_declaration = $customsDeclaration;
+        return $this;
+    }
 
     public function getLabel(): ?Files\Label
     {
@@ -62,6 +78,8 @@ final class Files extends PostmenEntity
                 $instance->setLabel($file);
             } elseif ($file instanceof Files\Invoice) {
                 $instance->setInvoice($file);
+            } elseif ($file instanceof Files\CustomsDeclaration) {
+                $instance->setCustomsDeclaration($file);
             }
         }
 

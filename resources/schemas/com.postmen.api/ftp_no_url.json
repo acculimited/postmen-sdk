@@ -1,0 +1,22 @@
+{
+  "$id": "/ftp_no_url",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "FTP",
+  "type": "object",
+  "description": "FTP credentials object",
+  "properties": {
+    "username": {
+      "type": "string",
+      "description": "username for ftp upload"
+    },
+    "password": {
+      "type": "string",
+      "description": "password for ftp upload"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "username",
+    "password"
+  ]
+}

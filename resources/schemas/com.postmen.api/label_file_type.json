@@ -1,0 +1,12 @@
+{
+  "$id": "/label_file_type",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Label File Type",
+  "description": "Label file type",
+  "enum": [
+    "pdf",
+    "zpl"
+  ],
+  "default": "pdf",
+  "additionalProperties": false
+}

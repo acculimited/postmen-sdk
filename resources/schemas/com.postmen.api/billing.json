@@ -1,0 +1,43 @@
+{
+  "$id": "/billing",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Billing",
+  "description": "Billing Object",
+  "type": "object",
+  "properties": {
+    "paid_by": {
+      "enum": [
+        "shipper",
+        "third_party",
+        "recipient"
+      ]
+    },
+    "method": {
+      "description": "payment method",
+      "$ref": "/payment_method_account"
+    }
+  },
+  "switch": [
+    {
+      "if": {
+        "properties": {
+          "paid_by": {
+            "enum": [
+              "third_party"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "method"
+        ]
+      },
+      "continue": false
+    }
+  ],
+  "additionalProperties": false,
+  "required": [
+    "paid_by"
+  ]
+}

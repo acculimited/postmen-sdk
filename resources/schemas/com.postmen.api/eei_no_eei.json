@@ -1,0 +1,26 @@
+{
+  "$id": "/eei_no_eei",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "no_eei",
+  "description": "EEI Type - no_eei",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "no_eei"
+      ]
+    },
+    "ftr_exemption": {
+      "enum": [
+        "noeei_30_37_a",
+        "noeei_30_37_h",
+        "noeei_30_36"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "ftr_exemption"
+  ]
+}

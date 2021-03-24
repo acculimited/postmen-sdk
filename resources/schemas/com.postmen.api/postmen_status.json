@@ -1,0 +1,13 @@
+{
+  "$id": "/postmen_status",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Postmen status",
+  "description": "Status of Task",
+  "enum": [
+    "pending",
+    "success",
+    "failed",
+    "complete"
+  ],
+  "additionalProperties": false
+}

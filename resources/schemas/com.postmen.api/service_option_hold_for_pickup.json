@@ -1,0 +1,25 @@
+{
+  "$id": "/service_option_hold_for_pickup",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option - Hold For Pickup",
+  "description": "Hold For Pickup Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "hold_for_pickup"
+      ]
+    },
+    "enabled": {
+      "enum": [
+        true,
+        false
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "enabled"
+  ]
+}

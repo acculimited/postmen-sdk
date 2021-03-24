@@ -2,8 +2,7 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\ISOCodes;
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 use InvalidArgumentException;
 
@@ -17,7 +16,9 @@ use InvalidArgumentException;
  */
 final class Money extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
+
+    public const JSON_SCHEMA = '/money';
 
     /** @var float */
     private $amount;
@@ -25,18 +26,11 @@ final class Money extends PostmenEntity
     /** @var string ISO 4217 currency code */
     private $currency;
 
-    /**
-     * @return float
-     */
     public function getAmount(): ?float
     {
         return $this->amount;
     }
 
-    /**
-     * @param float $amount
-     * @return Money
-     */
     public function setAmount(float $amount): Money
     {
         if ($amount < 0) {
@@ -47,24 +41,13 @@ final class Money extends PostmenEntity
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getCurrency(): ?string
     {
         return $this->currency;
     }
 
-    /**
-     * @param string $currency
-     * @return Money
-     */
     public function setCurrency(?string $currency): Money
     {
-        if (! ISOCodes::isValidCurrencyCode($currency)) {
-            throw new InvalidArgumentException('Invalid ISO code.');
-        }
-
         $this->currency = $currency;
         return $this;
     }

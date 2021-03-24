@@ -1,0 +1,38 @@
+{
+  "$id": "/parcel",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Parcel",
+  "description": "An object or collection of objects wrapped in paper in order to be carried or sent by post.",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "The description of the parcel"
+    },
+    "box_type": {
+      "$ref": "/box_type",
+      "description": "type of box"
+    },
+    "weight": {
+      "$ref": "/weight"
+    },
+    "dimension": {
+      "$ref": "/dimension"
+    },
+    "items": {
+      "description": "items of package",
+      "type": "array",
+      "items": {
+        "$ref": "/item"
+      },
+      "minItems": 1,
+      "maxItems": 100
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "box_type",
+    "dimension",
+    "items"
+  ]
+}

@@ -10,6 +10,8 @@ namespace Accu\Postmen\Entities\Files;
  */
 final class Invoice extends FileObject
 {
+    public const JSON_SCHEMA = '/invoice_file';
+
     /**@var string Label file type */
     protected $file_type = 'pdf';
 

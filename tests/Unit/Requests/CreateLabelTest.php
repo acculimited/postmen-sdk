@@ -15,21 +15,11 @@ use Accu\Postmen\Entities\Parcel;
 use Accu\Postmen\Entities\Shipment;
 use Accu\Postmen\Entities\ShipperAccount;
 use Accu\Postmen\Entities\Weight;
-use Accu\Postmen\Exceptions\InvalidRequestException;
 use Accu\Postmen\Requests\Labels\Create as CreateLabel;
 use PHPUnit\Framework\TestCase;
 
 class CreateLabelTest extends TestCase
 {
-    public function testMissingShipmentThrowsException()
-    {
-        $this->expectException(InvalidRequestException::class);
-        $this->expectExceptionMessage('Missing Shipment during CreateLabel request');
-
-        $labelRequest = new CreateLabel();
-        $labelRequest->jsonSerialize();
-    }
-
     public function testRequestGeneratesValidJson()
     {
         $shipment = (new Shipment())
@@ -132,5 +122,16 @@ class CreateLabelTest extends TestCase
         self::assertEquals('a4', $label->getFiles()->getInvoice()->getPaperSize());
 
         self::assertEquals('75400d65-1c64-4c57-8507-28332a1629ae', $label->getShipperAccount()->getId());
+    }
+
+    public function testLabelResponseValidatesJson()
+    {
+        $json = \GuzzleHttp\json_decode(
+            \file_get_contents(__DIR__ . '/../../resources/create-label-response.json'),
+            true
+        );
+
+        $label = (new CreateLabel())->mapResponseData($json);
+        self::assertJson(json_encode($label));
     }
 }

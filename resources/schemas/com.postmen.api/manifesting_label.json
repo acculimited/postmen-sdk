@@ -1,0 +1,21 @@
+{
+  "$id": "/manifesting_label",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "A manifesting label object",
+  "description": "A manifesting label object",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Label ID",
+      "type": "string"
+    },
+    "manifested": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "manifested"
+  ]
+}

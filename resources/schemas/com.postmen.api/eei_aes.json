@@ -1,0 +1,23 @@
+{
+  "$id": "/eei_aes",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "aes",
+  "description": "EEI Type - aes",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "aes"
+      ]
+    },
+    "itn_number": {
+      "type": "string",
+      "description": "ITN Number"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "itn_number"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$id": "/money",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Money",
+  "description": "money object",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "description": "amount"
+    },
+    "currency": {
+      "$ref": "/currency",
+      "description": "The currency code in ISO 4217"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "amount",
+    "currency"
+  ]
+}

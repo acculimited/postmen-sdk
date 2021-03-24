@@ -2,10 +2,8 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\ISOCodes;
-use Accu\Postmen\Utility\JsonSerializer;
 use Accu\Postmen\Utility\PostmenEntity;
-use InvalidArgumentException;
+use Accu\Postmen\Schema\JsonSchema;
 
 /**
  * Address
@@ -17,12 +15,9 @@ use InvalidArgumentException;
  */
 final class Address extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
 
-    public const ADDRESS_TYPES = [
-        'business',
-        'residential',
-    ];
+    public const JSON_SCHEMA = '/address';
 
     /** @var string Contact name of the address */
     private $contact_name;
@@ -73,10 +68,6 @@ final class Address extends PostmenEntity
 
     public function setCountry(?string $country): Address
     {
-        if (! ISOCodes::isValidCountryCode($country)) {
-            throw new InvalidArgumentException('Invalid Country Code.');
-        }
-
         $this->country = $country;
         return $this;
     }
@@ -209,10 +200,6 @@ final class Address extends PostmenEntity
 
     public function setType(?string $type): Address
     {
-        if (! in_array($type, self::ADDRESS_TYPES, true)) {
-            throw new InvalidArgumentException("Invalid type [{$type}], please use predefined option");
-        }
-
         $this->type = $type;
         return $this;
     }

@@ -1,0 +1,78 @@
+{
+  "$id": "/address_validation",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Address Validations",
+  "description": "Address Validations",
+  "type": "object",
+  "properties": {},
+  "links": [
+    {
+      "title": "Create an address validation",
+      "description": "Create an address validation",
+      "href": "/address-validations",
+      "method": "POST",
+      "authentication_needed": "yes",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Address validation",
+        "description": "Address validation request",
+        "type": "object",
+        "properties": {
+          "address": {
+            "$ref": "/address_validation_payload"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "address"
+        ]
+      },
+      "targetSchema": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "title": "Address validation",
+        "description": "Address validation response",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Request ID"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "valid",
+              "invalid"
+            ],
+            "description": "Validation result of the address."
+          },
+          "created_at": {
+            "type": "string",
+            "description": "A formatted date."
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "A formatted date."
+          },
+          "address": {
+            "$ref": "/address_validation_payload"
+          },
+          "recommended_address": {
+            "$ref": "/address_validation_payload"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "address",
+          "status",
+          "created_at",
+          "updated_at"
+        ]
+      },
+      "additionalProperties": false,
+      "required": [
+        "address"
+      ]
+    }
+  ]
+}

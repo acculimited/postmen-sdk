@@ -2,7 +2,7 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
@@ -15,7 +15,9 @@ use Accu\Postmen\Utility\PostmenEntity;
  */
 final class SimpleShipperAccount extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
+
+    public const JSON_SCHEMA = '/shipper_account_info';
 
     /** @var string Shipper ID */
     private $id;
@@ -26,54 +28,33 @@ final class SimpleShipperAccount extends PostmenEntity
     /** @var string Shipper account description */
     private $description;
 
-    /**
-     * @return string
-     */
     function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string
-     * @return SimpleShipperAccount
-     */
     public function setId(?string $id): SimpleShipperAccount
     {
         $this->id = $id;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getSlug(): ?string
     {
         return $this->slug;
     }
 
-    /**
-     * @param string
-     * @return SimpleShipperAccount
-     */
     public function setSlug(?string $slug): SimpleShipperAccount
     {
         $this->slug = $slug;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     * @return SimpleShipperAccount
-     */
     public function setDescription(?string $description): SimpleShipperAccount
     {
         $this->description = $description;

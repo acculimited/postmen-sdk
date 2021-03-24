@@ -1,0 +1,43 @@
+{
+  "$id": "/customs_billing",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Customs Billing",
+  "description": "Customs Billing Object",
+  "type": "object",
+  "properties": {
+    "paid_by": {
+      "enum": [
+        "shipper",
+        "recipient",
+        "third_party"
+      ]
+    },
+    "method": {
+      "description": "payment method",
+      "$ref": "/payment_method_account"
+    }
+  },
+  "switch": [
+    {
+      "if": {
+        "properties": {
+          "paid_by": {
+            "enum": [
+              "third_party"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "method"
+        ]
+      },
+      "continue": false
+    }
+  ],
+  "additionalProperties": false,
+  "required": [
+    "paid_by"
+  ]
+}

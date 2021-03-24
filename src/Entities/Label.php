@@ -2,7 +2,7 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\JsonSerializer;
+use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
@@ -13,7 +13,9 @@ use Accu\Postmen\Utility\PostmenEntity;
  */
 final class Label extends PostmenEntity
 {
-    use JsonSerializer;
+    use JsonSchema;
+
+    public const JSON_SCHEMA = '/label#/links/0/targetSchema';
 
     /**@var string Unique label identifier */
     private $id;

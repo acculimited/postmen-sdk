@@ -1,0 +1,36 @@
+{
+  "$id": "/invoice",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Invoice",
+  "type": "object",
+  "description": "Invoice object, used to describe invoice type. Optional. Commercial invoice will be generated if field is present in the request body, else not.",
+  "properties": {
+    "number": {
+      "type": "string",
+      "description": "Invoice number"
+    },
+    "date": {
+      "description": "Invoice date in YYYY-MM-DD",
+      "type": "string",
+      "formats": [
+        "YYYY-MM-DD"
+      ],
+      "format": "date"
+    },
+    "type": {
+      "enum": [
+        "commercial",
+        "proforma"
+      ]
+    },
+    "number_of_copies": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "date"
+  ]
+}

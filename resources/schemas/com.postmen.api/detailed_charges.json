@@ -1,0 +1,17 @@
+{
+  "$id": "/detailed_charges",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Detailed Charges",
+  "description": "Detailed Charges object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Detailed charges e.g. base, tax, fuel, discount etc."
+    },
+    "charge": {
+      "$ref": "/money"
+    }
+  },
+  "additionalProperties": false
+}

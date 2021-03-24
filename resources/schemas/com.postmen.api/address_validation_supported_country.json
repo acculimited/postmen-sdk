@@ -1,0 +1,11 @@
+{
+  "$id": "/address_validation_supported_country",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "address validation supported country Code",
+  "description": "Country in ISO 3166-1 alpha 3 code",
+  "type": "string",
+  "enum": [
+    "USA"
+  ],
+  "additionalProperties": false
+}

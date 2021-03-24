@@ -1,0 +1,63 @@
+{
+  "$id": "/rate_type",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Rate type",
+  "description": "The amount of a charge or payment with reference to some basis of calculation.",
+  "type": "object",
+  "properties": {
+    "charge_weight": {
+      "$ref": "/weight"
+    },
+    "total_charge": {
+      "$ref": "/money"
+    },
+    "shipper_account": {
+      "description": "Shipper Account Information",
+      "$ref": "/shipper_account_info"
+    },
+    "service_type": {
+      "$ref": "/service_type",
+      "description": "type of service"
+    },
+    "service_name": {
+      "type": "string",
+      "description": "name of service"
+    },
+    "pickup_deadline": {
+      "description": "pickup deadline",
+      "$ref": "/postmen_date"
+    },
+    "booking_cut_off": {
+      "description": "booking cutoff date",
+      "$ref": "/postmen_date"
+    },
+    "delivery_date": {
+      "description": "delivery date",
+      "$ref": "/postmen_date"
+    },
+    "transit_time": {
+      "description": "transit time",
+      "type": "integer"
+    },
+    "detailed_charges": {
+      "type": "array",
+      "items": {
+        "$ref": "/detailed_charges"
+      }
+    },
+    "info_message": {
+      "type": "string",
+      "description": "Info message of the rate result"
+    },
+    "error_message": {
+      "type": "string",
+      "description": "Error message of the rate result"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "shipper_account",
+    "service_type",
+    "service_name"
+  ]
+}

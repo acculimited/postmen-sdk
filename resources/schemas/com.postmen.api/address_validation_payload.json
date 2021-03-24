@@ -1,0 +1,134 @@
+{
+  "$id": "/address_validation_payload",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Address - Address Validation",
+  "description": "Address object",
+  "type": "object",
+  "properties": {
+    "contact_name": {
+      "type": "string",
+      "description": "contact_name of address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "contact_phone of address"
+    },
+    "fax": {
+      "type": "string",
+      "description": "fax_number of address"
+    },
+    "email": {
+      "type": "string",
+      "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+      "description": "email of address"
+    },
+    "company_name": {
+      "type": "string",
+      "description": "company_name of address"
+    },
+    "street1": {
+      "type": "string",
+      "description": "address_line1 of address"
+    },
+    "street2": {
+      "type": "string",
+      "description": "address_line2 of address"
+    },
+    "street3": {
+      "type": "string",
+      "description": "address_line3 of address"
+    },
+    "city": {
+      "type": "string",
+      "description": "city of address"
+    },
+    "state": {
+      "type": "string",
+      "description": "state of address"
+    },
+    "postal_code": {
+      "type": "string",
+      "description": "postal_code of address"
+    },
+    "country": {
+      "$ref": "/address_validation_supported_country",
+      "description": "country of address"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "business",
+        "residential"
+      ],
+      "description": "type of address"
+    },
+    "tax_id": {
+      "type": "string",
+      "description": "tax id"
+    }
+  },
+  "additionalProperties": false,
+  "live_example": {
+    "$id": "/create_an_address_validation",
+    "resource_id": "00000000-0000-0000-0000-000000000000",
+    "url": "/address-validations",
+    "body": {
+      "address": {
+        "street1": "52 Chambers St",
+        "city": "New York",
+        "state": "NY",
+        "postal_code": "10001",
+        "country": "USA"
+      }
+    },
+    "response": {
+      "meta": {
+        "code": 200,
+        "message": "Valid Address",
+        "details": []
+      },
+      "data": {
+        "id": "270b056a-2812-4c3a-b212-613ba1a2e3c7",
+        "status": "valid",
+        "created_at": "2021-02-03T10:46:32Z",
+        "updated_at": "2021-02-03T10:46:33Z",
+        "address": {
+          "country": "USA",
+          "contact_name": null,
+          "phone": null,
+          "fax": null,
+          "email": null,
+          "company_name": null,
+          "street1": "52 Chambers St",
+          "street2": null,
+          "street3": null,
+          "city": "New York",
+          "state": "NY",
+          "postal_code": "10001",
+          "type": null,
+          "tax_id": null
+        },
+        "recommended_address": {
+          "country": "USA",
+          "contact_name": null,
+          "phone": null,
+          "fax": null,
+          "email": null,
+          "company_name": null,
+          "street1": "52 CHAMBERS ST",
+          "street2": null,
+          "street3": null,
+          "city": "NEW YORK",
+          "state": "NY",
+          "postal_code": "10007-1222",
+          "type": "business",
+          "tax_id": null
+        }
+      }
+    }
+  },
+  "required": [
+    "street1",
+    "country"
+  ]
+}
