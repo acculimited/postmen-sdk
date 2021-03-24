@@ -1,5 +1,10 @@
 # Postmen SDK Change Log
 
+## 2.0.0 (UNRELEASED)
+Utilising JSON Schema Validations
+### Added
+ - [JSON schema validations](./resources/schemas/com.postmen.api) for the postmen.com API
+
 ## 1.2.1 (2021-03-10)
 ### Added
  - Ability to add Service Options to a label creation request
