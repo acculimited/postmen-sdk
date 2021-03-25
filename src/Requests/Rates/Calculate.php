@@ -6,9 +6,14 @@ use Accu\Postmen\Entities\Rate;
 use Accu\Postmen\Entities\Reference;
 use Accu\Postmen\Entities\Shipment;
 use Accu\Postmen\Requests\Request;
+use Accu\Postmen\Schema\JsonSchema;
 
 class Calculate extends Request
 {
+    use JsonSchema;
+
+    public const JSON_SCHEMA = '/rates#/links/0/schema';
+
     public const METHOD = 'POST';
     public const URI = 'rates';
 
@@ -23,17 +28,7 @@ class Calculate extends Request
         parent::__construct();
 
         $this->shipment = $shipment;
-        $this->shipper_accounts = $shippingAccounts;
-    }
-
-    public function jsonSerialize()
-    {
-        return [
-            'async' => false,
-            'is_document' => false,
-            'shipper_accounts' => Reference::mapCollection($this->shipper_accounts),
-            'shipment' => $this->shipment,
-        ];
+        $this->shipper_accounts = Reference::mapCollection($shippingAccounts);
     }
 
     public function mapResponseData(array $json): array
