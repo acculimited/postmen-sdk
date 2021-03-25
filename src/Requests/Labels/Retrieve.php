@@ -11,6 +11,8 @@ class Retrieve extends Request
 {
     use JsonSchema;
 
+    public const JSON_SCHEMA = '/label#/links/2/schema';
+
     public const METHOD = 'GET';
     public const URI = 'labels';
 
