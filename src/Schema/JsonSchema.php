@@ -27,7 +27,7 @@ trait JsonSchema
 
             // Casting as an (object) does not work recursively here.
             $validated = $schema->in(json_decode(
-                json_encode($this->toArray()),
+                json_encode((object) $this->toArray()),
                 false
             ));
         } catch (InvalidValue $exception) {

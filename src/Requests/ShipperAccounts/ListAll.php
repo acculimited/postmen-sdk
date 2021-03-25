@@ -14,6 +14,8 @@ class ListAll extends Request
 {
     use JsonSchema;
 
+    public const JSON_SCHEMA = '/shipper_account#/links/2/schema';
+
     public const METHOD = 'GET';
     public const URI = 'shipper-accounts';
 
