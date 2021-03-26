@@ -1,0 +1,651 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "bring",
+        "name": "Bring",
+        "ship_from": "DNK,NOR,SWE,FIN,ISL,GRL,FRO,ALA",
+        "ship_to": "Global",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": false,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": true,
+            "post@manifests": false
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": false,
+        "box_types": {
+            "custom": "Custom"
+        },
+        "service_options": {},
+        "service_types": {
+            "bring_servicepakke": "Kliman\u00f8ytral Servicepakke",
+            "bring_pa_doren": "P\u00e5 D\u00f8ren",
+            "bring_bpakke_dor-dor": "Bedriftspakke",
+            "bring_ekspress09": "Bedriftspakke Ekspress-Over natten 09",
+            "bring_minipakke": "Minipakken",
+            "bring_mail": "Post1",
+            "bring_nordic_same_day": "Nordic Same Day",
+            "bring_express_international_0900": "Express International 0900",
+            "bring_express_international_1200": "Express International 1200",
+            "bring_express_international": "Express International",
+            "bring_express_economy": "Express Economy",
+            "bring_cargo_groupage": "Cargo",
+            "bring_business_parcel": "Business Parcel",
+            "bring_pickup_parcel": "Pickup Parcel",
+            "bring_courier_vip": "Bud VIP",
+            "bring_courier_1h": "Bud 1 time",
+            "bring_courier_2h": "Bud 2 timer",
+            "bring_courier_4h": "Bud 4 timer",
+            "bring_courier_6h": "Bud 6 timer",
+            "bring_oil_express": "Oil Express",
+            "bring_bpakke_dor-dor_returservice": "Bedriftspakke return service",
+            "bring_ekspress09_returservice": "Bedriftspakke Ekspress-Over natten 09 return service",
+            "bring_servicepakke_returservice": "Kliman\u00f8ytral Servicepakke return service",
+            "bring_business_pallet": "Business Pallet",
+            "bring_business_halfpallet": "Business Half Pallet",
+            "bring_business_quarterpallet": "Business Quarter Pallet",
+            "bring_business_bulksplit": "Business Bulksplit",
+            "bring_express_nordic_0090_bulk": "Express Nordic 0900 Bulk",
+            "bring_pickup_parcel_bulk": "Pickup Parcel Bulk",
+            "bring_cargo": "Cargo",
+            "bring_courier_long_distance": "Bud Long Distance",
+            "bring_courier_bicycle_vip": "Bud Bicycle VIP",
+            "bring_courier_bicycle_1h": "Bud Bicycle 1 time",
+            "bring_courier_bicycle_2h": "Bud Bicycle 2 timer",
+            "bring_courier_bicycle_4h": "Bud Bicycle 4 timer"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "bring_servicepakke",
+                "service_name": "Kliman\u00f8ytral Servicepakke"
+            },
+            {
+                "service_type": "bring_pa_doren",
+                "service_name": "P\u00e5 D\u00f8ren"
+            },
+            {
+                "service_type": "bring_bpakke_dor-dor",
+                "service_name": "Bedriftspakke"
+            },
+            {
+                "service_type": "bring_ekspress09",
+                "service_name": "Bedriftspakke Ekspress-Over natten 09"
+            },
+            {
+                "service_type": "bring_minipakke",
+                "service_name": "Minipakken"
+            },
+            {
+                "service_type": "bring_mail",
+                "service_name": "Post1"
+            },
+            {
+                "service_type": "bring_nordic_same_day",
+                "service_name": "Nordic Same Day"
+            },
+            {
+                "service_type": "bring_express_international_0900",
+                "service_name": "Express International 0900"
+            },
+            {
+                "service_type": "bring_express_international_1200",
+                "service_name": "Express International 1200"
+            },
+            {
+                "service_type": "bring_express_international",
+                "service_name": "Express International"
+            },
+            {
+                "service_type": "bring_express_economy",
+                "service_name": "Express Economy"
+            },
+            {
+                "service_type": "bring_cargo_groupage",
+                "service_name": "Cargo"
+            },
+            {
+                "service_type": "bring_business_parcel",
+                "service_name": "Business Parcel"
+            },
+            {
+                "service_type": "bring_pickup_parcel",
+                "service_name": "Pickup Parcel"
+            },
+            {
+                "service_type": "bring_courier_vip",
+                "service_name": "Bud VIP"
+            },
+            {
+                "service_type": "bring_courier_1h",
+                "service_name": "Bud 1 time"
+            },
+            {
+                "service_type": "bring_courier_2h",
+                "service_name": "Bud 2 timer"
+            },
+            {
+                "service_type": "bring_courier_4h",
+                "service_name": "Bud 4 timer"
+            },
+            {
+                "service_type": "bring_courier_6h",
+                "service_name": "Bud 6 timer"
+            },
+            {
+                "service_type": "bring_oil_express",
+                "service_name": "Oil Express"
+            },
+            {
+                "service_type": "bring_bpakke_dor-dor_returservice",
+                "service_name": "Bedriftspakke return service"
+            },
+            {
+                "service_type": "bring_ekspress09_returservice",
+                "service_name": "Bedriftspakke Ekspress-Over natten 09 return service"
+            },
+            {
+                "service_type": "bring_servicepakke_returservice",
+                "service_name": "Kliman\u00f8ytral Servicepakke return service"
+            },
+            {
+                "service_type": "bring_business_pallet",
+                "service_name": "Business Pallet"
+            },
+            {
+                "service_type": "bring_business_halfpallet",
+                "service_name": "Business Half Pallet"
+            },
+            {
+                "service_type": "bring_business_quarterpallet",
+                "service_name": "Business Quarter Pallet"
+            },
+            {
+                "service_type": "bring_business_bulksplit",
+                "service_name": "Business Bulksplit"
+            },
+            {
+                "service_type": "bring_express_nordic_0090_bulk",
+                "service_name": "Express Nordic 0900 Bulk"
+            },
+            {
+                "service_type": "bring_pickup_parcel_bulk",
+                "service_name": "Pickup Parcel Bulk"
+            },
+            {
+                "service_type": "bring_cargo",
+                "service_name": "Cargo"
+            },
+            {
+                "service_type": "bring_courier_long_distance",
+                "service_name": "Bud Long Distance"
+            },
+            {
+                "service_type": "bring_courier_bicycle_vip",
+                "service_name": "Bud Bicycle VIP"
+            },
+            {
+                "service_type": "bring_courier_bicycle_1h",
+                "service_name": "Bud Bicycle 1 time"
+            },
+            {
+                "service_type": "bring_courier_bicycle_2h",
+                "service_name": "Bud Bicycle 2 timer"
+            },
+            {
+                "service_type": "bring_courier_bicycle_4h",
+                "service_name": "Bud Bicycle 4 timer"
+            }
+        ],
+        "courier_box_types": [],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Username",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "username"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Api key",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "api_key"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Api customer number",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "api_customer_number"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "ABW",
+                    "AFG",
+                    "AGO",
+                    "AIA",
+                    "ALA",
+                    "ALB",
+                    "AND",
+                    "ANT",
+                    "ARE",
+                    "ARG",
+                    "ARM",
+                    "ASM",
+                    "ATA",
+                    "ATF",
+                    "ATG",
+                    "AUS",
+                    "AUT",
+                    "AZE",
+                    "BDI",
+                    "BEL",
+                    "BEN",
+                    "BES",
+                    "BFA",
+                    "BGD",
+                    "BGR",
+                    "BHR",
+                    "BHS",
+                    "BIH",
+                    "BLM",
+                    "BLR",
+                    "BLZ",
+                    "BMU",
+                    "BOL",
+                    "BRA",
+                    "BRB",
+                    "BRN",
+                    "BTN",
+                    "BVT",
+                    "BWA",
+                    "CAF",
+                    "CAN",
+                    "CCK",
+                    "CHE",
+                    "CHL",
+                    "CHN",
+                    "CIV",
+                    "CMR",
+                    "COD",
+                    "COG",
+                    "COK",
+                    "COL",
+                    "COM",
+                    "CPV",
+                    "CRI",
+                    "CUB",
+                    "CUW",
+                    "CXR",
+                    "CYM",
+                    "CYP",
+                    "CZE",
+                    "DEU",
+                    "DJI",
+                    "DMA",
+                    "DNK",
+                    "DOM",
+                    "DZA",
+                    "ECU",
+                    "EGY",
+                    "ERI",
+                    "ESH",
+                    "ESP",
+                    "EST",
+                    "ETH",
+                    "FIN",
+                    "FJI",
+                    "FLK",
+                    "FRA",
+                    "FRO",
+                    "FSM",
+                    "GAB",
+                    "GBR",
+                    "GEO",
+                    "GGY",
+                    "GHA",
+                    "GIB",
+                    "GIN",
+                    "GLP",
+                    "GMB",
+                    "GNB",
+                    "GNQ",
+                    "GRC",
+                    "GRD",
+                    "GRL",
+                    "GTM",
+                    "GUF",
+                    "GUM",
+                    "GUY",
+                    "HKG",
+                    "HMD",
+                    "HND",
+                    "HRV",
+                    "HTI",
+                    "HUN",
+                    "IDN",
+                    "IMN",
+                    "IND",
+                    "IOT",
+                    "IRL",
+                    "IRN",
+                    "IRQ",
+                    "ISL",
+                    "ISR",
+                    "ITA",
+                    "JAM",
+                    "JEY",
+                    "JOR",
+                    "JPN",
+                    "KAZ",
+                    "KEN",
+                    "KGZ",
+                    "KHM",
+                    "KIR",
+                    "KNA",
+                    "KOR",
+                    "KWT",
+                    "LAO",
+                    "LBN",
+                    "LBR",
+                    "LBY",
+                    "LCA",
+                    "LIE",
+                    "LKA",
+                    "LSO",
+                    "LTU",
+                    "LUX",
+                    "LVA",
+                    "MAC",
+                    "MAF",
+                    "MAR",
+                    "MCO",
+                    "MDA",
+                    "MDG",
+                    "MDV",
+                    "MEX",
+                    "MHL",
+                    "MKD",
+                    "MLI",
+                    "MLT",
+                    "MMR",
+                    "MNE",
+                    "MNG",
+                    "MNP",
+                    "MOZ",
+                    "MRT",
+                    "MSR",
+                    "MTQ",
+                    "MUS",
+                    "MWI",
+                    "MYS",
+                    "MYT",
+                    "NAM",
+                    "NCL",
+                    "NER",
+                    "NFK",
+                    "NGA",
+                    "NIC",
+                    "NIU",
+                    "NLD",
+                    "NOR",
+                    "NPL",
+                    "NRU",
+                    "NZL",
+                    "OMN",
+                    "PAK",
+                    "PAN",
+                    "PCN",
+                    "PER",
+                    "PHL",
+                    "PLW",
+                    "PNG",
+                    "POL",
+                    "PRI",
+                    "PRK",
+                    "PRT",
+                    "PRY",
+                    "PSE",
+                    "PYF",
+                    "QAT",
+                    "REU",
+                    "ROU",
+                    "RUS",
+                    "RWA",
+                    "SAU",
+                    "SDN",
+                    "SEN",
+                    "SGP",
+                    "SGS",
+                    "SHN",
+                    "SJM",
+                    "SLB",
+                    "SLE",
+                    "SLV",
+                    "SMR",
+                    "SOM",
+                    "SPM",
+                    "SRB",
+                    "SSD",
+                    "STP",
+                    "SUR",
+                    "SVK",
+                    "SVN",
+                    "SWE",
+                    "SWZ",
+                    "SXM",
+                    "SYC",
+                    "SYR",
+                    "TCA",
+                    "TCD",
+                    "TGO",
+                    "THA",
+                    "TJK",
+                    "TKL",
+                    "TKM",
+                    "TLS",
+                    "TON",
+                    "TTO",
+                    "TUN",
+                    "TUR",
+                    "TUV",
+                    "TWN",
+                    "TZA",
+                    "UGA",
+                    "UKR",
+                    "UMI",
+                    "UNK",
+                    "URY",
+                    "USA",
+                    "UZB",
+                    "VAT",
+                    "VCT",
+                    "VEN",
+                    "VGB",
+                    "VIR",
+                    "VNM",
+                    "VUT",
+                    "WLF",
+                    "WSM",
+                    "YEM",
+                    "ZAF",
+                    "ZMB",
+                    "ZWE"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": "https:\/\/help.postmen.com\/hc\/en-us\/articles\/115010667047-Bring-Developer-Guide-API-Credentials",
+        "paper_sizes": [
+            "4x8",
+            "default"
+        ],
+        "highlights": null
+    }
+}

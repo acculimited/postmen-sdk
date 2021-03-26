@@ -1,0 +1,243 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "global-express",
+        "name": "Tai Wan Global Business",
+        "ship_from": "TWN",
+        "ship_to": "TWN",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": true,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": true,
+            "post@manifests": false
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": true,
+        "box_types": {
+            "custom": "Custom"
+        },
+        "service_options": {
+            "pickup": true
+        },
+        "service_types": {
+            "global-express_fd": "Global Express FD"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "global-express_fd",
+                "service_name": "Global Express FD"
+            }
+        ],
+        "courier_box_types": [],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Store code",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "store_code"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Store name",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "store_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "App key",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "app_key"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Iv",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "iv"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "TWN"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 512,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": null,
+        "paper_sizes": [
+            "default"
+        ],
+        "highlights": null
+    }
+}

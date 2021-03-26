@@ -1,0 +1,823 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "purolator",
+        "name": "Purolator",
+        "ship_from": "CAN",
+        "ship_to": "Global",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": true,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": true,
+            "post@manifests": true
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": false,
+        "box_types": {
+            "purolator_express_envelope": "Express Envelope",
+            "purolator_express_pack": "Express Pack",
+            "purolator_customer_packaging": "Customer Packaging",
+            "purolator_express_box": "Express Box",
+            "custom": "Custom"
+        },
+        "service_options": {
+            "insurance": true,
+            "saturday_delivery": true,
+            "signature": true
+        },
+        "service_types": {
+            "purolator_express_9am": "Purolator Express 9AM",
+            "purolator_express_1030am": "Purolator Express 1030AM",
+            "purolator_express_12pm": "Purolator Express 12PM",
+            "purolator_express": "Purolator Express",
+            "purolator_express_evening": "Purolator Express Evening",
+            "purolator_ground": "Purolator Ground",
+            "purolator_ground_9am": "Purolator Ground 9AM",
+            "purolator_ground_1030am": "Purolator Ground 1030AM",
+            "purolator_ground_evening": "Purolator Ground Evening",
+            "purolator_express_us": "Purolator Express US",
+            "purolator_express_us_9am": "Purolator Express US 9AM",
+            "purolator_express_us_1030am": "Purolator Express US 1030AM",
+            "purolator_express_us_1200": "Purolator Express US 1200",
+            "purolator_ground_us": "Purolator Ground US",
+            "purolator_express_international": "Purolator Express International",
+            "purolator_express_international_9am": "Purolator Express International 9AM",
+            "purolator_express_international_1030am": "Purolator Express International 1030AM",
+            "purolator_express_international_1200": "Purolator Express International 1200",
+            "purolator_quick_ship": "Purolator Quick Ship Box"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "purolator_express_9am",
+                "service_name": "Purolator Express 9AM"
+            },
+            {
+                "service_type": "purolator_express_1030am",
+                "service_name": "Purolator Express 1030AM"
+            },
+            {
+                "service_type": "purolator_express_12pm",
+                "service_name": "Purolator Express 12PM"
+            },
+            {
+                "service_type": "purolator_express",
+                "service_name": "Purolator Express"
+            },
+            {
+                "service_type": "purolator_express_evening",
+                "service_name": "Purolator Express Evening"
+            },
+            {
+                "service_type": "purolator_express_9am",
+                "service_name": "Purolator Express 9AM"
+            },
+            {
+                "service_type": "purolator_express_1030am",
+                "service_name": "Purolator Express 1030AM"
+            },
+            {
+                "service_type": "purolator_express_12pm",
+                "service_name": "Purolator Express 12PM"
+            },
+            {
+                "service_type": "purolator_express",
+                "service_name": "Purolator Express"
+            },
+            {
+                "service_type": "purolator_express_evening",
+                "service_name": "Purolator Express Evening"
+            },
+            {
+                "service_type": "purolator_express_9am",
+                "service_name": "Purolator Express 9AM"
+            },
+            {
+                "service_type": "purolator_express_1030am",
+                "service_name": "Purolator Express 1030AM"
+            },
+            {
+                "service_type": "purolator_express_12pm",
+                "service_name": "Purolator Express 12PM"
+            },
+            {
+                "service_type": "purolator_express",
+                "service_name": "Purolator Express"
+            },
+            {
+                "service_type": "purolator_express_evening",
+                "service_name": "Purolator Express Evening"
+            },
+            {
+                "service_type": "purolator_express_9am",
+                "service_name": "Purolator Express 9AM"
+            },
+            {
+                "service_type": "purolator_express_1030am",
+                "service_name": "Purolator Express 1030AM"
+            },
+            {
+                "service_type": "purolator_express_12pm",
+                "service_name": "Purolator Express 12PM"
+            },
+            {
+                "service_type": "purolator_express",
+                "service_name": "Purolator Express"
+            },
+            {
+                "service_type": "purolator_express_evening",
+                "service_name": "Purolator Express Evening"
+            },
+            {
+                "service_type": "purolator_express_9am",
+                "service_name": "Purolator Express 9AM"
+            },
+            {
+                "service_type": "purolator_express_1030am",
+                "service_name": "Purolator Express 1030AM"
+            },
+            {
+                "service_type": "purolator_express_12pm",
+                "service_name": "Purolator Express 12PM"
+            },
+            {
+                "service_type": "purolator_express",
+                "service_name": "Purolator Express"
+            },
+            {
+                "service_type": "purolator_express_evening",
+                "service_name": "Purolator Express Evening"
+            },
+            {
+                "service_type": "purolator_ground",
+                "service_name": "Purolator Ground"
+            },
+            {
+                "service_type": "purolator_ground_9am",
+                "service_name": "Purolator Ground 9AM"
+            },
+            {
+                "service_type": "purolator_ground_1030am",
+                "service_name": "Purolator Ground 1030AM"
+            },
+            {
+                "service_type": "purolator_ground_evening",
+                "service_name": "Purolator Ground Evening"
+            },
+            {
+                "service_type": "purolator_express_us",
+                "service_name": "Purolator Express US"
+            },
+            {
+                "service_type": "purolator_express_us_9am",
+                "service_name": "Purolator Express US 9AM"
+            },
+            {
+                "service_type": "purolator_express_us_1030am",
+                "service_name": "Purolator Express US 1030AM"
+            },
+            {
+                "service_type": "purolator_express_us_1200",
+                "service_name": "Purolator Express US 1200"
+            },
+            {
+                "service_type": "purolator_ground",
+                "service_name": "Purolator Ground"
+            },
+            {
+                "service_type": "purolator_ground_9am",
+                "service_name": "Purolator Ground 9AM"
+            },
+            {
+                "service_type": "purolator_ground_1030am",
+                "service_name": "Purolator Ground 1030AM"
+            },
+            {
+                "service_type": "purolator_ground_evening",
+                "service_name": "Purolator Ground Evening"
+            },
+            {
+                "service_type": "purolator_express_us",
+                "service_name": "Purolator Express US"
+            },
+            {
+                "service_type": "purolator_express_us_9am",
+                "service_name": "Purolator Express US 9AM"
+            },
+            {
+                "service_type": "purolator_express_us_1030am",
+                "service_name": "Purolator Express US 1030AM"
+            },
+            {
+                "service_type": "purolator_express_us_1200",
+                "service_name": "Purolator Express US 1200"
+            },
+            {
+                "service_type": "purolator_express_us",
+                "service_name": "Purolator Express US"
+            },
+            {
+                "service_type": "purolator_express_us_9am",
+                "service_name": "Purolator Express US 9AM"
+            },
+            {
+                "service_type": "purolator_express_us_1030am",
+                "service_name": "Purolator Express US 1030AM"
+            },
+            {
+                "service_type": "purolator_express_us_1200",
+                "service_name": "Purolator Express US 1200"
+            },
+            {
+                "service_type": "purolator_express_us",
+                "service_name": "Purolator Express US"
+            },
+            {
+                "service_type": "purolator_express_us_9am",
+                "service_name": "Purolator Express US 9AM"
+            },
+            {
+                "service_type": "purolator_express_us_1030am",
+                "service_name": "Purolator Express US 1030AM"
+            },
+            {
+                "service_type": "purolator_express_us_1200",
+                "service_name": "Purolator Express US 1200"
+            },
+            {
+                "service_type": "purolator_express_us",
+                "service_name": "Purolator Express US"
+            },
+            {
+                "service_type": "purolator_express_us_9am",
+                "service_name": "Purolator Express US 9AM"
+            },
+            {
+                "service_type": "purolator_express_us_1030am",
+                "service_name": "Purolator Express US 1030AM"
+            },
+            {
+                "service_type": "purolator_express_us_1200",
+                "service_name": "Purolator Express US 1200"
+            },
+            {
+                "service_type": "purolator_ground_us",
+                "service_name": "Purolator Ground US"
+            },
+            {
+                "service_type": "purolator_express_international",
+                "service_name": "Purolator Express International"
+            },
+            {
+                "service_type": "purolator_express_international_9am",
+                "service_name": "Purolator Express International 9AM"
+            },
+            {
+                "service_type": "purolator_express_international_1030am",
+                "service_name": "Purolator Express International 1030AM"
+            },
+            {
+                "service_type": "purolator_express_international_1200",
+                "service_name": "Purolator Express International 1200"
+            },
+            {
+                "service_type": "purolator_ground_us",
+                "service_name": "Purolator Ground US"
+            },
+            {
+                "service_type": "purolator_express_international",
+                "service_name": "Purolator Express International"
+            },
+            {
+                "service_type": "purolator_express_international_9am",
+                "service_name": "Purolator Express International 9AM"
+            },
+            {
+                "service_type": "purolator_express_international_1030am",
+                "service_name": "Purolator Express International 1030AM"
+            },
+            {
+                "service_type": "purolator_express_international_1200",
+                "service_name": "Purolator Express International 1200"
+            },
+            {
+                "service_type": "purolator_express_international",
+                "service_name": "Purolator Express International"
+            },
+            {
+                "service_type": "purolator_express_international_9am",
+                "service_name": "Purolator Express International 9AM"
+            },
+            {
+                "service_type": "purolator_express_international_1030am",
+                "service_name": "Purolator Express International 1030AM"
+            },
+            {
+                "service_type": "purolator_express_international_1200",
+                "service_name": "Purolator Express International 1200"
+            },
+            {
+                "service_type": "purolator_express_international",
+                "service_name": "Purolator Express International"
+            },
+            {
+                "service_type": "purolator_express_international_9am",
+                "service_name": "Purolator Express International 9AM"
+            },
+            {
+                "service_type": "purolator_express_international_1030am",
+                "service_name": "Purolator Express International 1030AM"
+            },
+            {
+                "service_type": "purolator_express_international_1200",
+                "service_name": "Purolator Express International 1200"
+            },
+            {
+                "service_type": "purolator_express_international",
+                "service_name": "Purolator Express International"
+            },
+            {
+                "service_type": "purolator_express_international_9am",
+                "service_name": "Purolator Express International 9AM"
+            },
+            {
+                "service_type": "purolator_express_international_1030am",
+                "service_name": "Purolator Express International 1030AM"
+            },
+            {
+                "service_type": "purolator_express_international_1200",
+                "service_name": "Purolator Express International 1200"
+            },
+            {
+                "service_type": "purolator_quick_ship",
+                "service_name": "Purolator Quick Ship"
+            },
+            {
+                "service_type": "purolator_quick_ship",
+                "service_name": "Purolator Quick Ship"
+            },
+            {
+                "service_type": "purolator_quick_ship",
+                "service_name": "Purolator Quick Ship Envelope"
+            },
+            {
+                "service_type": "purolator_quick_ship",
+                "service_name": "Purolator Quick Ship Pack"
+            },
+            {
+                "service_type": "purolator_quick_ship",
+                "service_name": "Purolator Quick Ship Box"
+            }
+        ],
+        "courier_box_types": [],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Account number",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "account_number"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Key",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "key"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Key password",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "key_password"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "ABW",
+                    "AFG",
+                    "AGO",
+                    "AIA",
+                    "ALA",
+                    "ALB",
+                    "AND",
+                    "ANT",
+                    "ARE",
+                    "ARG",
+                    "ARM",
+                    "ASM",
+                    "ATA",
+                    "ATF",
+                    "ATG",
+                    "AUS",
+                    "AUT",
+                    "AZE",
+                    "BDI",
+                    "BEL",
+                    "BEN",
+                    "BES",
+                    "BFA",
+                    "BGD",
+                    "BGR",
+                    "BHR",
+                    "BHS",
+                    "BIH",
+                    "BLM",
+                    "BLR",
+                    "BLZ",
+                    "BMU",
+                    "BOL",
+                    "BRA",
+                    "BRB",
+                    "BRN",
+                    "BTN",
+                    "BVT",
+                    "BWA",
+                    "CAF",
+                    "CAN",
+                    "CCK",
+                    "CHE",
+                    "CHL",
+                    "CHN",
+                    "CIV",
+                    "CMR",
+                    "COD",
+                    "COG",
+                    "COK",
+                    "COL",
+                    "COM",
+                    "CPV",
+                    "CRI",
+                    "CUB",
+                    "CUW",
+                    "CXR",
+                    "CYM",
+                    "CYP",
+                    "CZE",
+                    "DEU",
+                    "DJI",
+                    "DMA",
+                    "DNK",
+                    "DOM",
+                    "DZA",
+                    "ECU",
+                    "EGY",
+                    "ERI",
+                    "ESH",
+                    "ESP",
+                    "EST",
+                    "ETH",
+                    "FIN",
+                    "FJI",
+                    "FLK",
+                    "FRA",
+                    "FRO",
+                    "FSM",
+                    "GAB",
+                    "GBR",
+                    "GEO",
+                    "GGY",
+                    "GHA",
+                    "GIB",
+                    "GIN",
+                    "GLP",
+                    "GMB",
+                    "GNB",
+                    "GNQ",
+                    "GRC",
+                    "GRD",
+                    "GRL",
+                    "GTM",
+                    "GUF",
+                    "GUM",
+                    "GUY",
+                    "HKG",
+                    "HMD",
+                    "HND",
+                    "HRV",
+                    "HTI",
+                    "HUN",
+                    "IDN",
+                    "IMN",
+                    "IND",
+                    "IOT",
+                    "IRL",
+                    "IRN",
+                    "IRQ",
+                    "ISL",
+                    "ISR",
+                    "ITA",
+                    "JAM",
+                    "JEY",
+                    "JOR",
+                    "JPN",
+                    "KAZ",
+                    "KEN",
+                    "KGZ",
+                    "KHM",
+                    "KIR",
+                    "KNA",
+                    "KOR",
+                    "KWT",
+                    "LAO",
+                    "LBN",
+                    "LBR",
+                    "LBY",
+                    "LCA",
+                    "LIE",
+                    "LKA",
+                    "LSO",
+                    "LTU",
+                    "LUX",
+                    "LVA",
+                    "MAC",
+                    "MAF",
+                    "MAR",
+                    "MCO",
+                    "MDA",
+                    "MDG",
+                    "MDV",
+                    "MEX",
+                    "MHL",
+                    "MKD",
+                    "MLI",
+                    "MLT",
+                    "MMR",
+                    "MNE",
+                    "MNG",
+                    "MNP",
+                    "MOZ",
+                    "MRT",
+                    "MSR",
+                    "MTQ",
+                    "MUS",
+                    "MWI",
+                    "MYS",
+                    "MYT",
+                    "NAM",
+                    "NCL",
+                    "NER",
+                    "NFK",
+                    "NGA",
+                    "NIC",
+                    "NIU",
+                    "NLD",
+                    "NOR",
+                    "NPL",
+                    "NRU",
+                    "NZL",
+                    "OMN",
+                    "PAK",
+                    "PAN",
+                    "PCN",
+                    "PER",
+                    "PHL",
+                    "PLW",
+                    "PNG",
+                    "POL",
+                    "PRI",
+                    "PRK",
+                    "PRT",
+                    "PRY",
+                    "PSE",
+                    "PYF",
+                    "QAT",
+                    "REU",
+                    "ROU",
+                    "RUS",
+                    "RWA",
+                    "SAU",
+                    "SDN",
+                    "SEN",
+                    "SGP",
+                    "SGS",
+                    "SHN",
+                    "SJM",
+                    "SLB",
+                    "SLE",
+                    "SLV",
+                    "SMR",
+                    "SOM",
+                    "SPM",
+                    "SRB",
+                    "SSD",
+                    "STP",
+                    "SUR",
+                    "SVK",
+                    "SVN",
+                    "SWE",
+                    "SWZ",
+                    "SXM",
+                    "SYC",
+                    "SYR",
+                    "TCA",
+                    "TCD",
+                    "TGO",
+                    "THA",
+                    "TJK",
+                    "TKL",
+                    "TKM",
+                    "TLS",
+                    "TON",
+                    "TTO",
+                    "TUN",
+                    "TUR",
+                    "TUV",
+                    "TWN",
+                    "TZA",
+                    "UGA",
+                    "UKR",
+                    "UMI",
+                    "UNK",
+                    "URY",
+                    "USA",
+                    "UZB",
+                    "VAT",
+                    "VCT",
+                    "VEN",
+                    "VGB",
+                    "VIR",
+                    "VNM",
+                    "VUT",
+                    "WLF",
+                    "WSM",
+                    "YEM",
+                    "ZAF",
+                    "ZMB",
+                    "ZWE"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": "https:\/\/help.postmen.com\/hc\/en-us\/articles\/115010594907-Purolator-Developer-Guide-API-Credentials",
+        "paper_sizes": [
+            "4x6",
+            "default"
+        ],
+        "highlights": null
+    }
+}
