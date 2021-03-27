@@ -10,6 +10,7 @@ class FileFactory
         'customs_declaration' => CustomsDeclaration::class,
         'invoice' => Invoice::class,
         'label' => Label::class,
+        'qr_code' => QRCode::class,
     ];
 
     public static function make(string $fileType, ?array $data): FileObject

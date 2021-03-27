@@ -26,6 +26,9 @@ final class Files extends PostmenEntity
     /** @var Files\Invoice */
     private $invoice;
 
+    /** @var Files\QRCode */
+    private $qr_code;
+
     public function getCustomsDeclaration(): ?Files\CustomsDeclaration
     {
         return $this->customs_declaration;
@@ -59,6 +62,17 @@ final class Files extends PostmenEntity
         return $this;
     }
 
+    public function getQRCode(): ?Files\QRCode
+    {
+        return $this->qr_code;
+    }
+
+    public function setQRCode(Files\QRCode $qrCode): Files
+    {
+        $this->qr_code = $qrCode;
+        return $this;
+    }
+
     /**
      * @param array $data
      * @return PostmenEntity|Files
@@ -79,6 +93,8 @@ final class Files extends PostmenEntity
             } elseif ($file instanceof Files\Invoice) {
                 $instance->setInvoice($file);
             } elseif ($file instanceof Files\CustomsDeclaration) {
+                $instance->setCustomsDeclaration($file);
+            } elseif ($file instanceof Files\QRCode) {
                 $instance->setCustomsDeclaration($file);
             }
         }
