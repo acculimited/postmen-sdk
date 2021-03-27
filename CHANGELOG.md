@@ -1,9 +1,10 @@
 # Postmen SDK Change Log
 
-## 2.0.0 (UNRELEASED)
+## 2.0.0 (2021-03-27)
 Utilising JSON Schema Validations
 ### Added
  - [JSON schema validations](./resources/schemas/com.postmen.api) for the postmen.com API
+ - Service Options: `CashOnDelivery`, `Insurance`, `Pickup`
 
 ## 1.2.1 (2021-03-10)
 ### Added
