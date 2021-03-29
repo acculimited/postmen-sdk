@@ -1,0 +1,648 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "star-track",
+        "name": "StarTrack",
+        "ship_from": "AUS",
+        "ship_to": "Global",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": true,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": true,
+            "post@manifests": true
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": true,
+        "box_types": {
+            "custom": "Custom",
+            "star-track_bag": "Bag",
+            "star-track_carton": "Carton",
+            "star-track_pallet": "Pallet",
+            "star-track_satchel": "Satchel",
+            "star-track_envelope": "Envelope",
+            "star-track_item": "Item",
+            "star-track_jiffy_bag": "Jiffy Bag",
+            "star-track_skid": "Skid (up to 500kg)"
+        },
+        "service_options": {
+            "insurance": true,
+            "signature": true,
+            "pickup": true,
+            "undefined": true
+        },
+        "service_types": {
+            "star-track_afternoon_2u2day": "Afternoon 2U2Day",
+            "star-track_express_courier": "Express Courier",
+            "star-track_express_wagon": "Express Wagon",
+            "star-track_express_van": "Express Van",
+            "star-track_express_half_van": "Express Half Van",
+            "star-track_on_demand_tonight": "On Demand Tonight",
+            "star-track_on_demand_saturday": "On Demand Saturday",
+            "star-track_on_demand_now": "On Demand Now",
+            "star-track_standard_wagon": "Standard Wagon",
+            "star-track_standard_van": "Standard Van",
+            "star-track_same_day_2u2day": "Same Day 2U2Day",
+            "star-track_saturday_2u2day": "Saturday 2U2Day",
+            "star-track_standard_half_van": "Standard Half Van",
+            "star-track_standard_courier": "Standard Courier",
+            "star-track_immediate_priority_wagon": "Immediate Priority Wagon",
+            "star-track_immediate_priority_van": "Immediate Priority Van",
+            "star-track_immediate_priority_half_van": "Immediate Priority Half Van",
+            "star-track_immediate_priority_courier": "Immediate Priority Courier",
+            "star-track_twilight_2u2day": "Twilight 2U2Day",
+            "star-track_fixed_price_premium": "1,3 & 5KG Fixed Price Premium",
+            "star-track_premium": "Premium",
+            "star-track_express": "Express",
+            "star-track_cold_chain": "Cold Chain"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "star-track_afternoon_2u2day",
+                "service_name": "Afternoon 2U2Day"
+            },
+            {
+                "service_type": "star-track_express_courier",
+                "service_name": "Express Courier"
+            },
+            {
+                "service_type": "star-track_express_wagon",
+                "service_name": "Express Wagon"
+            },
+            {
+                "service_type": "star-track_express_van",
+                "service_name": "Express Van"
+            },
+            {
+                "service_type": "star-track_express_half_van",
+                "service_name": "Express Half Van"
+            },
+            {
+                "service_type": "star-track_on_demand_tonight",
+                "service_name": "On Demand Tonight"
+            },
+            {
+                "service_type": "star-track_on_demand_saturday",
+                "service_name": "On Demand Saturday"
+            },
+            {
+                "service_type": "star-track_on_demand_now",
+                "service_name": "On Demand Now"
+            },
+            {
+                "service_type": "star-track_standard_wagon",
+                "service_name": "Standard Wagon"
+            },
+            {
+                "service_type": "star-track_standard_van",
+                "service_name": "Standard Van"
+            },
+            {
+                "service_type": "star-track_same_day_2u2day",
+                "service_name": "Same Day 2U2Day"
+            },
+            {
+                "service_type": "star-track_saturday_2u2day",
+                "service_name": "Saturday 2U2Day"
+            },
+            {
+                "service_type": "star-track_standard_half_van",
+                "service_name": "Standard Half Van"
+            },
+            {
+                "service_type": "star-track_standard_courier",
+                "service_name": "Standard Courier"
+            },
+            {
+                "service_type": "star-track_immediate_priority_wagon",
+                "service_name": "Immediate Priority Wagon"
+            },
+            {
+                "service_type": "star-track_immediate_priority_van",
+                "service_name": "Immediate Priority Van"
+            },
+            {
+                "service_type": "star-track_immediate_priority_half_van",
+                "service_name": "Immediate Priority Half Van"
+            },
+            {
+                "service_type": "star-track_immediate_priority_courier",
+                "service_name": "Immediate Priority Courier"
+            },
+            {
+                "service_type": "star-track_twilight_2u2day",
+                "service_name": "Twilight 2U2Day"
+            },
+            {
+                "service_type": "star-track_fixed_price_premium",
+                "service_name": "1,3 & 5KG Fixed Price Premium"
+            },
+            {
+                "service_type": "star-track_premium",
+                "service_name": "Premium"
+            },
+            {
+                "service_type": "star-track_express",
+                "service_name": "Express"
+            }
+        ],
+        "courier_box_types": [
+            {
+                "box_name": "Custom",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Bag",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Carton",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Pallet",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Satchel",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Envelope",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Item",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Jiffy Bag",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Skid (up to 500kg)",
+                "box_size_cm": {},
+                "box_size_in": {}
+            }
+        ],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Account number",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "account_number"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Password",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "password"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Api key",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "api_key"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "ABW",
+                    "AFG",
+                    "AGO",
+                    "AIA",
+                    "ALA",
+                    "ALB",
+                    "AND",
+                    "ANT",
+                    "ARE",
+                    "ARG",
+                    "ARM",
+                    "ASM",
+                    "ATA",
+                    "ATF",
+                    "ATG",
+                    "AUS",
+                    "AUT",
+                    "AZE",
+                    "BDI",
+                    "BEL",
+                    "BEN",
+                    "BES",
+                    "BFA",
+                    "BGD",
+                    "BGR",
+                    "BHR",
+                    "BHS",
+                    "BIH",
+                    "BLM",
+                    "BLR",
+                    "BLZ",
+                    "BMU",
+                    "BOL",
+                    "BRA",
+                    "BRB",
+                    "BRN",
+                    "BTN",
+                    "BVT",
+                    "BWA",
+                    "CAF",
+                    "CAN",
+                    "CCK",
+                    "CHE",
+                    "CHL",
+                    "CHN",
+                    "CIV",
+                    "CMR",
+                    "COD",
+                    "COG",
+                    "COK",
+                    "COL",
+                    "COM",
+                    "CPV",
+                    "CRI",
+                    "CUB",
+                    "CUW",
+                    "CXR",
+                    "CYM",
+                    "CYP",
+                    "CZE",
+                    "DEU",
+                    "DJI",
+                    "DMA",
+                    "DNK",
+                    "DOM",
+                    "DZA",
+                    "ECU",
+                    "EGY",
+                    "ERI",
+                    "ESH",
+                    "ESP",
+                    "EST",
+                    "ETH",
+                    "FIN",
+                    "FJI",
+                    "FLK",
+                    "FRA",
+                    "FRO",
+                    "FSM",
+                    "GAB",
+                    "GBR",
+                    "GEO",
+                    "GGY",
+                    "GHA",
+                    "GIB",
+                    "GIN",
+                    "GLP",
+                    "GMB",
+                    "GNB",
+                    "GNQ",
+                    "GRC",
+                    "GRD",
+                    "GRL",
+                    "GTM",
+                    "GUF",
+                    "GUM",
+                    "GUY",
+                    "HKG",
+                    "HMD",
+                    "HND",
+                    "HRV",
+                    "HTI",
+                    "HUN",
+                    "IDN",
+                    "IMN",
+                    "IND",
+                    "IOT",
+                    "IRL",
+                    "IRN",
+                    "IRQ",
+                    "ISL",
+                    "ISR",
+                    "ITA",
+                    "JAM",
+                    "JEY",
+                    "JOR",
+                    "JPN",
+                    "KAZ",
+                    "KEN",
+                    "KGZ",
+                    "KHM",
+                    "KIR",
+                    "KNA",
+                    "KOR",
+                    "KWT",
+                    "LAO",
+                    "LBN",
+                    "LBR",
+                    "LBY",
+                    "LCA",
+                    "LIE",
+                    "LKA",
+                    "LSO",
+                    "LTU",
+                    "LUX",
+                    "LVA",
+                    "MAC",
+                    "MAF",
+                    "MAR",
+                    "MCO",
+                    "MDA",
+                    "MDG",
+                    "MDV",
+                    "MEX",
+                    "MHL",
+                    "MKD",
+                    "MLI",
+                    "MLT",
+                    "MMR",
+                    "MNE",
+                    "MNG",
+                    "MNP",
+                    "MOZ",
+                    "MRT",
+                    "MSR",
+                    "MTQ",
+                    "MUS",
+                    "MWI",
+                    "MYS",
+                    "MYT",
+                    "NAM",
+                    "NCL",
+                    "NER",
+                    "NFK",
+                    "NGA",
+                    "NIC",
+                    "NIU",
+                    "NLD",
+                    "NOR",
+                    "NPL",
+                    "NRU",
+                    "NZL",
+                    "OMN",
+                    "PAK",
+                    "PAN",
+                    "PCN",
+                    "PER",
+                    "PHL",
+                    "PLW",
+                    "PNG",
+                    "POL",
+                    "PRI",
+                    "PRK",
+                    "PRT",
+                    "PRY",
+                    "PSE",
+                    "PYF",
+                    "QAT",
+                    "REU",
+                    "ROU",
+                    "RUS",
+                    "RWA",
+                    "SAU",
+                    "SDN",
+                    "SEN",
+                    "SGP",
+                    "SGS",
+                    "SHN",
+                    "SJM",
+                    "SLB",
+                    "SLE",
+                    "SLV",
+                    "SMR",
+                    "SOM",
+                    "SPM",
+                    "SRB",
+                    "SSD",
+                    "STP",
+                    "SUR",
+                    "SVK",
+                    "SVN",
+                    "SWE",
+                    "SWZ",
+                    "SXM",
+                    "SYC",
+                    "SYR",
+                    "TCA",
+                    "TCD",
+                    "TGO",
+                    "THA",
+                    "TJK",
+                    "TKL",
+                    "TKM",
+                    "TLS",
+                    "TON",
+                    "TTO",
+                    "TUN",
+                    "TUR",
+                    "TUV",
+                    "TWN",
+                    "TZA",
+                    "UGA",
+                    "UKR",
+                    "UMI",
+                    "UNK",
+                    "URY",
+                    "USA",
+                    "UZB",
+                    "VAT",
+                    "VCT",
+                    "VEN",
+                    "VGB",
+                    "VIR",
+                    "VNM",
+                    "VUT",
+                    "WLF",
+                    "WSM",
+                    "YEM",
+                    "ZAF",
+                    "ZMB",
+                    "ZWE"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": null,
+        "paper_sizes": [
+            "a4",
+            "4x6",
+            "default"
+        ],
+        "highlights": null
+    }
+}

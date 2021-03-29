@@ -1,0 +1,819 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "ups",
+        "name": "UPS",
+        "ship_from": "Global",
+        "ship_to": "Global",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": false,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": true,
+            "post@manifests": false
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": false,
+        "box_types": {
+            "ups_letter": "UPS Letter",
+            "custom": "UPS Customer Supplied Package",
+            "ups_tube": "UPS Tube",
+            "ups_pak": "UPS Pak",
+            "ups_express_box": "UPS Express Box",
+            "ups_25kg_box": "UPS 25 KG Box\u00ae",
+            "ups_10kg_box": "UPS 10 KG Box\u00ae",
+            "ups_small_express_box": "UPS Small Express Box",
+            "ups_medium_express_box": "UPS Medium Express Box",
+            "ups_large_express_box": "UPS Large Express Box",
+            "ups_flats": "UPS Flats",
+            "ups_parcels": "UPS Parcels",
+            "ups_bpm": "UPS Bpm",
+            "ups_first_class": "UPS First Class",
+            "ups_priority": "UPS Priority",
+            "ups_machinables": "UPS Machinables",
+            "ups_irregulars": "UPS Irregulars",
+            "ups_parcel_post": "UPS Parcel Post",
+            "ups_bpm_parcel": "UPS Bpm Parcel",
+            "ups_media_mail": "UPS Media Mail",
+            "ups_bpm_flat": "UPS Bpm Flat",
+            "ups_standard_flat": "UPS Standard Flat"
+        },
+        "service_options": {
+            "insurance": true,
+            "paperless_invoice": true,
+            "saturday_delivery": true,
+            "signature": true,
+            "hold_for_pickup": true,
+            "undefined": true
+        },
+        "service_types": {
+            "ups_next_day_air": "UPS Next Day Air\u00ae",
+            "ups_2nd_day_air": "UPS 2nd Day Air\u00ae",
+            "ups_ground": "UPS\u00ae Ground",
+            "ups_express": "UPS Worldwide Express\u00ae",
+            "ups_expedited": "UPS Worldwide Expedited\u00ae",
+            "ups_standard": "UPS\u00ae Standard",
+            "ups_3_day_select": "UPS 3 Day Select\u00ae",
+            "ups_next_day_air_saver": "UPS Next Day Air Saver\u00ae",
+            "ups_next_day_air_early_am": "UPS Next Day Air\u00ae Early",
+            "ups_express_plus": "UPS Worldwide Express Plus\u00ae",
+            "ups_2nd_day_air_am": "UPS 2nd Day Air A.M.\u00ae",
+            "ups_saver": "UPS Worldwide Saver\u00ae",
+            "ups_express_freight_midday": "UPS Worldwide Express Freight Midday",
+            "ups_express_12": "UPS Express\u00ae 12:00",
+            "ups_first_class_mail": "UPS First Class Mail",
+            "ups_priority_mail": "UPS Priority Mail",
+            "ups_today_standard": "UPS Today Standard\u2120",
+            "ups_today_dedicated_courier": "UPS Today Dedicated Courier\u2120",
+            "ups_today_intercity": "UPS Today Intercity",
+            "ups_today_express": "UPS Today Express",
+            "ups_today_express_saver": "UPS Today Express Saver",
+            "ups_surepost": "UPS SurePost\u00ae",
+            "ups_surepost_bpm": "UPS SurePost\u00ae BPM",
+            "ups_surepost_media": "UPS SurePost\u00ae Media"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "ups_next_day_air"
+            },
+            {
+                "service_type": "ups_2nd_day_air"
+            },
+            {
+                "service_type": "ups_ground"
+            },
+            {
+                "service_type": "ups_express"
+            },
+            {
+                "service_type": "ups_expedited"
+            },
+            {
+                "service_type": "ups_standard"
+            },
+            {
+                "service_type": "ups_3_day_select"
+            },
+            {
+                "service_type": "ups_next_day_air_saver"
+            },
+            {
+                "service_type": "ups_next_day_air_early_am"
+            },
+            {
+                "service_type": "ups_express_plus"
+            },
+            {
+                "service_type": "ups_2nd_day_air_am"
+            },
+            {
+                "service_type": "ups_saver"
+            },
+            {
+                "service_type": "ups_express_freight_midday"
+            },
+            {
+                "service_type": "ups_express_12"
+            },
+            {
+                "service_type": "ups_first_class_mail"
+            },
+            {
+                "service_type": "ups_priority_mail"
+            },
+            {
+                "service_type": "ups_today_standard"
+            },
+            {
+                "service_type": "ups_today_dedicated_courier"
+            },
+            {
+                "service_type": "ups_today_intercity"
+            },
+            {
+                "service_type": "ups_today_express"
+            },
+            {
+                "service_type": "ups_today_express_saver"
+            },
+            {
+                "service_type": "ups_surepost"
+            },
+            {
+                "service_type": "ups_surepost"
+            },
+            {
+                "service_type": "ups_surepost_bpm"
+            },
+            {
+                "service_type": "ups_surepost_media"
+            }
+        ],
+        "courier_box_types": [
+            {
+                "box_name": "UPS Letter",
+                "box_type": "ups_letter",
+                "box_size_cm": {
+                    "width": "38",
+                    "height": "24",
+                    "depth": "2"
+                },
+                "box_size_in": {
+                    "width": "15",
+                    "height": "9.5",
+                    "depth": "1"
+                }
+            },
+            {
+                "box_name": "UPS Customer Supplied Package",
+                "box_type": "custom",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS Tube",
+                "box_type": "ups_tube",
+                "box_size_cm": {
+                    "width": "96",
+                    "height": "19",
+                    "depth": "17"
+                },
+                "box_size_in": {
+                    "width": "38",
+                    "height": "6",
+                    "depth": "6"
+                }
+            },
+            {
+                "box_name": "UPS Pak",
+                "box_type": "ups_pak",
+                "box_size_cm": {
+                    "width": "41",
+                    "height": "33",
+                    "depth": "3"
+                },
+                "box_size_in": {
+                    "width": "17",
+                    "height": "13",
+                    "depth": "1"
+                }
+            },
+            {
+                "box_name": "UPS Express Box",
+                "box_type": "ups_express_box",
+                "box_size_cm": {
+                    "width": "46",
+                    "height": "32",
+                    "depth": "10"
+                },
+                "box_size_in": {
+                    "width": "19",
+                    "height": "13",
+                    "depth": "4"
+                }
+            },
+            {
+                "box_name": "UPS 25 KG Box\u00ae",
+                "box_type": "ups_25kg_box",
+                "box_size_cm": {
+                    "width": "50",
+                    "height": "45",
+                    "depth": "34"
+                },
+                "box_size_in": {
+                    "width": "19",
+                    "height": "17",
+                    "depth": "14"
+                }
+            },
+            {
+                "box_name": "UPS 10 KG Box\u00ae",
+                "box_type": "ups_10kg_box",
+                "box_size_cm": {
+                    "width": "42",
+                    "height": "34",
+                    "depth": "27"
+                },
+                "box_size_in": {
+                    "width": "17",
+                    "height": "13",
+                    "depth": "11"
+                }
+            },
+            {
+                "box_name": "UPS Small Express Box",
+                "box_type": "ups_small_express_box",
+                "box_size_cm": {
+                    "width": "33",
+                    "height": "28",
+                    "depth": "5"
+                },
+                "box_size_in": {
+                    "width": "13",
+                    "height": "11",
+                    "depth": "2"
+                }
+            },
+            {
+                "box_name": "UPS Medium Express Box",
+                "box_type": "ups_medium_express_box",
+                "box_size_cm": {
+                    "width": "40",
+                    "height": "29",
+                    "depth": "8"
+                },
+                "box_size_in": {
+                    "width": "16",
+                    "height": "11",
+                    "depth": "3"
+                }
+            },
+            {
+                "box_name": "UPS Large Express Box",
+                "box_type": "ups_large_express_box",
+                "box_size_cm": {
+                    "width": "46",
+                    "height": "32",
+                    "depth": "8"
+                },
+                "box_size_in": {
+                    "width": "18",
+                    "height": "13",
+                    "depth": "3"
+                }
+            },
+            {
+                "box_name": "UPS Flats",
+                "box_type": "ups_flats",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS Parcels",
+                "box_type": "ups_parcels",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS Bpm",
+                "box_type": "ups_bpm",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS First Class",
+                "box_type": "ups_first_class",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS Priority",
+                "box_type": "ups_priority",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS Machinables",
+                "box_type": "ups_machinables",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS Irregulars",
+                "box_type": "ups_irregulars",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS Parcel Post",
+                "box_type": "ups_parcel_post",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS Bpm Parcel",
+                "box_type": "ups_bpm_parcel",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS Media Mail",
+                "box_type": "ups_media_mail",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS Bpm Flat",
+                "box_type": "ups_bpm_flat",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "UPS Standard Flat",
+                "box_type": "ups_standard_flat",
+                "box_size_cm": {},
+                "box_size_in": {}
+            }
+        ],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Account number",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "account_number"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Access key",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "access_key"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Password",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "password"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "User identifier",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "user_identifier"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 30,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "ABW",
+                    "AFG",
+                    "AGO",
+                    "AIA",
+                    "ALA",
+                    "ALB",
+                    "AND",
+                    "ANT",
+                    "ARE",
+                    "ARG",
+                    "ARM",
+                    "ASM",
+                    "ATA",
+                    "ATF",
+                    "ATG",
+                    "AUS",
+                    "AUT",
+                    "AZE",
+                    "BDI",
+                    "BEL",
+                    "BEN",
+                    "BES",
+                    "BFA",
+                    "BGD",
+                    "BGR",
+                    "BHR",
+                    "BHS",
+                    "BIH",
+                    "BLM",
+                    "BLR",
+                    "BLZ",
+                    "BMU",
+                    "BOL",
+                    "BRA",
+                    "BRB",
+                    "BRN",
+                    "BTN",
+                    "BVT",
+                    "BWA",
+                    "CAF",
+                    "CAN",
+                    "CCK",
+                    "CHE",
+                    "CHL",
+                    "CHN",
+                    "CIV",
+                    "CMR",
+                    "COD",
+                    "COG",
+                    "COK",
+                    "COL",
+                    "COM",
+                    "CPV",
+                    "CRI",
+                    "CUB",
+                    "CUW",
+                    "CXR",
+                    "CYM",
+                    "CYP",
+                    "CZE",
+                    "DEU",
+                    "DJI",
+                    "DMA",
+                    "DNK",
+                    "DOM",
+                    "DZA",
+                    "ECU",
+                    "EGY",
+                    "ERI",
+                    "ESH",
+                    "ESP",
+                    "EST",
+                    "ETH",
+                    "FIN",
+                    "FJI",
+                    "FLK",
+                    "FRA",
+                    "FRO",
+                    "FSM",
+                    "GAB",
+                    "GBR",
+                    "GEO",
+                    "GGY",
+                    "GHA",
+                    "GIB",
+                    "GIN",
+                    "GLP",
+                    "GMB",
+                    "GNB",
+                    "GNQ",
+                    "GRC",
+                    "GRD",
+                    "GRL",
+                    "GTM",
+                    "GUF",
+                    "GUM",
+                    "GUY",
+                    "HKG",
+                    "HMD",
+                    "HND",
+                    "HRV",
+                    "HTI",
+                    "HUN",
+                    "IDN",
+                    "IMN",
+                    "IND",
+                    "IOT",
+                    "IRL",
+                    "IRN",
+                    "IRQ",
+                    "ISL",
+                    "ISR",
+                    "ITA",
+                    "JAM",
+                    "JEY",
+                    "JOR",
+                    "JPN",
+                    "KAZ",
+                    "KEN",
+                    "KGZ",
+                    "KHM",
+                    "KIR",
+                    "KNA",
+                    "KOR",
+                    "KWT",
+                    "LAO",
+                    "LBN",
+                    "LBR",
+                    "LBY",
+                    "LCA",
+                    "LIE",
+                    "LKA",
+                    "LSO",
+                    "LTU",
+                    "LUX",
+                    "LVA",
+                    "MAC",
+                    "MAF",
+                    "MAR",
+                    "MCO",
+                    "MDA",
+                    "MDG",
+                    "MDV",
+                    "MEX",
+                    "MHL",
+                    "MKD",
+                    "MLI",
+                    "MLT",
+                    "MMR",
+                    "MNE",
+                    "MNG",
+                    "MNP",
+                    "MOZ",
+                    "MRT",
+                    "MSR",
+                    "MTQ",
+                    "MUS",
+                    "MWI",
+                    "MYS",
+                    "MYT",
+                    "NAM",
+                    "NCL",
+                    "NER",
+                    "NFK",
+                    "NGA",
+                    "NIC",
+                    "NIU",
+                    "NLD",
+                    "NOR",
+                    "NPL",
+                    "NRU",
+                    "NZL",
+                    "OMN",
+                    "PAK",
+                    "PAN",
+                    "PCN",
+                    "PER",
+                    "PHL",
+                    "PLW",
+                    "PNG",
+                    "POL",
+                    "PRI",
+                    "PRK",
+                    "PRT",
+                    "PRY",
+                    "PSE",
+                    "PYF",
+                    "QAT",
+                    "REU",
+                    "ROU",
+                    "RUS",
+                    "RWA",
+                    "SAU",
+                    "SDN",
+                    "SEN",
+                    "SGP",
+                    "SGS",
+                    "SHN",
+                    "SJM",
+                    "SLB",
+                    "SLE",
+                    "SLV",
+                    "SMR",
+                    "SOM",
+                    "SPM",
+                    "SRB",
+                    "SSD",
+                    "STP",
+                    "SUR",
+                    "SVK",
+                    "SVN",
+                    "SWE",
+                    "SWZ",
+                    "SXM",
+                    "SYC",
+                    "SYR",
+                    "TCA",
+                    "TCD",
+                    "TGO",
+                    "THA",
+                    "TJK",
+                    "TKL",
+                    "TKM",
+                    "TLS",
+                    "TON",
+                    "TTO",
+                    "TUN",
+                    "TUR",
+                    "TUV",
+                    "TWN",
+                    "TZA",
+                    "UGA",
+                    "UKR",
+                    "UMI",
+                    "UNK",
+                    "URY",
+                    "USA",
+                    "UZB",
+                    "VAT",
+                    "VCT",
+                    "VEN",
+                    "VGB",
+                    "VIR",
+                    "VNM",
+                    "VUT",
+                    "WLF",
+                    "WSM",
+                    "YEM",
+                    "ZAF",
+                    "ZMB",
+                    "ZWE"
+                ],
+                "items": null,
+                "required": true,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": "https:\/\/help.postmen.com\/hc\/en-us\/articles\/115010595787-UPS-Developer-Guide-API-Credentials",
+        "paper_sizes": [
+            "4x6",
+            "default"
+        ],
+        "highlights": null
+    }
+}

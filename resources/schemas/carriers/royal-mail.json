@@ -1,0 +1,1104 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "royal-mail",
+        "name": "Royal Mail",
+        "ship_from": "GBR",
+        "ship_to": "Global",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": true,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": false,
+            "post@manifests": true
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": true,
+        "box_types": {
+            "royal-mail_large_letter": "Large Letter",
+            "royal-mail_letter": "Letter",
+            "custom": "Custom",
+            "royal-mail_parcel": "Parcel"
+        },
+        "service_options": {
+            "insurance": true
+        },
+        "service_types": {
+            "royal-mail_crl1": "Royal Mail 24",
+            "royal-mail_crl2": "Royal Mail 48",
+            "royal-mail_de1": "Intl Bus Parcels Zero Sort Hi Vol Priority I",
+            "royal-mail_de3": "Intl Bus Parcels Zero Sort Hi Vol Economy",
+            "royal-mail_de4": "Intl Bus Parcels Zero Srt Lo Vol Priority",
+            "royal-mail_de6": "Intl Bus Parcels Zero Srt Lo Vol Economy",
+            "royal-mail_dg1": "Intl Bus Mail L Ltr Ctry Srt Hi Vol Priority",
+            "royal-mail_dg3": "Intl Bus Mail L Ltr Ctry Srt Hi Vol Economy",
+            "royal-mail_dg4": "Intl Bus Mail L Ltr Ctry Srt Lo Vol Priority",
+            "royal-mail_dg6": "Intl Bus Mail L Ltr Ctry Srt Lo Vol Economy",
+            "royal-mail_fs1": "Royal Mail 24 (Sort8) (Ll) Flat Rate",
+            "royal-mail_fs2": "Royal Mail 48 (Sort8) (Ll) Flat Rate",
+            "royal-mail_ie1": "Intl Bus Parcels Zone Sort Priority",
+            "royal-mail_ie3": "Intl Bus Parcels Zone Sort Economy",
+            "royal-mail_ig1": "Intl Bus Mail Lrg Ltr Zone Sort Pri",
+            "royal-mail_ig3": "Intl Bus Mail Lrg Ltr Zone Sort Economy",
+            "royal-mail_ig4": "Intl Bus Mail Lrg Ltr Zone Srt Pri Mch",
+            "royal-mail_ig6": "Intl Bus Mail L Ltr Zone Srt Economy Mch",
+            "royal-mail_mb1": "Intl Bus Parcels Print Direct Priority",
+            "royal-mail_mb2": "Intl Bus Parcels Print Direct Standard",
+            "royal-mail_mb3": "Intl Bus Parcels Print Direct Economy",
+            "royal-mail_mp0": "Intl Bus Parcels Signed Extra Comp Ctry",
+            "royal-mail_mp1": "Intl Bus Parcels Tracked",
+            "royal-mail_mp4": "Intl Bus Parcels Tracked Extra Comp",
+            "royal-mail_mp5": "Intl Bus Parcels Signed",
+            "royal-mail_mp6": "Intl Bus Parcels Signed Extra Comp",
+            "royal-mail_mp7": "Intl Bus Parcels Tracked Country Priced",
+            "royal-mail_mp8": "Intl Bus Parcels Tracked Extra Comp Ctry",
+            "royal-mail_mp9": "Intl Bus Parcels Signed Country Priced",
+            "royal-mail_mta": "Intl Bus Parcels Tracked & Signed",
+            "royal-mail_mtb": "Intl Bus Parcels Tracked Signed Xtr Comp",
+            "royal-mail_mtc": "Intl Bus Mail Tracked & Signed",
+            "royal-mail_mtd": "Intl Bus Mail Tracked & Signed Xtr Comp",
+            "royal-mail_mte": "Intl Bus Parcels Tracked & Signed Ctry",
+            "royal-mail_mtf": "Intl Bus Parcel Track&Sign Xtr Cmp Ctry",
+            "royal-mail_mtg": "Intl Bus Mail Tracked & Signed Country",
+            "royal-mail_mth": "Intl Bus Mail Track & Sign Xtr Comp Ctry",
+            "royal-mail_mti": "Intl Bus Mail Tracked",
+            "royal-mail_mtj": "Intl Bus Mail Tracked Extra Comp",
+            "royal-mail_mtk": "Intl Bus Mail Tracked Country Priced",
+            "royal-mail_mtl": "Intl Bus Mail Tracked Extra Comp Ctry",
+            "royal-mail_mtm": "Intl Bus Mail Signed",
+            "royal-mail_mtn": "Intl Bus Mail Signed Extra Comp",
+            "royal-mail_mto": "Intl Bus Mail Signed Country Priced",
+            "royal-mail_mtp": "Intl Bus Mail Signed Extra Comp Country",
+            "royal-mail_mtq": "Intl Bus Parcels Zone Sort Plus Priority",
+            "royal-mail_mts": "Intl Bus Parcels Zone Srt Plus Economy",
+            "royal-mail_ola": "Intl Standard On Account",
+            "royal-mail_ols": "Intl Economy On Account",
+            "royal-mail_osa": "International Signed On Account",
+            "royal-mail_osb": "Intl Signed On Account Extra Comp",
+            "royal-mail_ota": "International Tracked On Account",
+            "royal-mail_otb": "Intl Tracked On Account Extra Comp",
+            "royal-mail_otc": "International Tracked & Signed On Acct",
+            "royal-mail_otd": "Intl Tracked & Signed On Acct Extra Comp",
+            "royal-mail_oz1": "Intl Bus Mail Mixed Zone Sort Priority",
+            "royal-mail_oz3": "Intl Bus Mail Mixed Zone Sort Economy",
+            "royal-mail_oz4": "Intl Bus Mail Mixed Zone Sort Pri Mch",
+            "royal-mail_oz6": "Intl Bus Mail Mixed Zone Srt Economy Mch",
+            "royal-mail_pk0": "Royal Mail 48 (Ll) Flat Rate",
+            "royal-mail_pk1": "Royal Mail 24 (Sort8) (P) Flat Rate",
+            "royal-mail_pk2": "Royal Mail 48 (Sort8) (P) Flat Rate",
+            "royal-mail_pk3": "Royal Mail 24 (Sort8) (Ll\\P) Daily Rate",
+            "royal-mail_pk4": "Royal Mail 48 (Sort8) (Ll\\P) Daily Rate",
+            "royal-mail_pk9": "Royal Mail 24 (Ll) Flat Rate",
+            "royal-mail_ppf1": "Royal Mail 24 (P) Flat Rate",
+            "royal-mail_ppf2": "Royal Mail 48 (P) Flat Rate",
+            "royal-mail_ps0": "Intl Bus Parcels Max Sort Economy",
+            "royal-mail_psc": "Intl Bus Parcels Max Sort Standard",
+            "royal-mail_ps9": "Intl Bus Parcels Max Sort Priority",
+            "royal-mail_ps8": "Intl Bus Mail Lrg Ltr Max Sort Economy",
+            "royal-mail_psb": "Intl Bus Mail Lrg Ltr Max Sort Standard",
+            "royal-mail_ps7": "Intl Bus Mail Lrg Ltr Max Sort Priority",
+            "royal-mail_rm0": "Royal Mail 48 (Sort8) (P) Daily Rate",
+            "royal-mail_rm1": "Royal Mail 24 (Ll) Daily Rate",
+            "royal-mail_rm2": "Royal Mail 24 (P) Daily Rate",
+            "royal-mail_rm3": "Royal Mail 48 (Ll) Daily Rate",
+            "royal-mail_rm4": "Royal Mail 48 (P) Daily Rate",
+            "royal-mail_rm5": "Royal Mail 24 (P) Flat Rate",
+            "royal-mail_rm6": "Royal Mail 48 (P) Flat Rate",
+            "royal-mail_rm7": "Royal Mail 24 (Sort8) (Ll) Daily Rate",
+            "royal-mail_rm8": "Royal Mail 24 (Sort8) (P) Daily Rate",
+            "royal-mail_rm9": "Royal Mail 48 (Sort8) (Ll) Daily Rate",
+            "royal-mail_sd1": "Sd Guaranteed By 1pm",
+            "royal-mail_sd2": "Sd Guaranteed By 1pm (\u00a31000)",
+            "royal-mail_sd3": "Sd Guaranteed By 1pm (\u00a32500)",
+            "royal-mail_sd4": "Sd Guaranteed By 9am",
+            "royal-mail_sd5": "Sd Guaranteed By 9am (\u00a31000)",
+            "royal-mail_sd6": "Sd Guaranteed By 9am (\u00a32500)",
+            "royal-mail_tpn": "Royal Mail Tracked 24",
+            "royal-mail_tps": "Royal Mail Tracked 48",
+            "royal-mail_trn": "Royal Mail Tracked 24 (Lbt)",
+            "royal-mail_trs": "Royal Mail Tracked 48 (Lbt)",
+            "royal-mail_tsn": "Royal Mail Tracked Returns 24",
+            "royal-mail_tss": "Royal Mail Tracked Returns 48",
+            "royal-mail_we1": "Intl Bus Parcels Zero Sort Priority",
+            "royal-mail_we3": "Intl Bus Parcels Zero Sort Economy",
+            "royal-mail_wg1": "Intl Bus Mail Lrg Ltr Zero Srt Priority",
+            "royal-mail_wg3": "Intl Bus Mail Lrg Ltr Zero Sort Economy",
+            "royal-mail_wg4": "Intl Bus Mail Lrg Ltr Zero Srt Pri Mch",
+            "royal-mail_wg6": "Intl Bus Mail L Ltr Zero Srt Economy Mch",
+            "royal-mail_ww1": "Intl Bus Mail Mixed Zero Sort Priority",
+            "royal-mail_ww3": "Intl Bus Mail Mixed Zero Sort Economy",
+            "royal-mail_ww4": "Intl Bus Mail Mixed Zero Sort Pri Mch",
+            "royal-mail_ww6": "Intl Bus Mail Mixd Zero Srt Economy Mch",
+            "royal-mail_zc1": "Intl Bus Mail Mixed Zero Sort Premium"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "royal-mail_crl1",
+                "service_name": "Royal Mail 24"
+            },
+            {
+                "service_type": "royal-mail_crl2",
+                "service_name": "Royal Mail 48"
+            },
+            {
+                "service_type": "royal-mail_de1",
+                "service_name": "Intl Bus Parcels Zero Sort Hi Vol Priority I"
+            },
+            {
+                "service_type": "royal-mail_de3",
+                "service_name": "Intl Bus Parcels Zero Sort Hi Vol Economy"
+            },
+            {
+                "service_type": "royal-mail_de4",
+                "service_name": "Intl Bus Parcels Zero Srt Lo Vol Priority"
+            },
+            {
+                "service_type": "royal-mail_de6",
+                "service_name": "Intl Bus Parcels Zero Srt Lo Vol Economy"
+            },
+            {
+                "service_type": "royal-mail_dg1",
+                "service_name": "Intl Bus Mail L Ltr Ctry Srt Hi Vol Priority"
+            },
+            {
+                "service_type": "royal-mail_dg3",
+                "service_name": "Intl Bus Mail L Ltr Ctry Srt Hi Vol Economy"
+            },
+            {
+                "service_type": "royal-mail_dg4",
+                "service_name": "Intl Bus Mail L Ltr Ctry Srt Lo Vol Priority"
+            },
+            {
+                "service_type": "royal-mail_dg6",
+                "service_name": "Intl Bus Mail L Ltr Ctry Srt Lo Vol Economy"
+            },
+            {
+                "service_type": "royal-mail_fs1",
+                "service_name": "Royal Mail 24 (Sort8) (Ll) Flat Rate"
+            },
+            {
+                "service_type": "royal-mail_fs2",
+                "service_name": "Royal Mail 48 (Sort8) (Ll) Flat Rate"
+            },
+            {
+                "service_type": "royal-mail_ie1",
+                "service_name": "Intl Bus Parcels Zone Sort Priority"
+            },
+            {
+                "service_type": "royal-mail_ie3",
+                "service_name": "Intl Bus Parcels Zone Sort Economy"
+            },
+            {
+                "service_type": "royal-mail_ig1",
+                "service_name": "Intl Bus Mail Lrg Ltr Zone Sort Pri"
+            },
+            {
+                "service_type": "royal-mail_ig3",
+                "service_name": "Intl Bus Mail Lrg Ltr Zone Sort Economy"
+            },
+            {
+                "service_type": "royal-mail_ig4",
+                "service_name": "Intl Bus Mail Lrg Ltr Zone Srt Pri Mch"
+            },
+            {
+                "service_type": "royal-mail_ig6",
+                "service_name": "Intl Bus Mail L Ltr Zone Srt Economy Mch"
+            },
+            {
+                "service_type": "royal-mail_mb1",
+                "service_name": "Intl Bus Parcels Print Direct Priority"
+            },
+            {
+                "service_type": "royal-mail_mb2",
+                "service_name": "Intl Bus Parcels Print Direct Standard"
+            },
+            {
+                "service_type": "royal-mail_mb3",
+                "service_name": "Intl Bus Parcels Print Direct Economy"
+            },
+            {
+                "service_type": "royal-mail_mp0",
+                "service_name": "Intl Bus Parcels Signed Extra Comp Ctry"
+            },
+            {
+                "service_type": "royal-mail_mp1",
+                "service_name": "Intl Bus Parcels Tracked"
+            },
+            {
+                "service_type": "royal-mail_mp4",
+                "service_name": "Intl Bus Parcels Tracked Extra Comp"
+            },
+            {
+                "service_type": "royal-mail_mp5",
+                "service_name": "Intl Bus Parcels Signed"
+            },
+            {
+                "service_type": "royal-mail_mp6",
+                "service_name": "Intl Bus Parcels Signed Extra Comp"
+            },
+            {
+                "service_type": "royal-mail_mp7",
+                "service_name": "Intl Bus Parcels Tracked Country Priced"
+            },
+            {
+                "service_type": "royal-mail_mp8",
+                "service_name": "Intl Bus Parcels Tracked Extra Comp Ctry"
+            },
+            {
+                "service_type": "royal-mail_mp9",
+                "service_name": "Intl Bus Parcels Signed Country Priced"
+            },
+            {
+                "service_type": "royal-mail_mta",
+                "service_name": "Intl Bus Parcels Tracked & Signed"
+            },
+            {
+                "service_type": "royal-mail_mtb",
+                "service_name": "Intl Bus Parcels Tracked Signed Xtr Comp"
+            },
+            {
+                "service_type": "royal-mail_mtc",
+                "service_name": "Intl Bus Mail Tracked & Signed"
+            },
+            {
+                "service_type": "royal-mail_mtd",
+                "service_name": "Intl Bus Mail Tracked & Signed Xtr Comp"
+            },
+            {
+                "service_type": "royal-mail_mte",
+                "service_name": "Intl Bus Parcels Tracked & Signed Ctry"
+            },
+            {
+                "service_type": "royal-mail_mtf",
+                "service_name": "Intl Bus Parcel Track&Sign Xtr Cmp Ctry"
+            },
+            {
+                "service_type": "royal-mail_mtg",
+                "service_name": "Intl Bus Mail Tracked & Signed Country"
+            },
+            {
+                "service_type": "royal-mail_mth",
+                "service_name": "Intl Bus Mail Track & Sign Xtr Comp Ctry"
+            },
+            {
+                "service_type": "royal-mail_mti",
+                "service_name": "Intl Bus Mail Tracked"
+            },
+            {
+                "service_type": "royal-mail_mtj",
+                "service_name": "Intl Bus Mail Tracked Extra Comp"
+            },
+            {
+                "service_type": "royal-mail_mtk",
+                "service_name": "Intl Bus Mail Tracked Country Priced"
+            },
+            {
+                "service_type": "royal-mail_mtl",
+                "service_name": "Intl Bus Mail Tracked Extra Comp Ctry"
+            },
+            {
+                "service_type": "royal-mail_mtm",
+                "service_name": "Intl Bus Mail Signed"
+            },
+            {
+                "service_type": "royal-mail_mtn",
+                "service_name": "Intl Bus Mail Signed Extra Comp"
+            },
+            {
+                "service_type": "royal-mail_mto",
+                "service_name": "Intl Bus Mail Signed Country Priced"
+            },
+            {
+                "service_type": "royal-mail_mtp",
+                "service_name": "Intl Bus Mail Signed Extra Comp Country"
+            },
+            {
+                "service_type": "royal-mail_mtq",
+                "service_name": "Intl Bus Parcels Zone Sort Plus Priority"
+            },
+            {
+                "service_type": "royal-mail_mts",
+                "service_name": "Intl Bus Parcels Zone Srt Plus Economy"
+            },
+            {
+                "service_type": "royal-mail_ola",
+                "service_name": "Intl Standard On Account"
+            },
+            {
+                "service_type": "royal-mail_ols",
+                "service_name": "Intl Economy On Account"
+            },
+            {
+                "service_type": "royal-mail_osa",
+                "service_name": "International Signed On Account"
+            },
+            {
+                "service_type": "royal-mail_osb",
+                "service_name": "Intl Signed On Account Extra Comp"
+            },
+            {
+                "service_type": "royal-mail_ota",
+                "service_name": "International Tracked On Account"
+            },
+            {
+                "service_type": "royal-mail_otb",
+                "service_name": "Intl Tracked On Account Extra Comp"
+            },
+            {
+                "service_type": "royal-mail_otc",
+                "service_name": "International Tracked & Signed On Acct"
+            },
+            {
+                "service_type": "royal-mail_otd",
+                "service_name": "Intl Tracked & Signed On Acct Extra Comp"
+            },
+            {
+                "service_type": "royal-mail_oz1",
+                "service_name": "Intl Bus Mail Mixed Zone Sort Priority"
+            },
+            {
+                "service_type": "royal-mail_oz3",
+                "service_name": "Intl Bus Mail Mixed Zone Sort Economy"
+            },
+            {
+                "service_type": "royal-mail_oz4",
+                "service_name": "Intl Bus Mail Mixed Zone Sort Pri Mch"
+            },
+            {
+                "service_type": "royal-mail_oz6",
+                "service_name": "Intl Bus Mail Mixed Zone Srt Economy Mch"
+            },
+            {
+                "service_type": "royal-mail_pk0",
+                "service_name": "Royal Mail 48 (Ll) Flat Rate"
+            },
+            {
+                "service_type": "royal-mail_pk1",
+                "service_name": "Royal Mail 24 (Sort8) (P) Flat Rate"
+            },
+            {
+                "service_type": "royal-mail_pk2",
+                "service_name": "Royal Mail 48 (Sort8) (P) Flat Rate"
+            },
+            {
+                "service_type": "royal-mail_pk3",
+                "service_name": "Royal Mail 24 (Sort8) (Ll\\P) Daily Rate"
+            },
+            {
+                "service_type": "royal-mail_pk4",
+                "service_name": "Royal Mail 48 (Sort8) (Ll\\P) Daily Rate"
+            },
+            {
+                "service_type": "royal-mail_pk9",
+                "service_name": "Royal Mail 24 (Ll) Flat Rate"
+            },
+            {
+                "service_type": "royal-mail_ppf1",
+                "service_name": "Royal Mail 24 (P) Flat Rate"
+            },
+            {
+                "service_type": "royal-mail_ppf2",
+                "service_name": "Royal Mail 48 (P) Flat Rate"
+            },
+            {
+                "service_type": "royal-mail_ps0",
+                "service_name": "Intl Bus Parcels Max Sort Economy"
+            },
+            {
+                "service_type": "royal-mail_psc",
+                "service_name": "Intl Bus Parcels Max Sort Standard"
+            },
+            {
+                "service_type": "royal-mail_ps9",
+                "service_name": "Intl Bus Parcels Max Sort Priority"
+            },
+            {
+                "service_type": "royal-mail_ps8",
+                "service_name": "Intl Bus Mail Lrg Ltr Max Sort Economy"
+            },
+            {
+                "service_type": "royal-mail_psb",
+                "service_name": "Intl Bus Mail Lrg Ltr Max Sort Standard"
+            },
+            {
+                "service_type": "royal-mail_ps7",
+                "service_name": "Intl Bus Mail Lrg Ltr Max Sort Priority"
+            },
+            {
+                "service_type": "royal-mail_rm0",
+                "service_name": "Royal Mail 48 (Sort8) (P) Daily Rate"
+            },
+            {
+                "service_type": "royal-mail_rm1",
+                "service_name": "Royal Mail 24 (Ll) Daily Rate"
+            },
+            {
+                "service_type": "royal-mail_rm2",
+                "service_name": "Royal Mail 24 (P) Daily Rate"
+            },
+            {
+                "service_type": "royal-mail_rm3",
+                "service_name": "Royal Mail 48 (Ll) Daily Rate"
+            },
+            {
+                "service_type": "royal-mail_rm4",
+                "service_name": "Royal Mail 48 (P) Daily Rate"
+            },
+            {
+                "service_type": "royal-mail_rm5",
+                "service_name": "Royal Mail 24 (P) Flat Rate"
+            },
+            {
+                "service_type": "royal-mail_rm6",
+                "service_name": "Royal Mail 48 (P) Flat Rate"
+            },
+            {
+                "service_type": "royal-mail_rm7",
+                "service_name": "Royal Mail 24 (Sort8) (Ll) Daily Rate"
+            },
+            {
+                "service_type": "royal-mail_rm8",
+                "service_name": "Royal Mail 24 (Sort8) (P) Daily Rate"
+            },
+            {
+                "service_type": "royal-mail_rm9",
+                "service_name": "Royal Mail 48 (Sort8) (Ll) Daily Rate"
+            },
+            {
+                "service_type": "royal-mail_sd1",
+                "service_name": "Sd Guaranteed By 1pm"
+            },
+            {
+                "service_type": "royal-mail_sd2",
+                "service_name": "Sd Guaranteed By 1pm (\u00a31000)"
+            },
+            {
+                "service_type": "royal-mail_sd3",
+                "service_name": "Sd Guaranteed By 1pm (\u00a32500)"
+            },
+            {
+                "service_type": "royal-mail_sd4",
+                "service_name": "Sd Guaranteed By 9am"
+            },
+            {
+                "service_type": "royal-mail_sd5",
+                "service_name": "Sd Guaranteed By 9am (\u00a31000)"
+            },
+            {
+                "service_type": "royal-mail_sd6",
+                "service_name": "Sd Guaranteed By 9am (\u00a32500)"
+            },
+            {
+                "service_type": "(drop)",
+                "service_name": "1st Class Account Mail"
+            },
+            {
+                "service_type": "(drop)",
+                "service_name": "2nd Class Account Mail"
+            },
+            {
+                "service_type": "(drop)",
+                "service_name": "Royal Mail Tracked 48 (Hv)"
+            },
+            {
+                "service_type": "(drop)",
+                "service_name": "Royal Mail Tracked 24 (Hv)"
+            },
+            {
+                "service_type": "royal-mail_tpn",
+                "service_name": "Royal Mail Tracked 24"
+            },
+            {
+                "service_type": "royal-mail_tps",
+                "service_name": "Royal Mail Tracked 48"
+            },
+            {
+                "service_type": "(drop)",
+                "service_name": "Royal Mail Tracked 48 (Lbt) (Hv)"
+            },
+            {
+                "service_type": "(drop)",
+                "service_name": "Royal Mail Tracked 24 (Lbt) (Hv)"
+            },
+            {
+                "service_type": "royal-mail_trn",
+                "service_name": "Royal Mail Tracked 24 (Lbt)"
+            },
+            {
+                "service_type": "royal-mail_trs",
+                "service_name": "Royal Mail Tracked 48 (Lbt)"
+            },
+            {
+                "service_type": "royal-mail_tsn",
+                "service_name": "Royal Mail Tracked Returns 24"
+            },
+            {
+                "service_type": "royal-mail_tss",
+                "service_name": "Royal Mail Tracked Returns 48"
+            },
+            {
+                "service_type": "royal-mail_we1",
+                "service_name": "Intl Bus Parcels Zero Sort Priority"
+            },
+            {
+                "service_type": "royal-mail_we3",
+                "service_name": "Intl Bus Parcels Zero Sort Economy"
+            },
+            {
+                "service_type": "royal-mail_wg1",
+                "service_name": "Intl Bus Mail Lrg Ltr Zero Srt Priority"
+            },
+            {
+                "service_type": "royal-mail_wg3",
+                "service_name": "Intl Bus Mail Lrg Ltr Zero Sort Economy"
+            },
+            {
+                "service_type": "royal-mail_wg4",
+                "service_name": "Intl Bus Mail Lrg Ltr Zero Srt Pri Mch"
+            },
+            {
+                "service_type": "royal-mail_wg6",
+                "service_name": "Intl Bus Mail L Ltr Zero Srt Economy Mch"
+            },
+            {
+                "service_type": "royal-mail_ww1",
+                "service_name": "Intl Bus Mail Mixed Zero Sort Priority"
+            },
+            {
+                "service_type": "royal-mail_ww3",
+                "service_name": "Intl Bus Mail Mixed Zero Sort Economy"
+            },
+            {
+                "service_type": "royal-mail_ww4",
+                "service_name": "Intl Bus Mail Mixed Zero Sort Pri Mch"
+            },
+            {
+                "service_type": "royal-mail_ww6",
+                "service_name": "Intl Bus Mail Mixd Zero Srt Economy Mch"
+            },
+            {
+                "service_type": "royal-mail_zc1",
+                "service_name": "Intl Bus Mail Mixed Zero Sort Premium"
+            }
+        ],
+        "courier_box_types": [
+            {
+                "box_name": "Large Letter",
+                "box_type": "royal-mail_large_letter",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Letter",
+                "box_type": "royal-mail_letter",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Custom",
+                "box_type": "custom",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Parcel",
+                "box_type": "royal-mail_parcel",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Parcel",
+                "box_type": "royal-mail_parcel",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Large Letter",
+                "box_type": "royal-mail_large_letter",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Custom",
+                "box_type": "custom",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Letter",
+                "box_type": "royal-mail_letter",
+                "box_size_cm": {},
+                "box_size_in": {}
+            }
+        ],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Username",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "username"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Password",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "password"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Cert p12 file",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "cert_p12_file"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Cert password",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "cert_password"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Account number",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "account_number"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "ABW",
+                    "AFG",
+                    "AGO",
+                    "AIA",
+                    "ALA",
+                    "ALB",
+                    "AND",
+                    "ANT",
+                    "ARE",
+                    "ARG",
+                    "ARM",
+                    "ASM",
+                    "ATA",
+                    "ATF",
+                    "ATG",
+                    "AUS",
+                    "AUT",
+                    "AZE",
+                    "BDI",
+                    "BEL",
+                    "BEN",
+                    "BES",
+                    "BFA",
+                    "BGD",
+                    "BGR",
+                    "BHR",
+                    "BHS",
+                    "BIH",
+                    "BLM",
+                    "BLR",
+                    "BLZ",
+                    "BMU",
+                    "BOL",
+                    "BRA",
+                    "BRB",
+                    "BRN",
+                    "BTN",
+                    "BVT",
+                    "BWA",
+                    "CAF",
+                    "CAN",
+                    "CCK",
+                    "CHE",
+                    "CHL",
+                    "CHN",
+                    "CIV",
+                    "CMR",
+                    "COD",
+                    "COG",
+                    "COK",
+                    "COL",
+                    "COM",
+                    "CPV",
+                    "CRI",
+                    "CUB",
+                    "CUW",
+                    "CXR",
+                    "CYM",
+                    "CYP",
+                    "CZE",
+                    "DEU",
+                    "DJI",
+                    "DMA",
+                    "DNK",
+                    "DOM",
+                    "DZA",
+                    "ECU",
+                    "EGY",
+                    "ERI",
+                    "ESH",
+                    "ESP",
+                    "EST",
+                    "ETH",
+                    "FIN",
+                    "FJI",
+                    "FLK",
+                    "FRA",
+                    "FRO",
+                    "FSM",
+                    "GAB",
+                    "GBR",
+                    "GEO",
+                    "GGY",
+                    "GHA",
+                    "GIB",
+                    "GIN",
+                    "GLP",
+                    "GMB",
+                    "GNB",
+                    "GNQ",
+                    "GRC",
+                    "GRD",
+                    "GRL",
+                    "GTM",
+                    "GUF",
+                    "GUM",
+                    "GUY",
+                    "HKG",
+                    "HMD",
+                    "HND",
+                    "HRV",
+                    "HTI",
+                    "HUN",
+                    "IDN",
+                    "IMN",
+                    "IND",
+                    "IOT",
+                    "IRL",
+                    "IRN",
+                    "IRQ",
+                    "ISL",
+                    "ISR",
+                    "ITA",
+                    "JAM",
+                    "JEY",
+                    "JOR",
+                    "JPN",
+                    "KAZ",
+                    "KEN",
+                    "KGZ",
+                    "KHM",
+                    "KIR",
+                    "KNA",
+                    "KOR",
+                    "KWT",
+                    "LAO",
+                    "LBN",
+                    "LBR",
+                    "LBY",
+                    "LCA",
+                    "LIE",
+                    "LKA",
+                    "LSO",
+                    "LTU",
+                    "LUX",
+                    "LVA",
+                    "MAC",
+                    "MAF",
+                    "MAR",
+                    "MCO",
+                    "MDA",
+                    "MDG",
+                    "MDV",
+                    "MEX",
+                    "MHL",
+                    "MKD",
+                    "MLI",
+                    "MLT",
+                    "MMR",
+                    "MNE",
+                    "MNG",
+                    "MNP",
+                    "MOZ",
+                    "MRT",
+                    "MSR",
+                    "MTQ",
+                    "MUS",
+                    "MWI",
+                    "MYS",
+                    "MYT",
+                    "NAM",
+                    "NCL",
+                    "NER",
+                    "NFK",
+                    "NGA",
+                    "NIC",
+                    "NIU",
+                    "NLD",
+                    "NOR",
+                    "NPL",
+                    "NRU",
+                    "NZL",
+                    "OMN",
+                    "PAK",
+                    "PAN",
+                    "PCN",
+                    "PER",
+                    "PHL",
+                    "PLW",
+                    "PNG",
+                    "POL",
+                    "PRI",
+                    "PRK",
+                    "PRT",
+                    "PRY",
+                    "PSE",
+                    "PYF",
+                    "QAT",
+                    "REU",
+                    "ROU",
+                    "RUS",
+                    "RWA",
+                    "SAU",
+                    "SDN",
+                    "SEN",
+                    "SGP",
+                    "SGS",
+                    "SHN",
+                    "SJM",
+                    "SLB",
+                    "SLE",
+                    "SLV",
+                    "SMR",
+                    "SOM",
+                    "SPM",
+                    "SRB",
+                    "SSD",
+                    "STP",
+                    "SUR",
+                    "SVK",
+                    "SVN",
+                    "SWE",
+                    "SWZ",
+                    "SXM",
+                    "SYC",
+                    "SYR",
+                    "TCA",
+                    "TCD",
+                    "TGO",
+                    "THA",
+                    "TJK",
+                    "TKL",
+                    "TKM",
+                    "TLS",
+                    "TON",
+                    "TTO",
+                    "TUN",
+                    "TUR",
+                    "TUV",
+                    "TWN",
+                    "TZA",
+                    "UGA",
+                    "UKR",
+                    "UMI",
+                    "UNK",
+                    "URY",
+                    "USA",
+                    "UZB",
+                    "VAT",
+                    "VCT",
+                    "VEN",
+                    "VGB",
+                    "VIR",
+                    "VNM",
+                    "VUT",
+                    "WLF",
+                    "WSM",
+                    "YEM",
+                    "ZAF",
+                    "ZMB",
+                    "ZWE"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": "https:\/\/help.postmen.com\/hc\/en-us\/articles\/115010596347-Royal-Mail-Developer-Guide-API-Credentials",
+        "paper_sizes": [
+            "4x8",
+            "default"
+        ],
+        "highlights": null
+    }
+}

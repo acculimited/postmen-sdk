@@ -1,0 +1,609 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "ups-mi",
+        "name": "UPS Mail Innovation",
+        "ship_from": "Global",
+        "ship_to": "Global",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": false,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": false,
+            "post@manifests": false
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": false,
+        "box_types": {
+            "ups-mi_letter": "UPS MI Letter",
+            "custom": "UPS MI Customer Supplied Package",
+            "ups-mi_tube": "UPS MI Tube",
+            "ups-mi_pak": "UPS MI Pak",
+            "ups-mi_express_box": "UPS MI Express Box",
+            "ups-mi_25kg_box": "UPS MI 25kg Box",
+            "ups-mi_10kg_box": "UPS MI 10kg Box",
+            "ups-mi_small_express_box": "UPS MI Small Express Box",
+            "ups-mi_medium_express_box": "UPS MI Medium Express Box",
+            "ups-mi_large_express_box": "UPS MI Large Express Box",
+            "ups-mi_flats": "UPS MI Flats",
+            "ups-mi_parcels": "UPS MI Parcels",
+            "ups-mi_bpm": "UPS MI Bpm",
+            "ups-mi_first_class": "UPS MI First Class",
+            "ups-mi_priority": "UPS MI Priority",
+            "ups-mi_machinables": "UPS MI Machinables",
+            "ups-mi_irregulars": "UPS MI Irregulars",
+            "ups-mi_parcel_post": "UPS MI Parcel Post",
+            "ups-mi_bpm_parcel": "UPS MI Bpm Parcel",
+            "ups-mi_media_mail": "UPS MI Media Mail",
+            "ups-mi_bpm_flat": "UPS MI Bpm Flat",
+            "ups-mi_standard_flat": "UPS MI Standard Flat"
+        },
+        "service_options": {
+            "insurance": true,
+            "saturday_delivery": true
+        },
+        "service_types": {
+            "ups-mi_expedited": "UPS Expedited Mail Innovations",
+            "ups-mi_priority": "UPS Priority Mail Innovations",
+            "ups-mi_economy": "UPS Economy Mail Innovations"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "ups-mi_expedited"
+            },
+            {
+                "service_type": "ups-mi_priority"
+            },
+            {
+                "service_type": "ups-mi_economy"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            },
+            {
+                "service_type": "(drop)"
+            }
+        ],
+        "courier_box_types": [],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Account number",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "account_number"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Access key",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "access_key"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Password",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "password"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "User identifier",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "user_identifier"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Cost center",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "cost_center"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Usps endorsement",
+                "enum": [
+                    "return_service_requested",
+                    "forwarding_service_requested",
+                    "address_service_requested",
+                    "change_service_requested",
+                    "no_service_selected"
+                ],
+                "items": null,
+                "required": true,
+                "name": "usps_endorsement"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "ABW",
+                    "AFG",
+                    "AGO",
+                    "AIA",
+                    "ALA",
+                    "ALB",
+                    "AND",
+                    "ANT",
+                    "ARE",
+                    "ARG",
+                    "ARM",
+                    "ASM",
+                    "ATA",
+                    "ATF",
+                    "ATG",
+                    "AUS",
+                    "AUT",
+                    "AZE",
+                    "BDI",
+                    "BEL",
+                    "BEN",
+                    "BES",
+                    "BFA",
+                    "BGD",
+                    "BGR",
+                    "BHR",
+                    "BHS",
+                    "BIH",
+                    "BLM",
+                    "BLR",
+                    "BLZ",
+                    "BMU",
+                    "BOL",
+                    "BRA",
+                    "BRB",
+                    "BRN",
+                    "BTN",
+                    "BVT",
+                    "BWA",
+                    "CAF",
+                    "CAN",
+                    "CCK",
+                    "CHE",
+                    "CHL",
+                    "CHN",
+                    "CIV",
+                    "CMR",
+                    "COD",
+                    "COG",
+                    "COK",
+                    "COL",
+                    "COM",
+                    "CPV",
+                    "CRI",
+                    "CUB",
+                    "CUW",
+                    "CXR",
+                    "CYM",
+                    "CYP",
+                    "CZE",
+                    "DEU",
+                    "DJI",
+                    "DMA",
+                    "DNK",
+                    "DOM",
+                    "DZA",
+                    "ECU",
+                    "EGY",
+                    "ERI",
+                    "ESH",
+                    "ESP",
+                    "EST",
+                    "ETH",
+                    "FIN",
+                    "FJI",
+                    "FLK",
+                    "FRA",
+                    "FRO",
+                    "FSM",
+                    "GAB",
+                    "GBR",
+                    "GEO",
+                    "GGY",
+                    "GHA",
+                    "GIB",
+                    "GIN",
+                    "GLP",
+                    "GMB",
+                    "GNB",
+                    "GNQ",
+                    "GRC",
+                    "GRD",
+                    "GRL",
+                    "GTM",
+                    "GUF",
+                    "GUM",
+                    "GUY",
+                    "HKG",
+                    "HMD",
+                    "HND",
+                    "HRV",
+                    "HTI",
+                    "HUN",
+                    "IDN",
+                    "IMN",
+                    "IND",
+                    "IOT",
+                    "IRL",
+                    "IRN",
+                    "IRQ",
+                    "ISL",
+                    "ISR",
+                    "ITA",
+                    "JAM",
+                    "JEY",
+                    "JOR",
+                    "JPN",
+                    "KAZ",
+                    "KEN",
+                    "KGZ",
+                    "KHM",
+                    "KIR",
+                    "KNA",
+                    "KOR",
+                    "KWT",
+                    "LAO",
+                    "LBN",
+                    "LBR",
+                    "LBY",
+                    "LCA",
+                    "LIE",
+                    "LKA",
+                    "LSO",
+                    "LTU",
+                    "LUX",
+                    "LVA",
+                    "MAC",
+                    "MAF",
+                    "MAR",
+                    "MCO",
+                    "MDA",
+                    "MDG",
+                    "MDV",
+                    "MEX",
+                    "MHL",
+                    "MKD",
+                    "MLI",
+                    "MLT",
+                    "MMR",
+                    "MNE",
+                    "MNG",
+                    "MNP",
+                    "MOZ",
+                    "MRT",
+                    "MSR",
+                    "MTQ",
+                    "MUS",
+                    "MWI",
+                    "MYS",
+                    "MYT",
+                    "NAM",
+                    "NCL",
+                    "NER",
+                    "NFK",
+                    "NGA",
+                    "NIC",
+                    "NIU",
+                    "NLD",
+                    "NOR",
+                    "NPL",
+                    "NRU",
+                    "NZL",
+                    "OMN",
+                    "PAK",
+                    "PAN",
+                    "PCN",
+                    "PER",
+                    "PHL",
+                    "PLW",
+                    "PNG",
+                    "POL",
+                    "PRI",
+                    "PRK",
+                    "PRT",
+                    "PRY",
+                    "PSE",
+                    "PYF",
+                    "QAT",
+                    "REU",
+                    "ROU",
+                    "RUS",
+                    "RWA",
+                    "SAU",
+                    "SDN",
+                    "SEN",
+                    "SGP",
+                    "SGS",
+                    "SHN",
+                    "SJM",
+                    "SLB",
+                    "SLE",
+                    "SLV",
+                    "SMR",
+                    "SOM",
+                    "SPM",
+                    "SRB",
+                    "SSD",
+                    "STP",
+                    "SUR",
+                    "SVK",
+                    "SVN",
+                    "SWE",
+                    "SWZ",
+                    "SXM",
+                    "SYC",
+                    "SYR",
+                    "TCA",
+                    "TCD",
+                    "TGO",
+                    "THA",
+                    "TJK",
+                    "TKL",
+                    "TKM",
+                    "TLS",
+                    "TON",
+                    "TTO",
+                    "TUN",
+                    "TUR",
+                    "TUV",
+                    "TWN",
+                    "TZA",
+                    "UGA",
+                    "UKR",
+                    "UMI",
+                    "UNK",
+                    "URY",
+                    "USA",
+                    "UZB",
+                    "VAT",
+                    "VCT",
+                    "VEN",
+                    "VGB",
+                    "VIR",
+                    "VNM",
+                    "VUT",
+                    "WLF",
+                    "WSM",
+                    "YEM",
+                    "ZAF",
+                    "ZMB",
+                    "ZWE"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": "https:\/\/help.postmen.com\/hc\/en-us\/articles\/115010595767-UPS-Mail-Innovation-Developer-Guide-API-Credentials",
+        "paper_sizes": [
+            "4x6",
+            "default"
+        ],
+        "highlights": null
+    }
+}

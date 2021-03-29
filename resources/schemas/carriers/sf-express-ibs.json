@@ -1,0 +1,531 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "sf-express-ibs",
+        "name": "S.F. IBS",
+        "ship_from": "CHN,HKG",
+        "ship_to": "Global",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": false,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": false,
+            "post@manifests": false
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": false,
+        "box_types": {
+            "custom": "Custom"
+        },
+        "service_options": {
+            "cod": true,
+            "insurance": true,
+            "pickup": true
+        },
+        "service_types": {
+            "sf-express-ibs_intl_econ_bonded": "International Economy- BONDED",
+            "sf-express-ibs_ee_pilot_agent": "EE Pilot Agent",
+            "sf-express-ibs_intl_standard_express_doc": "International Standard Express-Doc",
+            "sf-express-ibs_intl_standard_express_parcel": "International Standard Express \u2013 Parcel",
+            "sf-express-ibs_intl_parcel_standard_type_d": "Int'l Parcel - Standard (Type D)",
+            "sf-express-ibs_bd5_53x32x23": "BD5(53 x 32 x 23cm)",
+            "sf-express-ibs_bde_33_24.5": "BDE(33 x 24.5cm)",
+            "sf-express-ibs_shipmax": "ShipMax",
+            "sf-express-ibs_global_express_document": "Global Express+ Document",
+            "sf-express-ibs_global_express_type_d_parcel": "Global Express+ Type D Parcel",
+            "sf-express-ibs_global_express_type_b_parcel": "Global Express+ Type B Parcel",
+            "sf-express-ibs_intl_econ_express_pilot": "International Economy Express \u2013 Pilot",
+            "sf-express-ibs_intl_econ_express_doc": "International Economy Express \u2013 Doc",
+            "sf-express-ibs_intl_econ_express_parcel": "International Economy Express \u2013 Parcel",
+            "sf-express-ibs_intl_parcel_econ_type_d": "Int'l Parcel \u2013 Economy (Type D)",
+            "sf-express-ibs_global_reach": "Global Reach+",
+            "sf-express-ibs_us_pack1": "US Pack1",
+            "sf-express-ibs_us_pack3": "US Pack3",
+            "sf-express-ibs_intl_ecommerce_express": "International E-commerce express",
+            "sf-express-ibs_intl_parcel_econ_box_direct_2": "Int'l Parcel Economy - Box Direct \uff032",
+            "sf-express-ibs_intl_parcel_econ_box_direct_3": "Int'l Parcel Economy - Box Direct \uff033",
+            "sf-express-ibs_intl_parcel_econ_box_direct_4": "Int'l Parcel Economy - Box Direct \uff034",
+            "sf-express-ibs_intl_parcel_econ_box_direct_5": "Int'l Parcel Economy - Box Direct \uff035",
+            "sf-express-ibs_intl_parcel_econ_box_direct_6": "Int'l Parcel Economy - Box Direct \uff036",
+            "sf-express-ibs_intl_parcel_econ_box_direct_envelope": "Int'l Parcel Economy - Box Direct envelope",
+            "sf-express-ibs_intl_parcel_standard_fba": "Int'l Parcel-Standard(FBA)",
+            "sf-express-ibs_intl_parcel_econ_fba": "Int'l Parcel\u2013Economy(FBA)",
+            "sf-express-ibs_intl_parcel_heavy_freight_fba": "Int'l Parcel-Heavy Freight(FBA)",
+            "sf-express-ibs_box_direct_2": "Box Direct \uff032",
+            "sf-express-ibs_box_direct_3": "Box Direct \uff033",
+            "sf-express-ibs_box_direct_4": "Box Direct \uff034",
+            "sf-express-ibs_box_direct_6": "Box Direct \uff036",
+            "sf-express-ibs_icc_room_temperature_ac": "ICC-Room Temperature (AC)",
+            "sf-express-ibs_icc_chilled": "ICC-Chilled",
+            "sf-express-ibs_icc_frozen": "ICC-Frozen",
+            "sf-express-ibs_abroad_local_order": "Abroad Local Order",
+            "sf-express-ibs_standard_express": "Standard Express",
+            "sf-express-ibs_econ_express": "Economy Express",
+            "sf-express-ibs_next_morning_delivery": "Next Morning Delivery",
+            "sf-express-ibs_standard_express_d": "Standard Express\uff08D\uff09",
+            "sf-express-ibs_econ_express_d": "Economy Express(D)",
+            "sf-express-ibs_logistics_cargo_service": "Logistics Cargo Service",
+            "sf-express-ibs_intl_heavy_freight_air_deliver": "International Heavy Freight-Air+Deliver",
+            "sf-express-ibs_intl_heavy_freight_air_port_to_port": "International Heavy Freight-Air Port to Port",
+            "sf-express-ibs_intl_heavy_freight_sea_fast_deliver": "International Heavy Freight-Sea(fast)+Deliver",
+            "sf-express-ibs_intl_heavy_freight_sea_normal_deliver": "International Heavy Freight-Sea(normal)+Deliver",
+            "sf-express-ibs_cross_border_direct_ship_ecommerce_import": "Cross Border Direct Ship-eCommerce Import",
+            "sf-express-ibs_cross_border_direct_ship_personal_parcel": "Cross Border Direct Ship-Personal Parcel"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "sf-express-ibs_intl_econ_bonded",
+                "service_name": "International Economy- BONDED"
+            },
+            {
+                "service_type": "sf-express-ibs_ee_pilot_agent",
+                "service_name": "EE Pilot Agent"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_standard_express_doc",
+                "service_name": "International Standard Express-Doc"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_standard_express_parcel",
+                "service_name": "International Standard Express \u2013 Parcel"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_parcel_standard_type_d",
+                "service_name": "Int'l Parcel - Standard (Type D)"
+            },
+            {
+                "service_type": "sf-express-ibs_bd5_53x32x23",
+                "service_name": "BD5(53 x 32 x 23cm)"
+            },
+            {
+                "service_type": "sf-express-ibs_bde_33_24.5",
+                "service_name": "BDE(33 x 24.5cm)"
+            },
+            {
+                "service_type": "sf-express-ibs_shipmax",
+                "service_name": "ShipMax"
+            },
+            {
+                "service_type": "sf-express-ibs_global_express_document",
+                "service_name": "Global Express+ Document"
+            },
+            {
+                "service_type": "sf-express-ibs_global_express_type_d_parcel",
+                "service_name": "Global Express+ Type D Parcel"
+            },
+            {
+                "service_type": "sf-express-ibs_global_express_type_b_parcel",
+                "service_name": "Global Express+ Type B Parcel"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_econ_express_pilot",
+                "service_name": "International Economy Express \u2013 Pilot"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_econ_express_doc",
+                "service_name": "International Economy Express \u2013 Doc"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_econ_express_parcel",
+                "service_name": "International Economy Express \u2013 Parcel"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_parcel_econ_type_d",
+                "service_name": "Int'l Parcel \u2013 Economy (Type D)"
+            },
+            {
+                "service_type": "sf-express-ibs_global_reach",
+                "service_name": "Global Reach+"
+            },
+            {
+                "service_type": "sf-express-ibs_us_pack1",
+                "service_name": "US Pack1"
+            },
+            {
+                "service_type": "sf-express-ibs_us_pack3",
+                "service_name": "US Pack3"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_ecommerce_express",
+                "service_name": "International E-commerce express"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_parcel_econ_box_direct_2",
+                "service_name": "Int'l Parcel Economy - Box Direct \uff032"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_parcel_econ_box_direct_3",
+                "service_name": "Int'l Parcel Economy - Box Direct \uff033"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_parcel_econ_box_direct_4",
+                "service_name": "Int'l Parcel Economy - Box Direct \uff034"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_parcel_econ_box_direct_5",
+                "service_name": "Int'l Parcel Economy - Box Direct \uff035"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_parcel_econ_box_direct_6",
+                "service_name": "Int'l Parcel Economy - Box Direct \uff036"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_parcel_econ_box_direct_envelope",
+                "service_name": "Int'l Parcel Economy - Box Direct envelope"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_parcel_standard_fba",
+                "service_name": "Int'l Parcel-Standard(FBA)"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_parcel_econ_fba",
+                "service_name": "Int'l Parcel\u2013Economy(FBA)"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_parcel_heavy_freight_fba",
+                "service_name": "Int'l Parcel-Heavy Freight(FBA)"
+            },
+            {
+                "service_type": "sf-express-ibs_box_direct_2",
+                "service_name": "Box Direct \uff032"
+            },
+            {
+                "service_type": "sf-express-ibs_box_direct_3",
+                "service_name": "Box Direct \uff033"
+            },
+            {
+                "service_type": "sf-express-ibs_box_direct_4",
+                "service_name": "Box Direct \uff034"
+            },
+            {
+                "service_type": "sf-express-ibs_box_direct_6",
+                "service_name": "Box Direct \uff036"
+            },
+            {
+                "service_type": "sf-express-ibs_icc_room_temperature_ac",
+                "service_name": "ICC-Room Temperature (AC)"
+            },
+            {
+                "service_type": "sf-express-ibs_icc_chilled",
+                "service_name": "ICC-Chilled"
+            },
+            {
+                "service_type": "sf-express-ibs_icc_frozen",
+                "service_name": "ICC-Frozen"
+            },
+            {
+                "service_type": "sf-express-ibs_abroad_local_order",
+                "service_name": "Abroad Local Order"
+            },
+            {
+                "service_type": "sf-express-ibs_standard_express",
+                "service_name": "Standard Express"
+            },
+            {
+                "service_type": "sf-express-ibs_econ_express",
+                "service_name": "Economy Express"
+            },
+            {
+                "service_type": "sf-express-ibs_next_morning_delivery",
+                "service_name": "Next Morning Delivery"
+            },
+            {
+                "service_type": "sf-express-ibs_standard_express_d",
+                "service_name": "Standard Express\uff08D\uff09"
+            },
+            {
+                "service_type": "sf-express-ibs_econ_express_d",
+                "service_name": "Economy Express(D)"
+            },
+            {
+                "service_type": "sf-express-ibs_logistics_cargo_service",
+                "service_name": "Logistics Cargo Service"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_heavy_freight_air_deliver",
+                "service_name": "International Heavy Freight-Air+Deliver"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_heavy_freight_air_port_to_port",
+                "service_name": "International Heavy Freight-Air Port to Port"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_heavy_freight_sea_fast_deliver",
+                "service_name": "International Heavy Freight-Sea(fast)+Deliver"
+            },
+            {
+                "service_type": "sf-express-ibs_intl_heavy_freight_sea_normal_deliver",
+                "service_name": "International Heavy Freight-Sea(normal)+Deliver"
+            },
+            {
+                "service_type": "sf-express-ibs_cross_border_direct_ship_ecommerce_import",
+                "service_name": "Cross Border Direct Ship-eCommerce Import"
+            },
+            {
+                "service_type": "sf-express-ibs_cross_border_direct_ship_personal_parcel",
+                "service_name": "Cross Border Direct Ship-Personal Parcel"
+            }
+        ],
+        "courier_box_types": [
+            {
+                "box_name": "Custom",
+                "box_type": "custom",
+                "box_size_cm": {},
+                "box_size_in": {}
+            }
+        ],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Account number",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "account_number"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Check word",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "check_word"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Client code",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "client_code"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Language",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "language"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "AUS",
+                    "BGD",
+                    "CHN",
+                    "HKG",
+                    "MAC",
+                    "TWN",
+                    "IND",
+                    "IDN",
+                    "JPN",
+                    "KOR",
+                    "MYS",
+                    "NZL",
+                    "SGP",
+                    "THA",
+                    "USA",
+                    "VNM",
+                    "AUT",
+                    "BEL",
+                    "BGR",
+                    "HRV",
+                    "CZE",
+                    "DNK",
+                    "EST",
+                    "FIN",
+                    "FRA",
+                    "DEU",
+                    "GRC",
+                    "HUN",
+                    "IRL",
+                    "ITA",
+                    "LVA",
+                    "LTU",
+                    "LUX",
+                    "NLD",
+                    "POL",
+                    "PRT",
+                    "ROU",
+                    "SVK",
+                    "SVN",
+                    "ESP",
+                    "SWE",
+                    "GBR",
+                    "MNG",
+                    "RUS"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": "https:\/\/help.postmen.com\/hc\/en-us\/articles\/115010763068-S-F-Express-Developer-Guide-API-Credentials",
+        "paper_sizes": [
+            "4x6",
+            "4x8",
+            "default"
+        ],
+        "highlights": null
+    }
+}
