@@ -1,5 +1,9 @@
 # Postmen SDK Change Log
 
+## 2.0.1 (2021-04-03)
+### Fixed
+ - Mapping of QR code in Files entity
+
 ## 2.0.0 (2021-03-27)
 Utilising JSON Schema Validations
 ### Added

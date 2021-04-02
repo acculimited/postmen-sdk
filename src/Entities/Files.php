@@ -95,7 +95,7 @@ final class Files extends PostmenEntity
             } elseif ($file instanceof Files\CustomsDeclaration) {
                 $instance->setCustomsDeclaration($file);
             } elseif ($file instanceof Files\QRCode) {
-                $instance->setCustomsDeclaration($file);
+                $instance->setQRCode($file);
             }
         }
 
