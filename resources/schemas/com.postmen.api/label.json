@@ -84,6 +84,10 @@
           "order_number": {
             "description": "A user-defined order number used to identify an order.",
             "$ref": "/postmen_order_number"
+          },
+          "order_id": {
+            "description": "Unique identification of the order.",
+            "$ref": "/order_id"
           }
         },
         "additionalProperties": false,
