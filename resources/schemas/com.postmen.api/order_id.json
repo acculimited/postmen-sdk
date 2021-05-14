@@ -1,0 +1,10 @@
+{
+  "$id": "/order_id",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Postmen order id",
+  "description": "Unique identification of the order.",
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 50,
+  "additionalProperties": false
+}

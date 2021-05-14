@@ -10,6 +10,7 @@
         "cod",
         "signature",
         "adult_signature",
+        "indirect_signature",
         "saturday_delivery",
         "paperless_invoice",
         "insurance",
@@ -126,7 +127,8 @@
           "type": {
             "enum": [
               "signature",
-              "adult_signature"
+              "adult_signature",
+              "indirect_signature"
             ],
             "description": "delivery confirmation service"
           }

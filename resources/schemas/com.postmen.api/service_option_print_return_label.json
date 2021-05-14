@@ -1,15 +1,13 @@
 {
-  "$id": "/service_option_delivery_confirmation",
+  "$id": "/service_option_print_return_label",
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "Service Option - Delivery Confirmation",
-  "description": "Delivery Confirmation Service Option object",
+  "title": "Service Option - Print Return Label",
+  "description": "Print Return Label Service Option object",
   "type": "object",
   "properties": {
     "type": {
       "enum": [
-        "signature",
-        "adult_signature",
-        "indirect_signature"
+        "print_return_label"
       ]
     },
     "enabled": {
