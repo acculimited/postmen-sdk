@@ -3,8 +3,10 @@
 namespace Accu\Postmen\Requests;
 
 use GuzzleHttp\Psr7\Request as Psr7Request;
+use GuzzleHttp\Psr7\Utils;
 use JsonSerializable;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\StreamInterface;
 
 abstract class Request extends Psr7Request implements JsonSerializable
 {
@@ -25,13 +27,15 @@ abstract class Request extends Psr7Request implements JsonSerializable
         );
     }
 
-    public function getBody()
+    public function getBody(): StreamInterface
     {
         if (static::METHOD === 'POST' && $payload = $this->jsonSerialize()) {
-            return \GuzzleHttp\json_encode($payload, JSON_PRETTY_PRINT);
+            return Utils::streamFor(
+                \GuzzleHttp\Utils::jsonEncode($payload, JSON_PRETTY_PRINT)
+            );
         }
 
-        return '';
+        return Utils::streamFor('');
     }
 
     public function hydrateResponse(ResponseInterface $response)

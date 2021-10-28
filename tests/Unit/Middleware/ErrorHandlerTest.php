@@ -14,7 +14,7 @@ class ErrorHandlerTest extends TestCase
     {
         $handler = new ErrorHandler(1);
 
-        $body = \GuzzleHttp\json_encode([
+        $body = \GuzzleHttp\Utils::jsonEncode([
             'meta' => [
                 'code' => 4713,
             ],
