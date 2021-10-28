@@ -64,6 +64,10 @@
     "tax_id": {
       "type": "string",
       "description": "tax id"
+    },
+    "eori_number": {
+      "type": "string",
+      "description": "eori number"
     }
   },
   "additionalProperties": false,

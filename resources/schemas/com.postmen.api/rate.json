@@ -36,6 +36,14 @@
             },
             "maxItems": 50
           },
+          "ship_date": {
+            "description": "Ship Date in YYYY-MM-DD, if not provided, will be today of the shipper account timezone",
+            "type": "string",
+            "formats": [
+              "YYYY-MM-DD"
+            ],
+            "format": "date"
+          },
           "shipment": {
             "description": "the shipment of label",
             "$ref": "/shipment"

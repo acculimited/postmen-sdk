@@ -1,0 +1,25 @@
+{
+  "$id": "/service_option_alcohol",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option - Alcohol",
+  "description": "Alcohol Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "alcohol"
+      ]
+    },
+    "recipient_type": {
+      "enum": [
+        "consumer",
+        "licensee"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "recipient_type"
+  ]
+}

@@ -19,7 +19,13 @@
         "rural_delivery",
         "sameday_evening_delivery",
         "overnight_evening_delivery",
-        "dangerous_goods"
+        "dangerous_goods",
+        "ppod",
+        "appointment",
+        "date_certain",
+        "evening",
+        "dry_ice",
+        "alcohol"
       ]
     }
   },
@@ -136,6 +142,72 @@
       },
       "then": {
         "$ref": "/service_option_delivery_confirmation"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "ppod"
+            ],
+            "description": "Paper Proof of Delivery"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_ppod"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "appointment",
+              "date_certain",
+              "evening"
+            ],
+            "description": "home delivery service"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_home_delivery"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "dry_ice"
+            ],
+            "description": "dry_ice service"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_dry_ice"
+      },
+      "continue": false
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "alcohol"
+            ],
+            "description": "alcohol service"
+          }
+        }
+      },
+      "then": {
+        "$ref": "/service_option_alcohol"
       },
       "continue": false
     }

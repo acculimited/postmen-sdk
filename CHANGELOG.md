@@ -3,6 +3,7 @@
 ## Unreleased 3.x
 ### Added
  - PHP 8 and 8.1 support
+ - Latest postmen.com JSON schema changes
 
 ### Removed
  - PHP 7.1 support

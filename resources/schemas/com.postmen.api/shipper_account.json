@@ -1224,6 +1224,9 @@
             "type": "string",
             "description": "Use IANA — Time Zone Database"
           },
+          "credentials": {
+            "$ref": "/shipper_account_credentials"
+          },
           "address": {
             "$ref": "/shipper_account_address"
           }

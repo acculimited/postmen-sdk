@@ -1,0 +1,25 @@
+{
+  "$id": "/service_option_ppod",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option - PPOD",
+  "description": "Paper Proof of PPOD",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "ppod"
+      ]
+    },
+    "enabled": {
+      "enum": [
+        true,
+        false
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "enabled"
+  ]
+}
