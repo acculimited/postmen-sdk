@@ -12,6 +12,9 @@
     },
     "cod_value": {
       "$ref": "/money"
+    },
+    "cod_recipient": {
+      "$ref": "/address"
     }
   },
   "additionalProperties": false,

@@ -261,7 +261,35 @@
               "email": "test@test.test",
               "type": "residential"
             }
-          }
+          },
+          "service_options": [
+            {
+              "type": "dangerous_goods",
+              "un_number": "3480",
+              "packing_group": "II",
+              "packing_instruction": "PI965"
+            },
+            {
+              "type": "paperless_invoice",
+              "enabled": true
+            },
+            {
+              "type": "saturday_delivery",
+              "enabled": true
+            },
+            {
+              "type": "insurance",
+              "insured_value": {
+                "amount": 19398,
+                "currency": "USD"
+              }
+            },
+            {
+              "type": "pickup",
+              "start_time": "11:12:11",
+              "end_time": "18:00:23"
+            }
+          ]
         },
         "response": {
           "meta": {

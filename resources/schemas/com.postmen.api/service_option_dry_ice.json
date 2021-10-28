@@ -1,0 +1,22 @@
+{
+  "$id": "/service_option_dry_ice",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Service Option - Dry Ice",
+  "description": "Dry Ice Service Option object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "dry_ice"
+      ]
+    },
+    "weight": {
+      "$ref": "/weight"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "weight"
+  ]
+}

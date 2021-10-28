@@ -29,7 +29,7 @@
           },
           "label_ids": {
             "type": "array",
-            "description": "An array of label ids to create a manifest, only available for USPS / Australia Post / StarTrack / DHL GLobal Mail Asia, will throw error if any label_id does not belong to this shipper_account or cannot be manifested.",
+            "description": "An array of label ids to create a manifest, only available for USPS / Australia Post / StarTrack / DHL eCommmerce Asia, will throw error if any label_id does not belong to this shipper_account or cannot be manifested.",
             "items": {
               "type": "string"
             },
@@ -93,14 +93,17 @@
           "async": false,
           "shipper_account": {
             "id": "00000000-0000-0000-0000-000000000000"
-          }
+          },
+          "label_ids": [
+            "00000000-0000-0000-0000-000000000000"
+          ]
         },
         "response": {
           "labels": [
             {
               "id": "00000000-0000-0000-0000-000000000000",
               "manifested": true,
-              "ship_date": "2016-08-18"
+              "ship_date": "2021-07-16"
             }
           ],
           "files": {

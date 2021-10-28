@@ -20,6 +20,7 @@
     "collectplus",
     "courex",
     "couriers-please",
+    "china-post",
     "delhivery",
     "dhl-discounted",
     "dhl-germany",
@@ -75,7 +76,11 @@
     "usps",
     "whistl",
     "yodel",
-    "yunexpress"
+    "yunexpress",
+    "swiss-post",
+    "kerry-express-th",
+    "gojek",
+    "parcll"
   ],
   "additionalProperties": false
 }
