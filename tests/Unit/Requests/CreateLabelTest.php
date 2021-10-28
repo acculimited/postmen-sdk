@@ -96,7 +96,7 @@ class CreateLabelTest extends TestCase
 
         self::assertJsonStringEqualsJsonFile(
             __DIR__ . '/../../resources/create-label-request.json',
-            \GuzzleHttp\json_encode($labelRequest, JSON_PRETTY_PRINT)
+            \GuzzleHttp\Utils::jsonEncode($labelRequest, JSON_PRETTY_PRINT)
         );
     }
 

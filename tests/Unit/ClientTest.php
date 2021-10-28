@@ -35,13 +35,13 @@ class ClientTest extends TestCase
                 'Postmen failed without a valid API response.',
             ],
             [
-                new Response(500, [], \GuzzleHttp\json_encode([
+                new Response(500, [], \GuzzleHttp\Utils::jsonEncode([
                     'data' => [],
                 ])),
                 'Postmen API response malformed: meta data is missing',
             ],
             [
-                new Response(200, [], \GuzzleHttp\json_encode([
+                new Response(200, [], \GuzzleHttp\Utils::jsonEncode([
                     'meta' => [
                         'message' => 'What, no code?',
                         'details' => [],
@@ -55,7 +55,7 @@ class ClientTest extends TestCase
     public function testWellFormedMetaError()
     {
         $client = $this->createMockedClient(new MockHandler([
-            new Response(200, [], \GuzzleHttp\json_encode([
+            new Response(200, [], \GuzzleHttp\Utils::jsonEncode([
                 'meta' => [
                     'code' => 4100,
                     'message' => 'Internal Error',
@@ -73,7 +73,7 @@ class ClientTest extends TestCase
     public function testRetryableError()
     {
         $client = $this->createMockedClient(new MockHandler([
-            new Response(200, [], \GuzzleHttp\json_encode([
+            new Response(200, [], \GuzzleHttp\Utils::jsonEncode([
                 'meta' => [
                     'code' => 4101,
                     'message' => 'Internal Error, please try again.',
@@ -81,7 +81,7 @@ class ClientTest extends TestCase
                     'retryable' => true,
                 ],
             ])),
-            new Response(200, [], \GuzzleHttp\json_encode([
+            new Response(200, [], \GuzzleHttp\Utils::jsonEncode([
                 'meta' => [
                     'code' => 200,
                     'message' => 'OK',

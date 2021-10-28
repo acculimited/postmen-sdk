@@ -1,5 +1,12 @@
 # Postmen SDK Change Log
 
+## Unreleased 3.x
+### Added
+ - PHP 8 and 8.1 support
+
+### Removed
+ - PHP 7.1 support
+
 ## 2.0.1 (2021-04-03)
 ### Fixed
  - Mapping of QR code in Files entity

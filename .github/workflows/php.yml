@@ -17,10 +17,11 @@ jobs:
           - windows-latest
 
         php-version:
-          - "7.1"
           - "7.2"
           - "7.3"
           - "7.4"
+          - "8.0"
+          - "8.1"
 
     runs-on: ${{ matrix.os }}
 
@@ -47,7 +48,7 @@ jobs:
 
     - name: Install dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
-      run: composer install --prefer-dist --no-progress --no-suggest
+      run: composer install --prefer-dist --no-progress
 
     - name: Run test suite
       run: composer run-script test

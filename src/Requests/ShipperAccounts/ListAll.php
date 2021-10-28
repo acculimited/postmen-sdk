@@ -5,6 +5,7 @@ namespace Accu\Postmen\Requests\ShipperAccounts;
 use Accu\Postmen\Entities\ShipperAccount;
 use Accu\Postmen\Requests\Request;
 use Accu\Postmen\Schema\JsonSchema;
+use Psr\Http\Message\UriInterface;
 
 /**
  * List all available shipper accounts.
@@ -28,7 +29,7 @@ class ListAll extends Request
     /** @var string */
     private $next_token;
 
-    public function getUri()
+    public function getUri(): UriInterface
     {
         return \GuzzleHttp\Psr7\Uri::withQueryValues(parent::getUri(), ['slug' => $this->slug]);
     }
