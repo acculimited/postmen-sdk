@@ -49,7 +49,7 @@ final class Weight extends PostmenEntity
 
     public static function fromData(array $data): Weight
     {
-        return (new self)
+        return (new self())
             ->setValue($data['value'] ?? null)
             ->setUnit($data['unit'] ?? null);
     }

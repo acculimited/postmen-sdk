@@ -102,7 +102,7 @@ class CreateLabelTest extends TestCase
 
     public function testResponseMapsALabel()
     {
-        $json = \GuzzleHttp\json_decode(
+        $json = \GuzzleHttp\Utils::jsonDecode(
             \file_get_contents(__DIR__ . '/../../resources/create-label-response.json'),
             true
         );
@@ -126,7 +126,7 @@ class CreateLabelTest extends TestCase
 
     public function testLabelResponseValidatesJson()
     {
-        $json = \GuzzleHttp\json_decode(
+        $json = \GuzzleHttp\Utils::jsonDecode(
             \file_get_contents(__DIR__ . '/../../resources/create-label-response.json'),
             true
         );

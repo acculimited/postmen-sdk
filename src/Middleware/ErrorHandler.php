@@ -26,7 +26,7 @@ class ErrorHandler
     public function __invoke(int $retries, RequestInterface $request, ResponseInterface $response)
     {
         try {
-            $responseData = \GuzzleHttp\json_decode($response->getBody()->getContents());
+            $responseData = \GuzzleHttp\Utils::jsonDecode($response->getBody()->getContents());
         } catch (InvalidArgumentException $invalidArgumentException) {
             throw new ServerErrorException(
                 'Postmen failed without a valid API response.',

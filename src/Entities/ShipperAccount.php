@@ -147,7 +147,7 @@ final class ShipperAccount extends PostmenEntity
 
     public static function fromData(array $data): ShipperAccount
     {
-        return (new self)
+        return (new self())
             ->setId($data['id'] ?? null)
             ->setAddress(Address::fromData($data['address'] ?? []))
             ->setSlug($data['slug'] ?? null)

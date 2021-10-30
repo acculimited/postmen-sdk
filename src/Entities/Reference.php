@@ -44,7 +44,7 @@ final class Reference extends PostmenEntity
 
     public static function fromEntity($entity)
     {
-        return (new static)->setEntity($entity);
+        return (new static())->setEntity($entity);
     }
 
     public static function mapCollection(array $collection)

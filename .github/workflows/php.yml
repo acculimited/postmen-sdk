@@ -8,11 +8,11 @@ on:
 
 jobs:
   build:
-
     strategy:
       fail-fast: false
       matrix:
         os:
+          - macos-latest
           - ubuntu-latest
           - windows-latest
 
@@ -26,7 +26,13 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Set git to use LF
+      run: |
+        git config --global core.autocrlf false
+        git config --global core.eol lf
+
+    - name: Checkout code
+      uses: actions/checkout@v2
 
     - name: Install PHP
       uses: shivammathur/setup-php@v2
@@ -49,6 +55,9 @@ jobs:
     - name: Install dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
       run: composer install --prefer-dist --no-progress
+
+    - name: Run Codesniffer
+      run: composer run-script phpcs
 
     - name: Run test suite
       run: composer run-script test
