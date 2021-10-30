@@ -54,7 +54,7 @@ final class Money extends PostmenEntity
 
     public static function fromData(array $data): Money
     {
-        return (new self)
+        return (new self())
             ->setAmount($data['amount'] ?? null)
             ->setCurrency($data['currency'] ?? null);
     }

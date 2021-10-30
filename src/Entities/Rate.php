@@ -192,7 +192,7 @@ final class Rate extends PostmenEntity
 
     public static function fromData(array $data): Rate
     {
-        $entity = (new self)
+        $entity = (new self())
             ->setSimpleShipperAccount(SimpleShipperAccount::fromData($data['shipper_account'] ?? []))
             ->setServiceType($data['service_type'] ?? null)
             ->setServiceName($data['service_name'] ?? null)

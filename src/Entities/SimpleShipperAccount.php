@@ -28,7 +28,7 @@ final class SimpleShipperAccount extends PostmenEntity
     /** @var string Shipper account description */
     private $description;
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->id;
     }
@@ -63,7 +63,7 @@ final class SimpleShipperAccount extends PostmenEntity
 
     public static function fromData(array $data): SimpleShipperAccount
     {
-        return (new self)
+        return (new self())
             ->setId($data['id'] ?? [])
             ->setSlug($data['slug'] ?? [])
             ->setDescription($data['description'] ?? []);

@@ -49,7 +49,7 @@ final class DetailedCharge extends PostmenEntity
 
     public static function fromData(array $data): DetailedCharge
     {
-        return (new self)
+        return (new self())
             ->setCharge(Money::fromData($data['charge'] ?? []))
             ->setType($data['type'] ?? null);
     }

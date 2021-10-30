@@ -217,7 +217,7 @@ final class Address extends PostmenEntity
 
     public static function fromData(array $data): Address
     {
-        return (new self)
+        return (new self())
             ->setCountry($data['country'] ?? null)
             ->setContactName($data['contact_name'] ?? null)
             ->setPhone($data['phone'] ?? null)

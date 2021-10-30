@@ -12,6 +12,6 @@ abstract class PostmenEntity implements JsonSerializable
      */
     public static function fromData(array $data)
     {
-        return (new static);
+        return new static();
     }
 }
