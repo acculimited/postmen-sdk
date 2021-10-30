@@ -41,7 +41,7 @@ abstract class Request extends Psr7Request implements JsonSerializable
     public function hydrateResponse(ResponseInterface $response)
     {
         return $this->mapResponseData(
-            \GuzzleHttp\json_decode($response->getBody()->getContents(), true)
+            \GuzzleHttp\Utils::jsonDecode($response->getBody()->getContents(), true)
         );
     }
 

@@ -102,7 +102,7 @@ class ClientTest extends TestCase
 
         self::assertInstanceOf(ResponseInterface::class, $response);
 
-        $json = \GuzzleHttp\json_decode($response->getBody()->getContents());
+        $json = \GuzzleHttp\Utils::jsonDecode($response->getBody()->getContents());
         self::assertEquals(200, $json->meta->code);
     }
 
