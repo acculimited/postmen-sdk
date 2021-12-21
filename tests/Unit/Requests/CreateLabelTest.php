@@ -134,4 +134,17 @@ class CreateLabelTest extends TestCase
         $label = (new CreateLabel())->mapResponseData($json);
         self::assertJson(json_encode($label));
     }
+
+    public function testDeferredLabelsCanBeCreated()
+    {
+        $json = \GuzzleHttp\Utils::jsonDecode(
+            \file_get_contents(__DIR__ . '/../../resources/deferred-label-response.json'),
+            true
+        );
+
+        $label = (new CreateLabel())->mapResponseData($json);
+
+        self::assertEquals('creating', $label->getStatus());
+        self::assertNull($label->getFiles());
+    }
 }

@@ -97,7 +97,7 @@ final class Label extends PostmenEntity
         return $this;
     }
 
-    public function getFiles(): Files
+    public function getFiles(): ?Files
     {
         return $this->files;
     }
@@ -179,19 +179,30 @@ final class Label extends PostmenEntity
 
     public static function fromData(array $data): PostmenEntity
     {
-        return (new self())
+        $label = (new self())
             ->setId($data['id'] ?? null)
             ->setStatus($data['status'] ?? null)
             ->setTrackingNumbers($data['tracking_numbers'] ?? null)
-            ->setFiles(Files::fromData($data['files'] ?? []))
             ->setCreatedAt($data['created_at'] ?? null)
             ->setUpdatedAt($data['updated_at'] ?? null)
-            ->setShipDate($data['ship_date'] ?? null)
             ->setShipperAccount((new ShipperAccount())
                 ->setId($data['shipper_account']['id'] ?? null)
                 ->setSlug($data['shipper_account']['slug'] ?? null)
                 ->setDescription($data['shipper_account']['description'] ?? null))
-            ->setRate(Rate::fromData($data['rate'] ?? null))
             ->setServiceType($data['service_type'] ?? null);
+
+        if ($fileData = $data['files'] ?? []) {
+            $label->setFiles(Files::fromData($fileData));
+        }
+
+        if ($shipDate = $data['ship_date'] ?? null) {
+            $label->setShipDate($shipDate);
+        }
+
+        if ($rateData = $data['rate'] ?? []) {
+            $label->setRate(Rate::fromData($rateData));
+        }
+
+        return $label;
     }
 }
