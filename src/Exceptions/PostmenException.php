@@ -6,5 +6,5 @@ use Exception;
 
 class PostmenException extends Exception
 {
-
+    // No special extension currently required.
 }

@@ -1,0 +1,41 @@
+{
+    "meta": {
+        "code": 3001,
+        "message": "The request has been accepted for processing, but the processing has not been completed.",
+        "details": []
+    },
+    "data": {
+        "rate": null,
+        "tracking_numbers": [],
+        "service_type": "dpd-uk_int_express_parcel",
+        "references": [
+            "reference1",
+            "reference2",
+            "reference3"
+        ],
+        "created_at": "2021-12-18T01:14:42+00:00",
+        "shipper_account": {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "slug": "dpd-uk"
+        },
+        "ship_date": null,
+        "status": "creating",
+        "service_options": [
+            {
+                "type": "insurance",
+                "insured_value": {
+                    "amount": 19398,
+                    "currency": "GBP"
+                }
+            },
+            {
+                "type": "pickup",
+                "start_time": "11:12:11",
+                "end_time": "18:00:23"
+            }
+        ],
+        "updated_at": "2021-12-18T01:14:42+00:00",
+        "files": null,
+        "id": "00000000-1111-2222-3333-000000000000"
+    }
+}

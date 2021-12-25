@@ -9,6 +9,8 @@ use Accu\Postmen\Entities\Label;
 use Accu\Postmen\Entities\ServiceOptions\ServiceOption;
 use Accu\Postmen\Entities\Shipment;
 use Accu\Postmen\Entities\ShipperAccount;
+use Accu\Postmen\Requests\Deferrable;
+use Accu\Postmen\Requests\Deferred;
 use Accu\Postmen\Requests\Request;
 use Accu\Postmen\Utility\PostmenEntity;
 use Accu\Postmen\Schema\JsonSchema;
@@ -18,17 +20,15 @@ use Accu\Postmen\Schema\JsonSchema;
  * @package Accu\Postmen\Requests\Labels
  * @link https://docs.postmen.com/api.html#labels-create-a-label
  */
-class Create extends Request
+class Create extends Request implements Deferrable
 {
+    use Deferred;
     use JsonSchema;
 
     public const JSON_SCHEMA = '/label#/links/0/schema';
 
     public const METHOD = 'POST';
     public const URI = 'labels';
-
-    /** @var bool */
-    private $async = false;
 
     /** @var bool */
     private $is_document = false;

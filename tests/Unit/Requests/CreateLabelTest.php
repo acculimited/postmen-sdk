@@ -15,6 +15,7 @@ use Accu\Postmen\Entities\Parcel;
 use Accu\Postmen\Entities\Shipment;
 use Accu\Postmen\Entities\ShipperAccount;
 use Accu\Postmen\Entities\Weight;
+use Accu\Postmen\Requests\Deferrable;
 use Accu\Postmen\Requests\Labels\Create as CreateLabel;
 use PHPUnit\Framework\TestCase;
 
@@ -133,5 +134,32 @@ class CreateLabelTest extends TestCase
 
         $label = (new CreateLabel())->mapResponseData($json);
         self::assertJson(json_encode($label));
+    }
+
+    public function testDeferredLabelsCanBeCreated()
+    {
+        $json = \GuzzleHttp\Utils::jsonDecode(
+            \file_get_contents(__DIR__ . '/../../resources/deferred-label-response.json'),
+            true
+        );
+
+        $label = (new CreateLabel())->mapResponseData($json);
+
+        self::assertEquals('creating', $label->getStatus());
+        self::assertNull($label->getFiles());
+    }
+
+    public function testDeferredTrait()
+    {
+        $label = new CreateLabel();
+        self::assertInstanceOf(Deferrable::class, $label);
+
+        self::assertFalse($label->isDeferred(), 'Initial state is not deferred');
+
+        $label->shouldDefer(true);
+        self::assertTrue($label->isDeferred());
+
+        $label->shouldDefer(false);
+        self::assertFalse($label->isDeferred());
     }
 }

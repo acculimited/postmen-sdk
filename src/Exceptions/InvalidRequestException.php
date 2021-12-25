@@ -9,6 +9,9 @@ use Throwable;
 class InvalidRequestException extends PostmenException
 {
     public const META_CODE_EXEMPTIONS = [
+        // The request has been accepted for processing, but the processing has not been completed.
+        3001,
+        // All or partial failed in rate request.
         4713,
     ];
 
