@@ -10,7 +10,7 @@ use Swaggest\JsonSchema\Schema;
 
 trait JsonSchema
 {
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         if (! defined('static::JSON_SCHEMA')) {
             throw new PostmenException(static::class . ' must define a public JSON_SCHEMA.');
