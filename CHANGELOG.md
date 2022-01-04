@@ -1,6 +1,6 @@
 # Postmen SDK Change Log
 
-## Unreleased 3.x
+## 3.0.0 (2022-01-04)
 ### Added
  - PHP 8 and 8.1 support
  - Latest postmen.com JSON schema changes
