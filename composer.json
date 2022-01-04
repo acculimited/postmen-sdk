@@ -16,6 +16,7 @@
         "php": "^7.2|^8.0",
         "ext-json": "*",
         "guzzlehttp/guzzle": "^6.5|^7.0",
+        "psr/event-dispatcher": "^1.0",
         "swaggest/json-schema": "^0.12.39"
     },
     "autoload": {

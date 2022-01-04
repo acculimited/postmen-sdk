@@ -5,6 +5,7 @@
  - PHP 8 and 8.1 support
  - Latest postmen.com JSON schema changes
  - Support async requests (label creation for webhook support)
+   - Decode webhook envelopes with `\Accu\Postmen\Events\EventFactory::fromWebhook($json)`
 
 ### Removed
  - PHP 7.1 support
