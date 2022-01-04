@@ -10,9 +10,7 @@ class EventFactory
 {
     public static function fromWebhook(array $json)
     {
-        $type = $json['event'] ?? null;
-
-        if (! $type) {
+        if (! ($type = $json['event'] ?? null)) {
             throw new PostmenException('Unable to decode webhook payload.');
         }
 
