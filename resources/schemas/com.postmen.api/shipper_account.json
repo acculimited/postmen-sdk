@@ -1159,7 +1159,7 @@
       "title": "Update a shipper account credentials",
       "description": "Update a shipper account credentials",
       "href": "/shipper-accounts/:id/credentials",
-      "method": "PUT",
+      "method": "PATCH",
       "authentication_needed": "yes",
       "schema": {
         "$schema": "http://json-schema.org/draft-06/schema#",

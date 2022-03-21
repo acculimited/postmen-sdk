@@ -1,0 +1,24 @@
+{
+  "$id": "/location",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Location",
+  "description": "location for latitude and longitude",
+  "type": "object",
+  "properties": {
+    "lat": {
+      "type": "number",
+      "maximum": 90,
+      "minimum": -90,
+      "multipleOf": 1e-8,
+      "description": "latitude number"
+    },
+    "lng": {
+      "type": "number",
+      "maximum": 180,
+      "minimum": -180,
+      "multipleOf": 1e-8,
+      "description": "longitude number"
+    }
+  },
+  "additionalProperties": false
+}

@@ -68,6 +68,10 @@
     "eori_number": {
       "type": "string",
       "description": "eori number"
+    },
+    "location": {
+      "$ref": "/location",
+      "description": "location for latitude and longitude"
     }
   },
   "additionalProperties": false,

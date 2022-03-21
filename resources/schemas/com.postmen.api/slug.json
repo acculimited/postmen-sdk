@@ -80,7 +80,16 @@
     "swiss-post",
     "kerry-express-th",
     "gojek",
-    "parcll"
+    "parcll",
+    "dhl-global-mail",
+    "chronopost-france",
+    "toll-priority",
+    "b2ceurope",
+    "colissimo",
+    "dhlparcel-nl",
+    "dhl-ecommerce-solutions-eu",
+    "elite-co",
+    "ilyanglogis"
   ],
   "additionalProperties": false
 }

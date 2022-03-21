@@ -167,6 +167,10 @@
           "service_type": {
             "description": "type of service",
             "$ref": "/service_type"
+          },
+          "order_number": {
+            "description": "A user-defined order number used to identify an order.",
+            "$ref": "/postmen_order_number"
           }
         },
         "additionalProperties": false
