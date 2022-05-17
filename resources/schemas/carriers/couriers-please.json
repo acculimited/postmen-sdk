@@ -1,0 +1,732 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "couriers-please",
+        "name": "Couriers Please",
+        "ship_from": "AUS",
+        "ship_to": "Global",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": false,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": true,
+            "post@manifests": false
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": false,
+        "box_types": {
+            "custom": "Custom"
+        },
+        "service_options": {
+            "insurance": true,
+            "pickup": true
+        },
+        "service_types": {
+            "couriers-please_international_express_d": "Couriers Please International Express (D)",
+            "couriers-please_international_saver": "Couriers Please International Saver",
+            "couriers-please_international_express_import_e": "Couriers Please International Express Import(E)",
+            "couriers-please_express_rate_international_priority_a": "Couriers Please Express Rate International Priority (A)",
+            "couriers-please_international_saver_w": "Couriers Please International Saver (W)",
+            "couriers-please_international_express_w": "Couriers Please International Express (W)",
+            "couriers-please_international_express_import_i": "Couriers Please International Express Import(I)",
+            "couriers-please_road_express_i77": "Couriers Please Road Express - I77",
+            "couriers-please_road_express_i66": "Couriers Please Road Express - I66",
+            "couriers-please_road_express_i55": "Couriers Please Road Express - I55",
+            "couriers-please_road_express_i50": "Couriers Please Road Express - I50",
+            "couriers-please_road_express_i44": "Couriers Please Road Express - I44",
+            "couriers-please_road_express_i33": "Couriers Please Road Express - I33",
+            "couriers-please_road_express_i22": "Couriers Please Road Express - I22",
+            "couriers-please_road_express_i11": "Couriers Please Road Express - I11",
+            "couriers-please_road_express_i10": "Couriers Please Road Express - I10",
+            "couriers-please_road_express_i05": "Couriers Please Road Express - I05",
+            "couriers-please_road_express_l77": "Couriers Please Road Express - L77",
+            "couriers-please_road_express_l66": "Couriers Please Road Express - L66",
+            "couriers-please_road_express_l55": "Couriers Please Road Express - L55",
+            "couriers-please_road_express_l50": "Couriers Please Road Express - L50",
+            "couriers-please_road_express_l44": "Couriers Please Road Express - L44",
+            "couriers-please_road_express_l33": "Couriers Please Road Express - L33",
+            "couriers-please_road_express_l22": "Couriers Please Road Express - L22",
+            "couriers-please_road_express_l11": "Couriers Please Road Express - L11",
+            "couriers-please_road_express_l10": "Couriers Please Road Express - L10",
+            "couriers-please_road_express_l05": "Couriers Please Road Express - L05",
+            "couriers-please_road_express_49": "Couriers Please Road Express - 49",
+            "couriers-please_road_express_49L": "Couriers Please Road Express - 49L",
+            "couriers-please_5kg_satchel": "Couriers Please 5Kg Satchel",
+            "couriers-please_3kg_satchel": "Couriers Please 3Kg Satchel",
+            "couriers-please_1kg_satchel": "Couriers Please 1Kg Satchel",
+            "couriers-please_5kg_satchel_atl": "Couriers Please 5Kg Satchel ATL",
+            "couriers-please_3kg_satchel_atl": "Couriers Please 3Kg Satchel ATL",
+            "couriers-please_1kg_satchel_atl": "Couriers Please 1Kg Satchel ATL",
+            "couriers-please_500gram_satchel": "Couriers Please 500Gram Satchel",
+            "couriers-please_500gram_satchel_atl": "Couriers Please 500Gram Satchel ATL",
+            "couriers-please_25kg_parcel": "Couriers Please 25Kg Parcel",
+            "couriers-please_10kg_parcel": "Couriers Please 10Kg Parcel",
+            "couriers-please_5kg_parcel": "Couriers Please 5Kg Parcel",
+            "couriers-please_3kg_parcel": "Couriers Please 3Kg Parcel",
+            "couriers-please_1kg_parcel": "Couriers Please 1Kg Parcel",
+            "couriers-please_500gram_parcel": "Couriers Please 500Gram Parcel",
+            "couriers-please_500gram_parcel_atl": "Couriers Please 500Gram Parcel ATL"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "couriers-please_international_express_d",
+                "service_name": "Couriers Please International Express (D)"
+            },
+            {
+                "service_type": "couriers-please_international_saver",
+                "service_name": "Couriers Please International Saver"
+            },
+            {
+                "service_type": "couriers-please_international_express_import_e",
+                "service_name": "Couriers Please International Express Import(E)"
+            },
+            {
+                "service_type": "couriers-please_express_rate_international_priority_a",
+                "service_name": "Couriers Please Express Rate International Priority (A)"
+            },
+            {
+                "service_type": "couriers-please_international_saver_w",
+                "service_name": "Couriers Please International Saver (W)"
+            },
+            {
+                "service_type": "couriers-please_international_express_w",
+                "service_name": "Couriers Please International Express (W)"
+            },
+            {
+                "service_type": "couriers-please_international_express_import_i",
+                "service_name": "Couriers Please International Express Import(I)"
+            },
+            {
+                "service_type": "couriers-please_road_express_i77",
+                "service_name": "Couriers Please Road Express - I77"
+            },
+            {
+                "service_type": "couriers-please_road_express_i66",
+                "service_name": "Couriers Please Road Express - I66"
+            },
+            {
+                "service_type": "couriers-please_road_express_i55",
+                "service_name": "Couriers Please Road Express - I55"
+            },
+            {
+                "service_type": "couriers-please_road_express_i50",
+                "service_name": "Couriers Please Road Express - I50"
+            },
+            {
+                "service_type": "couriers-please_road_express_i44",
+                "service_name": "Couriers Please Road Express - I44"
+            },
+            {
+                "service_type": "couriers-please_road_express_i33",
+                "service_name": "Couriers Please Road Express - I33"
+            },
+            {
+                "service_type": "couriers-please_road_express_i22",
+                "service_name": "Couriers Please Road Express - I22"
+            },
+            {
+                "service_type": "couriers-please_road_express_i11",
+                "service_name": "Couriers Please Road Express - I11"
+            },
+            {
+                "service_type": "couriers-please_road_express_i10",
+                "service_name": "Couriers Please Road Express - I10"
+            },
+            {
+                "service_type": "couriers-please_road_express_i05",
+                "service_name": "Couriers Please Road Express - I05"
+            },
+            {
+                "service_type": "couriers-please_road_express_l77",
+                "service_name": "Couriers Please Road Express - L77"
+            },
+            {
+                "service_type": "couriers-please_road_express_l66",
+                "service_name": "Couriers Please Road Express - L66"
+            },
+            {
+                "service_type": "couriers-please_road_express_l55",
+                "service_name": "Couriers Please Road Express - L55"
+            },
+            {
+                "service_type": "couriers-please_road_express_l50",
+                "service_name": "Couriers Please Road Express - L50"
+            },
+            {
+                "service_type": "couriers-please_road_express_l44",
+                "service_name": "Couriers Please Road Express - L44"
+            },
+            {
+                "service_type": "couriers-please_road_express_l33",
+                "service_name": "Couriers Please Road Express - L33"
+            },
+            {
+                "service_type": "couriers-please_road_express_l22",
+                "service_name": "Couriers Please Road Express - L22"
+            },
+            {
+                "service_type": "couriers-please_road_express_l11",
+                "service_name": "Couriers Please Road Express - L11"
+            },
+            {
+                "service_type": "couriers-please_road_express_l10",
+                "service_name": "Couriers Please Road Express - L10"
+            },
+            {
+                "service_type": "couriers-please_road_express_l05",
+                "service_name": "Couriers Please Road Express - L05"
+            },
+            {
+                "service_type": "couriers-please_road_express_49",
+                "service_name": "Couriers Please Road Express - 49"
+            },
+            {
+                "service_type": "couriers-please_road_express_49L",
+                "service_name": "Couriers Please Road Express - 49L"
+            },
+            {
+                "service_type": "couriers-please_5kg_satchel",
+                "service_name": "Couriers Please 5Kg Satchel"
+            },
+            {
+                "service_type": "couriers-please_3kg_satchel",
+                "service_name": "Couriers Please 3Kg Satchel"
+            },
+            {
+                "service_type": "couriers-please_1kg_satchel",
+                "service_name": "Couriers Please 1Kg Satchel"
+            },
+            {
+                "service_type": "couriers-please_5kg_satchel_atl",
+                "service_name": "Couriers Please 5Kg Satchel ATL"
+            },
+            {
+                "service_type": "couriers-please_3kg_satchel_atl",
+                "service_name": "Couriers Please 3Kg Satchel ATL"
+            },
+            {
+                "service_type": "couriers-please_1kg_satchel_atl",
+                "service_name": "Couriers Please 1Kg Satchel ATL"
+            },
+            {
+                "service_type": "couriers-please_5kg_satchel",
+                "service_name": "Couriers Please 5Kg Satchel"
+            },
+            {
+                "service_type": "couriers-please_5kg_satchel_atl",
+                "service_name": "Couriers Please 5Kg Satchel ATL"
+            },
+            {
+                "service_type": "couriers-please_3kg_satchel",
+                "service_name": "Couriers Please 3Kg Satchel"
+            },
+            {
+                "service_type": "couriers-please_3kg_satchel_atl",
+                "service_name": "Couriers Please 3Kg Satchel ATL"
+            },
+            {
+                "service_type": "couriers-please_1kg_satchel",
+                "service_name": "Couriers Please 1Kg Satchel"
+            },
+            {
+                "service_type": "couriers-please_1kg_satchel_atl",
+                "service_name": "Couriers Please 1Kg Satchel ATL"
+            },
+            {
+                "service_type": "couriers-please_500gram_satchel",
+                "service_name": "Couriers Please 500Gram Satchel"
+            },
+            {
+                "service_type": "couriers-please_500gram_satchel_atl",
+                "service_name": "Couriers Please 500Gram Satchel ATL"
+            },
+            {
+                "service_type": "couriers-please_25kg_parcel",
+                "service_name": "Couriers Please 25Kg Parcel"
+            },
+            {
+                "service_type": "couriers-please_10kg_parcel",
+                "service_name": "Couriers Please 10Kg Parcel"
+            },
+            {
+                "service_type": "couriers-please_5kg_parcel",
+                "service_name": "Couriers Please 5Kg Parcel"
+            },
+            {
+                "service_type": "couriers-please_3kg_parcel",
+                "service_name": "Couriers Please 3Kg Parcel"
+            },
+            {
+                "service_type": "couriers-please_1kg_parcel",
+                "service_name": "Couriers Please 1Kg Parcel"
+            },
+            {
+                "service_type": "couriers-please_1kg_parcel",
+                "service_name": "Couriers Please 1Kg Parcel"
+            },
+            {
+                "service_type": "couriers-please_500gram_parcel",
+                "service_name": "Couriers Please 500Gram Parcel"
+            },
+            {
+                "service_type": "couriers-please_500gram_parcel_atl",
+                "service_name": "Couriers Please 500Gram Parcel ATL"
+            },
+            {
+                "service_type": "couriers-please_5kg_parcel",
+                "service_name": "Couriers Please 5Kg Parcel"
+            },
+            {
+                "service_type": "couriers-please_3kg_parcel",
+                "service_name": "Couriers Please 3Kg Parcel"
+            },
+            {
+                "service_type": "couriers-please_1kg_parcel",
+                "service_name": "Couriers Please 1Kg Parcel"
+            },
+            {
+                "service_type": "couriers-please_500gram_parcel",
+                "service_name": "Couriers Please 500Gram Parcel"
+            }
+        ],
+        "courier_box_types": [],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Username",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "username"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Password",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "password"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "ABW",
+                    "AFG",
+                    "AGO",
+                    "AIA",
+                    "ALA",
+                    "ALB",
+                    "AND",
+                    "ANT",
+                    "ARE",
+                    "ARG",
+                    "ARM",
+                    "ASM",
+                    "ATA",
+                    "ATF",
+                    "ATG",
+                    "AUS",
+                    "AUT",
+                    "AZE",
+                    "BDI",
+                    "BEL",
+                    "BEN",
+                    "BES",
+                    "BFA",
+                    "BGD",
+                    "BGR",
+                    "BHR",
+                    "BHS",
+                    "BIH",
+                    "BLM",
+                    "BLR",
+                    "BLZ",
+                    "BMU",
+                    "BOL",
+                    "BRA",
+                    "BRB",
+                    "BRN",
+                    "BTN",
+                    "BVT",
+                    "BWA",
+                    "CAF",
+                    "CAN",
+                    "CCK",
+                    "CHE",
+                    "CHL",
+                    "CHN",
+                    "CIV",
+                    "CMR",
+                    "COD",
+                    "COG",
+                    "COK",
+                    "COL",
+                    "COM",
+                    "CPV",
+                    "CRI",
+                    "CUB",
+                    "CUW",
+                    "CXR",
+                    "CYM",
+                    "CYP",
+                    "CZE",
+                    "DEU",
+                    "DJI",
+                    "DMA",
+                    "DNK",
+                    "DOM",
+                    "DZA",
+                    "ECU",
+                    "EGY",
+                    "ERI",
+                    "ESH",
+                    "ESP",
+                    "EST",
+                    "ETH",
+                    "FIN",
+                    "FJI",
+                    "FLK",
+                    "FRA",
+                    "FRO",
+                    "FSM",
+                    "GAB",
+                    "GBR",
+                    "GEO",
+                    "GGY",
+                    "GHA",
+                    "GIB",
+                    "GIN",
+                    "GLP",
+                    "GMB",
+                    "GNB",
+                    "GNQ",
+                    "GRC",
+                    "GRD",
+                    "GRL",
+                    "GTM",
+                    "GUF",
+                    "GUM",
+                    "GUY",
+                    "HKG",
+                    "HMD",
+                    "HND",
+                    "HRV",
+                    "HTI",
+                    "HUN",
+                    "IDN",
+                    "IMN",
+                    "IND",
+                    "IOT",
+                    "IRL",
+                    "IRN",
+                    "IRQ",
+                    "ISL",
+                    "ISR",
+                    "ITA",
+                    "JAM",
+                    "JEY",
+                    "JOR",
+                    "JPN",
+                    "KAZ",
+                    "KEN",
+                    "KGZ",
+                    "KHM",
+                    "KIR",
+                    "KNA",
+                    "KOR",
+                    "KWT",
+                    "LAO",
+                    "LBN",
+                    "LBR",
+                    "LBY",
+                    "LCA",
+                    "LIE",
+                    "LKA",
+                    "LSO",
+                    "LTU",
+                    "LUX",
+                    "LVA",
+                    "MAC",
+                    "MAF",
+                    "MAR",
+                    "MCO",
+                    "MDA",
+                    "MDG",
+                    "MDV",
+                    "MEX",
+                    "MHL",
+                    "MKD",
+                    "MLI",
+                    "MLT",
+                    "MMR",
+                    "MNE",
+                    "MNG",
+                    "MNP",
+                    "MOZ",
+                    "MRT",
+                    "MSR",
+                    "MTQ",
+                    "MUS",
+                    "MWI",
+                    "MYS",
+                    "MYT",
+                    "NAM",
+                    "NCL",
+                    "NER",
+                    "NFK",
+                    "NGA",
+                    "NIC",
+                    "NIU",
+                    "NLD",
+                    "NOR",
+                    "NPL",
+                    "NRU",
+                    "NZL",
+                    "OMN",
+                    "PAK",
+                    "PAN",
+                    "PCN",
+                    "PER",
+                    "PHL",
+                    "PLW",
+                    "PNG",
+                    "POL",
+                    "PRI",
+                    "PRK",
+                    "PRT",
+                    "PRY",
+                    "PSE",
+                    "PYF",
+                    "QAT",
+                    "REU",
+                    "ROU",
+                    "RUS",
+                    "RWA",
+                    "SAU",
+                    "SDN",
+                    "SEN",
+                    "SGP",
+                    "SGS",
+                    "SHN",
+                    "SJM",
+                    "SLB",
+                    "SLE",
+                    "SLV",
+                    "SMR",
+                    "SOM",
+                    "SPM",
+                    "SRB",
+                    "SSD",
+                    "STP",
+                    "SUR",
+                    "SVK",
+                    "SVN",
+                    "SWE",
+                    "SWZ",
+                    "SXM",
+                    "SYC",
+                    "SYR",
+                    "TCA",
+                    "TCD",
+                    "TGO",
+                    "THA",
+                    "TJK",
+                    "TKL",
+                    "TKM",
+                    "TLS",
+                    "TON",
+                    "TTO",
+                    "TUN",
+                    "TUR",
+                    "TUV",
+                    "TWN",
+                    "TZA",
+                    "UGA",
+                    "UKR",
+                    "UMI",
+                    "UNK",
+                    "URY",
+                    "USA",
+                    "UZB",
+                    "VAT",
+                    "VCT",
+                    "VEN",
+                    "VGB",
+                    "VIR",
+                    "VNM",
+                    "VUT",
+                    "WLF",
+                    "WSM",
+                    "YEM",
+                    "ZAF",
+                    "ZMB",
+                    "ZWE"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": "https:\/\/help.postmen.com\/hc\/en-us\/articles\/115013345469",
+        "paper_sizes": [
+            "default"
+        ],
+        "highlights": null
+    }
+}

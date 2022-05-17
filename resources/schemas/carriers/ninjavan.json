@@ -1,0 +1,303 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "ninjavan",
+        "name": "Ninja Van",
+        "ship_from": "SGP",
+        "ship_to": "SGP",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": true,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": false,
+            "post@manifests": false
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": true,
+        "box_types": {
+            "S": "S Box",
+            "M": "M Box",
+            "L": "L Box",
+            "XL": "XL Box",
+            "XXL": "XXL Box",
+            "custom": "Custom"
+        },
+        "service_options": {
+            "cod": true,
+            "insurance": true,
+            "pickup": true
+        },
+        "service_types": {
+            "ninjavan_standard_parcel": "Ninjavan Standard Parcel",
+            "ninjavan_standard_return": "Ninjavan Standard Return",
+            "ninjavan_express_parcel": "Ninjavan Express Parcel",
+            "ninjavan_express_return": "Ninjavan Express Return",
+            "ninjavan_sameday_parcel": "Ninjavan Sameday Parcel",
+            "ninjavan_sameday_return": "Ninjavan Sameday Return",
+            "ninjavan_nextday_parcel": "Ninjavan Nextday Parcel",
+            "ninjavan_nextday_return": "Ninjavan Nextday Return"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "ninjavan_standard_parcel",
+                "service_name": "Ninjavan Standard Parcel"
+            },
+            {
+                "service_type": "ninjavan_standard_return",
+                "service_name": "Ninjavan Standard Return"
+            },
+            {
+                "service_type": "ninjavan_express_parcel",
+                "service_name": "Ninjavan Express Parcel"
+            },
+            {
+                "service_type": "ninjavan_express_return",
+                "service_name": "Ninjavan Express Return"
+            },
+            {
+                "service_type": "ninjavan_sameday_parcel",
+                "service_name": "Ninjavan Sameday Parcel"
+            },
+            {
+                "service_type": "ninjavan_sameday_return",
+                "service_name": "Ninjavan Sameday Return"
+            },
+            {
+                "service_type": "ninjavan_nextday_parcel",
+                "service_name": "Ninjavan Nextday Parcel"
+            },
+            {
+                "service_type": "ninjavan_nextday_return",
+                "service_name": "Ninjavan Nextday Return"
+            }
+        ],
+        "courier_box_types": [
+            {
+                "box_name": "S Box",
+                "box_type": "S",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "M Box",
+                "box_type": "M",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "L Box",
+                "box_type": "L",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "XL Box",
+                "box_type": "XL",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "XXL Box",
+                "box_type": "XXL",
+                "box_size_cm": {},
+                "box_size_in": {}
+            },
+            {
+                "box_name": "Custom",
+                "box_type": "custom",
+                "box_size_cm": {},
+                "box_size_in": {}
+            }
+        ],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Client ID",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "client_id"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Client secret",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "client_secret"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "SGP"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": null,
+        "paper_sizes": [
+            "60x70",
+            "default"
+        ],
+        "highlights": null
+    }
+}

@@ -1,0 +1,680 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "tipsa",
+        "name": "TIPSA",
+        "ship_from": "ESP,AND,PRT",
+        "ship_to": "Global",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": true,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": false,
+            "post@manifests": false
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": false,
+        "box_types": {
+            "custom": "Custom"
+        },
+        "service_options": {
+            "saturday_delivery": true,
+            "cod": true
+        },
+        "service_types": {
+            "tipsa_10_horas": "10 Horas",
+            "tipsa_14_horas": "14 Horas",
+            "tipsa_2_7_10_horas": "2-7 10 Horas",
+            "tipsa_2_8_frio": "2-8 Frio",
+            "tipsa_acuse": "Acuse",
+            "tipsa_acuse_rec": "Acuse Rec.",
+            "tipsa_antes_10_farma_25": "Antes 10 Farma 25",
+            "tipsa_caducado_yupick": "Caducado Yupick",
+            "tipsa_carga_2_8_frio": "Carga 2-8 Frio",
+            "tipsa_carga_aerea_maritima": "Carga Aerea\/Maritima",
+            "tipsa_dev_farma_25": "Dev Farma 25",
+            "tipsa_dev_rot": "Dev.Rot",
+            "tipsa_devolucion": "Devolucion",
+            "tipsa_devolucion_carga": "Devolucion Carga",
+            "tipsa_devolucion_yupick": "Devolucion Yupick",
+            "tipsa_economy": "Economy",
+            "tipsa_en_delegacion": "En Delegacion",
+            "tipsa_europack": "Europack",
+            "tipsa_farma_25": "Farma 25",
+            "tipsa_int_economy": "Int-Economy",
+            "tipsa_int_express": "Int-Express",
+            "tipsa_masivo": "Masivo",
+            "tipsa_mediodia": "Mediodia",
+            "tipsa_mr_maritimo": "Mr-Maritimo",
+            "tipsa_premium": "Premium",
+            "tipsa_prepago": "Prepago",
+            "tipsa_recanalizado": "Recanalizado",
+            "tipsa_recanalizado_yupick": "Recanalizado Yupick",
+            "tipsa_ret_2_8_frio": "Ret 2-8 Frio",
+            "tipsa_ret_2_8_frio_baleares": "Ret 2-8 Frio Baleares",
+            "tipsa_retorno": "Retorno",
+            "tipsa_retorno_carga": "Retorno Carga",
+            "tipsa_retorno_carga_canarias": "Retorno Carga Canarias",
+            "tipsa_serv_admin": "Serv Admin",
+            "tipsa_smartpak": "Smartpak",
+            "tipsa_standard": "Standard",
+            "tipsa_valija": "Valija",
+            "tipsa_yupick": "Yupick"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "tipsa_10_horas",
+                "service_name": "10 Horas"
+            },
+            {
+                "service_type": "tipsa_14_horas",
+                "service_name": "14 Horas"
+            },
+            {
+                "service_type": "tipsa_2_7_10_horas",
+                "service_name": "2-7 10 Horas"
+            },
+            {
+                "service_type": "tipsa_2_8_frio",
+                "service_name": "2-8 Frio"
+            },
+            {
+                "service_type": "tipsa_acuse",
+                "service_name": "Acuse"
+            },
+            {
+                "service_type": "tipsa_acuse_rec",
+                "service_name": "Acuse Rec."
+            },
+            {
+                "service_type": "tipsa_antes_10_farma_25",
+                "service_name": "Antes 10 Farma 25"
+            },
+            {
+                "service_type": "tipsa_caducado_yupick",
+                "service_name": "Caducado Yupick"
+            },
+            {
+                "service_type": "tipsa_carga_2_8_frio",
+                "service_name": "Carga 2-8 Frio"
+            },
+            {
+                "service_type": "tipsa_carga_aerea_maritima",
+                "service_name": "Carga Aerea\/Maritima"
+            },
+            {
+                "service_type": "tipsa_dev_farma_25",
+                "service_name": "Dev Farma 25"
+            },
+            {
+                "service_type": "tipsa_dev_rot",
+                "service_name": "Dev.Rot"
+            },
+            {
+                "service_type": "tipsa_devolucion",
+                "service_name": "Devolucion"
+            },
+            {
+                "service_type": "tipsa_devolucion_carga",
+                "service_name": "Devolucion Carga"
+            },
+            {
+                "service_type": "tipsa_devolucion_yupick",
+                "service_name": "Devolucion Yupick"
+            },
+            {
+                "service_type": "tipsa_economy",
+                "service_name": "Economy"
+            },
+            {
+                "service_type": "tipsa_en_delegacion",
+                "service_name": "En Delegacion"
+            },
+            {
+                "service_type": "tipsa_europack",
+                "service_name": "Europack"
+            },
+            {
+                "service_type": "tipsa_farma_25",
+                "service_name": "Farma 25"
+            },
+            {
+                "service_type": "tipsa_int_economy",
+                "service_name": "Int-Economy"
+            },
+            {
+                "service_type": "tipsa_int_express",
+                "service_name": "Int-Express"
+            },
+            {
+                "service_type": "tipsa_masivo",
+                "service_name": "Masivo"
+            },
+            {
+                "service_type": "tipsa_mediodia",
+                "service_name": "Mediodia"
+            },
+            {
+                "service_type": "tipsa_mr_maritimo",
+                "service_name": "Mr-Maritimo"
+            },
+            {
+                "service_type": "tipsa_premium",
+                "service_name": "Premium"
+            },
+            {
+                "service_type": "tipsa_prepago",
+                "service_name": "Prepago"
+            },
+            {
+                "service_type": "tipsa_recanalizado",
+                "service_name": "Recanalizado"
+            },
+            {
+                "service_type": "tipsa_recanalizado_yupick",
+                "service_name": "Recanalizado Yupick"
+            },
+            {
+                "service_type": "tipsa_ret_2_8_frio",
+                "service_name": "Ret 2-8 Frio"
+            },
+            {
+                "service_type": "tipsa_ret_2_8_frio_baleares",
+                "service_name": "Ret 2-8 Frio Baleares"
+            },
+            {
+                "service_type": "tipsa_retorno",
+                "service_name": "Retorno"
+            },
+            {
+                "service_type": "tipsa_retorno_carga",
+                "service_name": "Retorno Carga"
+            },
+            {
+                "service_type": "tipsa_retorno_carga_canarias",
+                "service_name": "Retorno Carga Canarias"
+            },
+            {
+                "service_type": "tipsa_serv_admin",
+                "service_name": "Serv Admin"
+            },
+            {
+                "service_type": "tipsa_smartpak",
+                "service_name": "Smartpak"
+            },
+            {
+                "service_type": "tipsa_standard",
+                "service_name": "Standard"
+            },
+            {
+                "service_type": "tipsa_valija",
+                "service_name": "Valija"
+            },
+            {
+                "service_type": "tipsa_yupick",
+                "service_name": "Yupick"
+            }
+        ],
+        "courier_box_types": [],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Password",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "password"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Agency code",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "agency_code"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Customer code",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "customer_code"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Department code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "department_code"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "ABW",
+                    "AFG",
+                    "AGO",
+                    "AIA",
+                    "ALA",
+                    "ALB",
+                    "AND",
+                    "ANT",
+                    "ARE",
+                    "ARG",
+                    "ARM",
+                    "ASM",
+                    "ATA",
+                    "ATF",
+                    "ATG",
+                    "AUS",
+                    "AUT",
+                    "AZE",
+                    "BDI",
+                    "BEL",
+                    "BEN",
+                    "BES",
+                    "BFA",
+                    "BGD",
+                    "BGR",
+                    "BHR",
+                    "BHS",
+                    "BIH",
+                    "BLM",
+                    "BLR",
+                    "BLZ",
+                    "BMU",
+                    "BOL",
+                    "BRA",
+                    "BRB",
+                    "BRN",
+                    "BTN",
+                    "BVT",
+                    "BWA",
+                    "CAF",
+                    "CAN",
+                    "CCK",
+                    "CHE",
+                    "CHL",
+                    "CHN",
+                    "CIV",
+                    "CMR",
+                    "COD",
+                    "COG",
+                    "COK",
+                    "COL",
+                    "COM",
+                    "CPV",
+                    "CRI",
+                    "CUB",
+                    "CUW",
+                    "CXR",
+                    "CYM",
+                    "CYP",
+                    "CZE",
+                    "DEU",
+                    "DJI",
+                    "DMA",
+                    "DNK",
+                    "DOM",
+                    "DZA",
+                    "ECU",
+                    "EGY",
+                    "ERI",
+                    "ESH",
+                    "ESP",
+                    "EST",
+                    "ETH",
+                    "FIN",
+                    "FJI",
+                    "FLK",
+                    "FRA",
+                    "FRO",
+                    "FSM",
+                    "GAB",
+                    "GBR",
+                    "GEO",
+                    "GGY",
+                    "GHA",
+                    "GIB",
+                    "GIN",
+                    "GLP",
+                    "GMB",
+                    "GNB",
+                    "GNQ",
+                    "GRC",
+                    "GRD",
+                    "GRL",
+                    "GTM",
+                    "GUF",
+                    "GUM",
+                    "GUY",
+                    "HKG",
+                    "HMD",
+                    "HND",
+                    "HRV",
+                    "HTI",
+                    "HUN",
+                    "IDN",
+                    "IMN",
+                    "IND",
+                    "IOT",
+                    "IRL",
+                    "IRN",
+                    "IRQ",
+                    "ISL",
+                    "ISR",
+                    "ITA",
+                    "JAM",
+                    "JEY",
+                    "JOR",
+                    "JPN",
+                    "KAZ",
+                    "KEN",
+                    "KGZ",
+                    "KHM",
+                    "KIR",
+                    "KNA",
+                    "KOR",
+                    "KWT",
+                    "LAO",
+                    "LBN",
+                    "LBR",
+                    "LBY",
+                    "LCA",
+                    "LIE",
+                    "LKA",
+                    "LSO",
+                    "LTU",
+                    "LUX",
+                    "LVA",
+                    "MAC",
+                    "MAF",
+                    "MAR",
+                    "MCO",
+                    "MDA",
+                    "MDG",
+                    "MDV",
+                    "MEX",
+                    "MHL",
+                    "MKD",
+                    "MLI",
+                    "MLT",
+                    "MMR",
+                    "MNE",
+                    "MNG",
+                    "MNP",
+                    "MOZ",
+                    "MRT",
+                    "MSR",
+                    "MTQ",
+                    "MUS",
+                    "MWI",
+                    "MYS",
+                    "MYT",
+                    "NAM",
+                    "NCL",
+                    "NER",
+                    "NFK",
+                    "NGA",
+                    "NIC",
+                    "NIU",
+                    "NLD",
+                    "NOR",
+                    "NPL",
+                    "NRU",
+                    "NZL",
+                    "OMN",
+                    "PAK",
+                    "PAN",
+                    "PCN",
+                    "PER",
+                    "PHL",
+                    "PLW",
+                    "PNG",
+                    "POL",
+                    "PRI",
+                    "PRK",
+                    "PRT",
+                    "PRY",
+                    "PSE",
+                    "PYF",
+                    "QAT",
+                    "REU",
+                    "ROU",
+                    "RUS",
+                    "RWA",
+                    "SAU",
+                    "SDN",
+                    "SEN",
+                    "SGP",
+                    "SGS",
+                    "SHN",
+                    "SJM",
+                    "SLB",
+                    "SLE",
+                    "SLV",
+                    "SMR",
+                    "SOM",
+                    "SPM",
+                    "SRB",
+                    "SSD",
+                    "STP",
+                    "SUR",
+                    "SVK",
+                    "SVN",
+                    "SWE",
+                    "SWZ",
+                    "SXM",
+                    "SYC",
+                    "SYR",
+                    "TCA",
+                    "TCD",
+                    "TGO",
+                    "THA",
+                    "TJK",
+                    "TKL",
+                    "TKM",
+                    "TLS",
+                    "TON",
+                    "TTO",
+                    "TUN",
+                    "TUR",
+                    "TUV",
+                    "TWN",
+                    "TZA",
+                    "UGA",
+                    "UKR",
+                    "UMI",
+                    "UNK",
+                    "URY",
+                    "USA",
+                    "UZB",
+                    "VAT",
+                    "VCT",
+                    "VEN",
+                    "VGB",
+                    "VIR",
+                    "VNM",
+                    "VUT",
+                    "WLF",
+                    "WSM",
+                    "YEM",
+                    "ZAF",
+                    "ZMB",
+                    "ZWE"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": null,
+        "paper_sizes": [
+            "4x6",
+            "default"
+        ],
+        "highlights": null
+    }
+}

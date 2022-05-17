@@ -1,0 +1,797 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "dhl",
+        "name": "DHL Express",
+        "ship_from": "Global",
+        "ship_to": "Global",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": true,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": true,
+            "post@manifests": true
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "internal_cancel_label": true,
+        "template_mapping": true,
+        "box_types": {
+            "dhl_express_envelope": "DHL Express Envelope",
+            "dhl_other_dhl_packaging": "DHL Other DHL Packaging",
+            "custom": "DHL Custom Packaging",
+            "dhl_flyer": "DHL Flyer",
+            "dhl_jumbo_box": "DHL Jumbo Box",
+            "dhl_junior_jumbo_box": "DHL Junior Jumbo Box",
+            "dhl_jumbo_document": "DHL Jumbo Document",
+            "dhl_jumbo_parcel": "DHL Jumbo Parcel",
+            "dhl_document": "DHL Document",
+            "dhl_domestic": "DHL Domestic",
+            "dhl_express_document": "DHL Express Document",
+            "dhl_jumbo_junior_document": "DHL Jumbo Junior Document",
+            "dhl_jumbo_junior_parcel": "DHL Jumbo Junior Parcel",
+            "dhl_parcel": "DHL Parcel"
+        },
+        "service_options": {
+            "insurance": true,
+            "paperless_invoice": true,
+            "saturday_delivery": true,
+            "undefined": true
+        },
+        "service_types": {
+            "dhl_break_bulk_express": "DHL Break Bulk Express",
+            "dhl_domestic_economy_select": "DHL Domestic Economy Select",
+            "dhl_domestic_express": "DHL Domestic Express",
+            "dhl_domestic_express_0900": "DHL Domestic Express 0900",
+            "dhl_domestic_express_1030": "DHL Domestic Express 1030",
+            "dhl_domestic_express_1200": "DHL Domestic Express 1200",
+            "dhl_economy_select": "DHL Economy Select",
+            "dhl_europack": "DHL Europack",
+            "dhl_express_0900": "DHL Express 0900",
+            "dhl_express_1030": "DHL Express 1030",
+            "dhl_express_1200": "DHL Express 1200",
+            "dhl_express_easy": "DHL Express Easy",
+            "dhl_express_envelope": "DHL Express Envelope",
+            "dhl_express_worldwide": "DHL Express Worldwide",
+            "dhl_express_worldwide_eu": "DHL Express Worldwide EU",
+            "dhl_globalmail_business": "DHL Globalmail Business",
+            "dhl_jetline": "DHL Jetline",
+            "dhl_jumbo_box": "DHL Jumbo Box",
+            "dhl_medical_express": "DHL Medical Express",
+            "dhl_same_day": "DHL Same Day",
+            "dhl_sprintline": "DHL Sprintline",
+            "dhl_economy_select_eu": "DHL Economy Select EU"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "dhl_break_bulk_express",
+                "service_name": "DHL Break Bulk Express",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_break_bulk_express",
+                "service_name": "DHL Break Bulk Express",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_domestic_economy_select",
+                "service_name": "DHL Domestic Economy Select",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_domestic_economy_select",
+                "service_name": "DHL Domestic Economy Select",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_domestic_express",
+                "service_name": "DHL Domestic Express",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_domestic_express",
+                "service_name": "DHL Domestic Express",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_domestic_express_0900",
+                "service_name": "DHL Domestic Express 0900",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_domestic_express_0900",
+                "service_name": "DHL Domestic Express 0900",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_domestic_express_1030",
+                "service_name": "DHL Domestic Express 1030",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_domestic_express_1030",
+                "service_name": "DHL Domestic Express 1030",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_domestic_express_1200",
+                "service_name": "DHL Domestic Express 1200",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_domestic_express_1200",
+                "service_name": "DHL Domestic Express 1200",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_economy_select",
+                "service_name": "DHL Economy Select",
+                "is_international": "true",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_economy_select",
+                "service_name": "DHL Economy Select",
+                "is_international": "true",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_europack",
+                "service_name": "DHL Europack",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_europack",
+                "service_name": "DHL Europack",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_0900",
+                "service_name": "DHL Express 0900",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_0900",
+                "service_name": "DHL Express 0900",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_1030",
+                "service_name": "DHL Express 1030",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_1030",
+                "service_name": "DHL Express 1030",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_1200",
+                "service_name": "DHL Express 1200",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_1200",
+                "service_name": "DHL Express 1200",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_easy",
+                "service_name": "DHL Express Easy",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_express_easy",
+                "service_name": "DHL Express Easy",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_express_envelope",
+                "service_name": "DHL Express Envelope",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_envelope",
+                "service_name": "DHL Express Envelope",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_worldwide",
+                "service_name": "DHL Express Worldwide",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_worldwide",
+                "service_name": "DHL Express Worldwide",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_worldwide_eu",
+                "service_name": "DHL Express Worldwide EU",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_express_worldwide_eu",
+                "service_name": "DHL Express Worldwide EU",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_globalmail_business",
+                "service_name": "DHL Globalmail Business",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_globalmail_business",
+                "service_name": "DHL Globalmail Business",
+                "is_international": "true",
+                "is_domestic": "false"
+            },
+            {
+                "service_type": "dhl_jetline",
+                "service_name": "DHL Jetline",
+                "is_international": "true",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_jetline",
+                "service_name": "DHL Jetline",
+                "is_international": "true",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_jumbo_box",
+                "service_name": "DHL Jumbo Box",
+                "is_international": "true",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_jumbo_box",
+                "service_name": "DHL Jumbo Box",
+                "is_international": "true",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_medical_express",
+                "service_name": "DHL Medical Express",
+                "is_international": "true",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_medical_express",
+                "service_name": "DHL Medical Express",
+                "is_international": "true",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_same_day",
+                "service_name": "DHL Same Day",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_same_day",
+                "service_name": "DHL Same Day",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_sprintline",
+                "service_name": "DHL Sprintline",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_sprintline",
+                "service_name": "DHL Sprintline",
+                "is_international": "false",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_economy_select_eu",
+                "service_name": "DHL Economy Select EU",
+                "is_international": "true",
+                "is_domestic": "true"
+            },
+            {
+                "service_type": "dhl_economy_select_eu",
+                "service_name": "DHL Economy Select EU",
+                "is_international": "true",
+                "is_domestic": "true"
+            }
+        ],
+        "courier_box_types": [],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Account number",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "account_number"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Password",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "password"
+            },
+            {
+                "type": "string",
+                "min_length": 6,
+                "max_length": 20,
+                "label": "Site ID",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "site_id"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Show account on waybill",
+                "enum": [
+                    "YES",
+                    "NO",
+                    ""
+                ],
+                "items": null,
+                "required": false,
+                "name": "show_account_on_waybill"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "ABW",
+                    "AFG",
+                    "AGO",
+                    "AIA",
+                    "ALA",
+                    "ALB",
+                    "AND",
+                    "ANT",
+                    "ARE",
+                    "ARG",
+                    "ARM",
+                    "ASM",
+                    "ATA",
+                    "ATF",
+                    "ATG",
+                    "AUS",
+                    "AUT",
+                    "AZE",
+                    "BDI",
+                    "BEL",
+                    "BEN",
+                    "BES",
+                    "BFA",
+                    "BGD",
+                    "BGR",
+                    "BHR",
+                    "BHS",
+                    "BIH",
+                    "BLM",
+                    "BLR",
+                    "BLZ",
+                    "BMU",
+                    "BOL",
+                    "BRA",
+                    "BRB",
+                    "BRN",
+                    "BTN",
+                    "BVT",
+                    "BWA",
+                    "CAF",
+                    "CAN",
+                    "CCK",
+                    "CHE",
+                    "CHL",
+                    "CHN",
+                    "CIV",
+                    "CMR",
+                    "COD",
+                    "COG",
+                    "COK",
+                    "COL",
+                    "COM",
+                    "CPV",
+                    "CRI",
+                    "CUB",
+                    "CUW",
+                    "CXR",
+                    "CYM",
+                    "CYP",
+                    "CZE",
+                    "DEU",
+                    "DJI",
+                    "DMA",
+                    "DNK",
+                    "DOM",
+                    "DZA",
+                    "ECU",
+                    "EGY",
+                    "ERI",
+                    "ESH",
+                    "ESP",
+                    "EST",
+                    "ETH",
+                    "FIN",
+                    "FJI",
+                    "FLK",
+                    "FRA",
+                    "FRO",
+                    "FSM",
+                    "GAB",
+                    "GBR",
+                    "GEO",
+                    "GGY",
+                    "GHA",
+                    "GIB",
+                    "GIN",
+                    "GLP",
+                    "GMB",
+                    "GNB",
+                    "GNQ",
+                    "GRC",
+                    "GRD",
+                    "GRL",
+                    "GTM",
+                    "GUF",
+                    "GUM",
+                    "GUY",
+                    "HKG",
+                    "HMD",
+                    "HND",
+                    "HRV",
+                    "HTI",
+                    "HUN",
+                    "IDN",
+                    "IMN",
+                    "IND",
+                    "IOT",
+                    "IRL",
+                    "IRN",
+                    "IRQ",
+                    "ISL",
+                    "ISR",
+                    "ITA",
+                    "JAM",
+                    "JEY",
+                    "JOR",
+                    "JPN",
+                    "KAZ",
+                    "KEN",
+                    "KGZ",
+                    "KHM",
+                    "KIR",
+                    "KNA",
+                    "KOR",
+                    "KWT",
+                    "LAO",
+                    "LBN",
+                    "LBR",
+                    "LBY",
+                    "LCA",
+                    "LIE",
+                    "LKA",
+                    "LSO",
+                    "LTU",
+                    "LUX",
+                    "LVA",
+                    "MAC",
+                    "MAF",
+                    "MAR",
+                    "MCO",
+                    "MDA",
+                    "MDG",
+                    "MDV",
+                    "MEX",
+                    "MHL",
+                    "MKD",
+                    "MLI",
+                    "MLT",
+                    "MMR",
+                    "MNE",
+                    "MNG",
+                    "MNP",
+                    "MOZ",
+                    "MRT",
+                    "MSR",
+                    "MTQ",
+                    "MUS",
+                    "MWI",
+                    "MYS",
+                    "MYT",
+                    "NAM",
+                    "NCL",
+                    "NER",
+                    "NFK",
+                    "NGA",
+                    "NIC",
+                    "NIU",
+                    "NLD",
+                    "NOR",
+                    "NPL",
+                    "NRU",
+                    "NZL",
+                    "OMN",
+                    "PAK",
+                    "PAN",
+                    "PCN",
+                    "PER",
+                    "PHL",
+                    "PLW",
+                    "PNG",
+                    "POL",
+                    "PRI",
+                    "PRK",
+                    "PRT",
+                    "PRY",
+                    "PSE",
+                    "PYF",
+                    "QAT",
+                    "REU",
+                    "ROU",
+                    "RUS",
+                    "RWA",
+                    "SAU",
+                    "SDN",
+                    "SEN",
+                    "SGP",
+                    "SGS",
+                    "SHN",
+                    "SJM",
+                    "SLB",
+                    "SLE",
+                    "SLV",
+                    "SMR",
+                    "SOM",
+                    "SPM",
+                    "SRB",
+                    "SSD",
+                    "STP",
+                    "SUR",
+                    "SVK",
+                    "SVN",
+                    "SWE",
+                    "SWZ",
+                    "SXM",
+                    "SYC",
+                    "SYR",
+                    "TCA",
+                    "TCD",
+                    "TGO",
+                    "THA",
+                    "TJK",
+                    "TKL",
+                    "TKM",
+                    "TLS",
+                    "TON",
+                    "TTO",
+                    "TUN",
+                    "TUR",
+                    "TUV",
+                    "TWN",
+                    "TZA",
+                    "UGA",
+                    "UKR",
+                    "UMI",
+                    "UNK",
+                    "URY",
+                    "USA",
+                    "UZB",
+                    "VAT",
+                    "VCT",
+                    "VEN",
+                    "VGB",
+                    "VIR",
+                    "VNM",
+                    "VUT",
+                    "WLF",
+                    "WSM",
+                    "YEM",
+                    "ZAF",
+                    "ZMB",
+                    "ZWE"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": "https:\/\/help.postmen.com\/hc\/en-us\/articles\/115010762808-DHL-Express-Developer-Guide-API-Credentials",
+        "paper_sizes": [
+            "4x6",
+            "4x8",
+            "a4",
+            "default"
+        ],
+        "highlights": null
+    }
+}

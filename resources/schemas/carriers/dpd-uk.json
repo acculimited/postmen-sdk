@@ -1,0 +1,705 @@
+{
+    "meta": {
+        "code": 200,
+        "message": "OK",
+        "details": []
+    },
+    "data": {
+        "slug": "dpd-uk",
+        "name": "DPD UK",
+        "ship_from": "GBR",
+        "ship_to": "Global",
+        "enabled": null,
+        "operations": {
+            "post@labels": true,
+            "post@cancel-labels": false,
+            "post@admin\/cancel-labels": false,
+            "post@admin\/labels": true,
+            "post@rates": false,
+            "post@manifests": false
+        },
+        "characteristics": {
+            "post@labels": {
+                "return_shipment": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "internal_cancel_label": false,
+        "template_mapping": false,
+        "box_types": {
+            "custom": "Custom"
+        },
+        "service_options": {
+            "insurance": true,
+            "pickup": true
+        },
+        "service_types": {
+            "dpd-uk_parcel_2d": "Parcel - Two Day",
+            "dpd-uk_parcel_1d": "Parcel - Next Day",
+            "dpd-uk_parcel_12": "Parcel - DPD 12",
+            "dpd-uk_parcel_10": "Parcel - DPD 10",
+            "dpd-uk_parcel_sat": "Parcel - Saturday",
+            "dpd-uk_parcel_sat12": "Parcel - Saturday 12",
+            "dpd-uk_parcel_sat10": "Parcel - Saturday 10",
+            "dpd-uk_parcel_sun10": "Parcel - Sunday 10",
+            "dpd-uk_parcel_timed": "Parcel - Timed",
+            "dpd-uk_parcel_returned": "Parcel - Returned",
+            "dpd-uk_homecall": "Homecall - Homecall",
+            "dpd-uk_homedelivery_afternoon": "Home Delivery - Afternoon",
+            "dpd-uk_homedelivery_evening": "Home Delivery - Evening",
+            "dpd-uk_expresspak_1d": "Expresspak - Next Day",
+            "dpd-uk_expresspak_12": "Expresspak - DPD 12",
+            "dpd-uk_expresspak_10": "Expresspak - DPD 10",
+            "dpd-uk_expresspak_sat": "Expresspak - Saturday",
+            "dpd-uk_expresspak_sat12": "Expresspak - Saturday 12",
+            "dpd-uk_expresspak_sat10": "Expresspak - Saturday 10",
+            "dpd-uk_expresspak_timed": "Expresspak - Timed",
+            "dpd-uk_dpddirect": "DPD Direct - DPD Direct",
+            "dpd-uk_dpddirect_2d": "DPD Direct - Two Day",
+            "dpd-uk_swapit_2d": "Swap It - Two Day",
+            "dpd-uk_swapit_1d": "Swap It - Next Day",
+            "dpd-uk_swapit_12": "Swap It - DPD 12",
+            "dpd-uk_swapit_10": "Swap It - DPD 10",
+            "dpd-uk_swapit_afternoon": "Swap It - Afternoon",
+            "dpd-uk_swapit_sat": "Swap It - Saturday",
+            "dpd-uk_swapit_sat12": "Swap It - Saturday 12",
+            "dpd-uk_swapit_sat10": "Swap It - Saturday 10",
+            "dpd-uk_swapit_evening": "Swap It - Evening",
+            "dpd-uk_swapit_timed": "Swap It - Timed",
+            "dpd-uk_reverseit_2d": "Reverse It - Two Day",
+            "dpd-uk_reverseit_1d": "Reverse It - Next Day",
+            "dpd-uk_int_dpdclassic_road": "DPD Classic - By Road",
+            "dpd-uk_int_express_parcel": "Express - Parcel by Air",
+            "dpd-uk_int_express_doc": "Express - Document by Air",
+            "dpd-uk_int_express_eu": "Express - Europe by Air",
+            "dpd-uk_parcel_sun": "Parcel - Sunday",
+            "dpd-uk_parcel_sun1030": "Parcel - Snday 1030",
+            "dpd-uk_parcel_sun12": "Parcel - Sunday 12",
+            "dpd-uk_expresspak_sun": "Expresspack - Sunday",
+            "dpd-uk_expresspak_sun1030": "Expresspack - Sunday 1030",
+            "dpd-uk_expresspak_sun12": "Expresspack - Sunday 12",
+            "dpd-uk_swapit_sun": "Swap It - Sunday",
+            "dpd-uk_swapit_sun1030": "Swap It - Sunday 1030",
+            "dpd-uk_swapit_sun12": "Swap It - Sunday 12"
+        },
+        "courier_service_types": [
+            {
+                "service_type": "dpd-uk_parcel_2d",
+                "service_name": "Parcel - Two Day"
+            },
+            {
+                "service_type": "dpd-uk_parcel_1d",
+                "service_name": "Parcel - Next Day"
+            },
+            {
+                "service_type": "dpd-uk_parcel_12",
+                "service_name": "Parcel - DPD 12"
+            },
+            {
+                "service_type": "dpd-uk_parcel_10",
+                "service_name": "Parcel - DPD 10"
+            },
+            {
+                "service_type": "dpd-uk_parcel_sat",
+                "service_name": "Parcel - Saturday"
+            },
+            {
+                "service_type": "dpd-uk_parcel_sat12",
+                "service_name": "Parcel - Saturday 12"
+            },
+            {
+                "service_type": "dpd-uk_parcel_sat10",
+                "service_name": "Parcel - Saturday 10"
+            },
+            {
+                "service_type": "dpd-uk_parcel_sun10",
+                "service_name": "Parcel - Sunday 10"
+            },
+            {
+                "service_type": "dpd-uk_parcel_timed",
+                "service_name": "Parcel - Timed"
+            },
+            {
+                "service_type": "dpd-uk_parcel_returned",
+                "service_name": "Parcel - Returned"
+            },
+            {
+                "service_type": "dpd-uk_homecall",
+                "service_name": "Homecall - Homecall"
+            },
+            {
+                "service_type": "dpd-uk_homedelivery_afternoon",
+                "service_name": "Home Delivery - Afternoon"
+            },
+            {
+                "service_type": "dpd-uk_homedelivery_evening",
+                "service_name": "Home Delivery - Evening"
+            },
+            {
+                "service_type": "dpd-uk_expresspak_1d",
+                "service_name": "Expresspak - Next Day"
+            },
+            {
+                "service_type": "dpd-uk_expresspak_12",
+                "service_name": "Expresspak - DPD 12"
+            },
+            {
+                "service_type": "dpd-uk_expresspak_10",
+                "service_name": "Expresspak - DPD 10"
+            },
+            {
+                "service_type": "dpd-uk_expresspak_sat",
+                "service_name": "Expresspak - Saturday"
+            },
+            {
+                "service_type": "dpd-uk_expresspak_sat12",
+                "service_name": "Expresspak - Saturday 12"
+            },
+            {
+                "service_type": "dpd-uk_expresspak_sat10",
+                "service_name": "Expresspak - Saturday 10"
+            },
+            {
+                "service_type": "dpd-uk_expresspak_timed",
+                "service_name": "Expresspak - Timed"
+            },
+            {
+                "service_type": "dpd-uk_dpddirect",
+                "service_name": "DPD Direct - DPD Direct"
+            },
+            {
+                "service_type": "dpd-uk_dpddirect_2d",
+                "service_name": "DPD Direct - Two Day"
+            },
+            {
+                "service_type": "dpd-uk_swapit_2d",
+                "service_name": "Swap It - Two Day"
+            },
+            {
+                "service_type": "dpd-uk_swapit_1d",
+                "service_name": "Swap It - Next Day"
+            },
+            {
+                "service_type": "dpd-uk_swapit_12",
+                "service_name": "Swap It - DPD 12"
+            },
+            {
+                "service_type": "dpd-uk_swapit_10",
+                "service_name": "Swap It - DPD 10"
+            },
+            {
+                "service_type": "dpd-uk_swapit_afternoon",
+                "service_name": "Swap It - Afternoon"
+            },
+            {
+                "service_type": "dpd-uk_swapit_sat",
+                "service_name": "Swap It - Saturday"
+            },
+            {
+                "service_type": "dpd-uk_swapit_sat12",
+                "service_name": "Swap It - Saturday 12"
+            },
+            {
+                "service_type": "dpd-uk_swapit_sat10",
+                "service_name": "Swap It - Saturday 10"
+            },
+            {
+                "service_type": "dpd-uk_swapit_evening",
+                "service_name": "Swap It - Evening"
+            },
+            {
+                "service_type": "dpd-uk_swapit_timed",
+                "service_name": "Swap It - Timed"
+            },
+            {
+                "service_type": "dpd-uk_reverseit_2d",
+                "service_name": "Reverse It - Two Day"
+            },
+            {
+                "service_type": "dpd-uk_reverseit_1d",
+                "service_name": "Reverse It - Next Day"
+            },
+            {
+                "service_type": "dpd-uk_int_dpdclassic_road",
+                "service_name": "DPD Classic - By Road"
+            },
+            {
+                "service_type": "dpd-uk_int_express_parcel",
+                "service_name": "Express - Parcel by Air"
+            },
+            {
+                "service_type": "dpd-uk_int_express_doc",
+                "service_name": "Express - Document by Air"
+            },
+            {
+                "service_type": "dpd-uk_int_express_eu",
+                "service_name": "Express - Europe by Air"
+            },
+            {
+                "service_type": "dpd-uk_parcel_sun",
+                "service_name": "Parcel - Sunday"
+            },
+            {
+                "service_type": "dpd-uk_parcel_sun1030",
+                "service_name": "Parcel - Snday 1030"
+            },
+            {
+                "service_type": "dpd-uk_parcel_sun12",
+                "service_name": "Parcel - Sunday 12"
+            },
+            {
+                "service_type": "dpd-uk_expresspak_sun",
+                "service_name": "Expresspack - Sunday"
+            },
+            {
+                "service_type": "dpd-uk_expresspak_sun1030",
+                "service_name": "Expresspack - Sunday 1030"
+            },
+            {
+                "service_type": "dpd-uk_expresspak_sun12",
+                "service_name": "Expresspack - Sunday 12"
+            },
+            {
+                "service_type": "dpd-uk_swapit_sun",
+                "service_name": "Swap It - Sunday"
+            },
+            {
+                "service_type": "dpd-uk_swapit_sun1030",
+                "service_name": "Swap It - Sunday 1030"
+            },
+            {
+                "service_type": "dpd-uk_swapit_sun12",
+                "service_name": "Swap It - Sunday 12"
+            }
+        ],
+        "courier_box_types": [],
+        "pre_assigned_number_configs": [],
+        "credential_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Username",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "username"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Password",
+                "enum": [],
+                "items": null,
+                "required": true,
+                "name": "password"
+            }
+        ],
+        "address_fields": [
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Contact name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "contact_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Phone",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "phone"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Fax",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "fax"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Email",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "email"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Company name",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "company_name"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street1",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street1"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street2",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street2"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Street3",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "street3"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "City",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "city"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "State",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "state"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Postal code",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "postal_code"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Country",
+                "enum": [
+                    "ABW",
+                    "AFG",
+                    "AGO",
+                    "AIA",
+                    "ALA",
+                    "ALB",
+                    "AND",
+                    "ANT",
+                    "ARE",
+                    "ARG",
+                    "ARM",
+                    "ASM",
+                    "ATA",
+                    "ATF",
+                    "ATG",
+                    "AUS",
+                    "AUT",
+                    "AZE",
+                    "BDI",
+                    "BEL",
+                    "BEN",
+                    "BES",
+                    "BFA",
+                    "BGD",
+                    "BGR",
+                    "BHR",
+                    "BHS",
+                    "BIH",
+                    "BLM",
+                    "BLR",
+                    "BLZ",
+                    "BMU",
+                    "BOL",
+                    "BRA",
+                    "BRB",
+                    "BRN",
+                    "BTN",
+                    "BVT",
+                    "BWA",
+                    "CAF",
+                    "CAN",
+                    "CCK",
+                    "CHE",
+                    "CHL",
+                    "CHN",
+                    "CIV",
+                    "CMR",
+                    "COD",
+                    "COG",
+                    "COK",
+                    "COL",
+                    "COM",
+                    "CPV",
+                    "CRI",
+                    "CUB",
+                    "CUW",
+                    "CXR",
+                    "CYM",
+                    "CYP",
+                    "CZE",
+                    "DEU",
+                    "DJI",
+                    "DMA",
+                    "DNK",
+                    "DOM",
+                    "DZA",
+                    "ECU",
+                    "EGY",
+                    "ERI",
+                    "ESH",
+                    "ESP",
+                    "EST",
+                    "ETH",
+                    "FIN",
+                    "FJI",
+                    "FLK",
+                    "FRA",
+                    "FRO",
+                    "FSM",
+                    "GAB",
+                    "GBR",
+                    "GEO",
+                    "GGY",
+                    "GHA",
+                    "GIB",
+                    "GIN",
+                    "GLP",
+                    "GMB",
+                    "GNB",
+                    "GNQ",
+                    "GRC",
+                    "GRD",
+                    "GRL",
+                    "GTM",
+                    "GUF",
+                    "GUM",
+                    "GUY",
+                    "HKG",
+                    "HMD",
+                    "HND",
+                    "HRV",
+                    "HTI",
+                    "HUN",
+                    "IDN",
+                    "IMN",
+                    "IND",
+                    "IOT",
+                    "IRL",
+                    "IRN",
+                    "IRQ",
+                    "ISL",
+                    "ISR",
+                    "ITA",
+                    "JAM",
+                    "JEY",
+                    "JOR",
+                    "JPN",
+                    "KAZ",
+                    "KEN",
+                    "KGZ",
+                    "KHM",
+                    "KIR",
+                    "KNA",
+                    "KOR",
+                    "KWT",
+                    "LAO",
+                    "LBN",
+                    "LBR",
+                    "LBY",
+                    "LCA",
+                    "LIE",
+                    "LKA",
+                    "LSO",
+                    "LTU",
+                    "LUX",
+                    "LVA",
+                    "MAC",
+                    "MAF",
+                    "MAR",
+                    "MCO",
+                    "MDA",
+                    "MDG",
+                    "MDV",
+                    "MEX",
+                    "MHL",
+                    "MKD",
+                    "MLI",
+                    "MLT",
+                    "MMR",
+                    "MNE",
+                    "MNG",
+                    "MNP",
+                    "MOZ",
+                    "MRT",
+                    "MSR",
+                    "MTQ",
+                    "MUS",
+                    "MWI",
+                    "MYS",
+                    "MYT",
+                    "NAM",
+                    "NCL",
+                    "NER",
+                    "NFK",
+                    "NGA",
+                    "NIC",
+                    "NIU",
+                    "NLD",
+                    "NOR",
+                    "NPL",
+                    "NRU",
+                    "NZL",
+                    "OMN",
+                    "PAK",
+                    "PAN",
+                    "PCN",
+                    "PER",
+                    "PHL",
+                    "PLW",
+                    "PNG",
+                    "POL",
+                    "PRI",
+                    "PRK",
+                    "PRT",
+                    "PRY",
+                    "PSE",
+                    "PYF",
+                    "QAT",
+                    "REU",
+                    "ROU",
+                    "RUS",
+                    "RWA",
+                    "SAU",
+                    "SDN",
+                    "SEN",
+                    "SGP",
+                    "SGS",
+                    "SHN",
+                    "SJM",
+                    "SLB",
+                    "SLE",
+                    "SLV",
+                    "SMR",
+                    "SOM",
+                    "SPM",
+                    "SRB",
+                    "SSD",
+                    "STP",
+                    "SUR",
+                    "SVK",
+                    "SVN",
+                    "SWE",
+                    "SWZ",
+                    "SXM",
+                    "SYC",
+                    "SYR",
+                    "TCA",
+                    "TCD",
+                    "TGO",
+                    "THA",
+                    "TJK",
+                    "TKL",
+                    "TKM",
+                    "TLS",
+                    "TON",
+                    "TTO",
+                    "TUN",
+                    "TUR",
+                    "TUV",
+                    "TWN",
+                    "TZA",
+                    "UGA",
+                    "UKR",
+                    "UMI",
+                    "UNK",
+                    "URY",
+                    "USA",
+                    "UZB",
+                    "VAT",
+                    "VCT",
+                    "VEN",
+                    "VGB",
+                    "VIR",
+                    "VNM",
+                    "VUT",
+                    "WLF",
+                    "WSM",
+                    "YEM",
+                    "ZAF",
+                    "ZMB",
+                    "ZWE"
+                ],
+                "items": null,
+                "required": false,
+                "name": "country"
+            },
+            {
+                "type": "string",
+                "min_length": null,
+                "max_length": null,
+                "label": "Type",
+                "enum": [
+                    "business",
+                    "residential"
+                ],
+                "items": null,
+                "required": false,
+                "name": "type"
+            },
+            {
+                "type": "string",
+                "min_length": 1,
+                "max_length": 255,
+                "label": "Tax ID",
+                "enum": [],
+                "items": null,
+                "required": false,
+                "name": "tax_id"
+            }
+        ],
+        "guide": "https:\/\/help.postmen.com\/hc\/en-us\/articles\/115010763608-DPD-UK-Developer-Guide-API-Credentials",
+        "paper_sizes": [
+            "4x4",
+            "default"
+        ],
+        "highlights": null
+    }
+}
